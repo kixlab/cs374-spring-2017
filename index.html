@@ -27,8 +27,23 @@
 	    border: solid 1px lightgrey;
 	}
   .well {
-    font-size: 16px;
+    font-size: 16px;  
+    position: relative;
   }
+/*  .well:after {
+    content: "";
+    background: url("dist/img/task1.jpg");
+    opacity: 0.15;
+    filter: alpha(opacity=15);
+    display: block;
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+  }*/
   .well p {
       font-weight: normal !important;
   }  
@@ -41,6 +56,7 @@
 	.no-class {
 		background-color: lightgrey;
 	}
+
   </style>
   <title>CS374: Intro to HCI | KAIST Spring 2017</title>
 </head>
@@ -74,7 +90,7 @@
 	<div class="row">
 		<div class="col-md-12">
           <div class="well">
-            <div>KAIST Spring 2017</div>
+            <div>KAIST Spring 2017&nbsp;&nbsp;|&nbsp;&nbsp;Juho Kim</div>
             <h1>CS374: Introduction to Human-Computer Interaction</h1>
 
             <p>Designing useful and usable user interfaces is much more than designing fancy and beautiful things. This course introduces fundamental principles, techniques, and methods for designing, prototyping, and evaluating user interfaces. Through this course, you’ll master skills to design useful and usable interfaces that are carefully catered to users’ needs. </p>
@@ -97,7 +113,7 @@
 	              <h3 class="panel-title">Course Staff</h3>
 	            </div>
 	            <div class="panel-body">
-	              <strong>Instructor: <a href="http://juhokim.com/">Prof. Juho Kim</a> </strong>(juhokim@kaist.ac.kr)<br/>
+	              <strong>Instructor: <a href="http://juhokim.com/">Prof. Juho Kim</a> </strong><br/>
 	              &nbsp;&nbsp;&nbsp;&nbsp;<em>Office Hours</em>: TBD @ N1-605<br/><br/>
 	              <strong>TA: TBD </strong><br/>
 	              &nbsp;&nbsp;&nbsp;&nbsp;<em>Office Hours</em>: TBD<br/>
@@ -136,6 +152,33 @@
     </div>
 
 	<div class="row">
+    <div class="col-md-4">
+          <div class="bs-component">
+            <div class="panel panel-primary">
+              <div class="panel-heading">
+                <h3 class="panel-title">Topics</h3>
+              </div>
+              <div class="panel-body">
+                Major topics include:
+                <ul>
+                 <li>Usability: Learnability, Efficiency, Safety</li>
+                 <li>User-Centered Design Process</li>
+                 <li>Rapid Prototyping, Iterative Design</li>
+                 <li>Needfinding, Contextual Inquiry, Storyboards</li>
+                 <li>Affordance, Metaphors, Conceptual Models</li>
+                 <li>User Interface Software Architecture</li>
+                 <li>Input and Output</li>
+                 <li>Visual Information Design</li>
+                 <li>Layout, Color, Typography</li>
+                 <li>Usability Testing & Heuristic Evaluation</li>
+                 <li>Experimental Design & Analysis</li>
+                </ul>
+
+                <!-- <strong>Late policy</strong>: Three lowest reading response grades will be removed. No late submissions are allowed for the reading responses. For assignments and project milestones, you'll lose 10% for each late day. Submissions will be accepted until three days after the deadline. -->
+              </div>
+            </div>         
+          </div>          
+        </div>  
 		<div class="col-md-4">
 	        <div class="bs-component">
 	          <div class="panel panel-primary">
@@ -162,7 +205,8 @@
 	              <h3 class="panel-title">Prerequisites</h3>
 	            </div>
 	            <div class="panel-body">
-	            There are no official course prerequisites. But the assignments and the final project will require building web-based user interfaces, so some fluency in programming is needed. Web programming skills are a plus, but not required. The first 2-3 weeks of the course will include tutorials on HTML, CSS, and JavaScript. 
+	            There are no official course prerequisites. But the assignments and the final project will require building web-based user interfaces, so some fluency in programming is needed. Web programming skills are a plus, but not required. The first 2-3 weeks of the course will include tutorials on HTML, CSS, and JavaScript. <br/>
+              <strong>Non-CS majors are also welcome.</strong>
 	            </div>
 	          </div>         
 	        </div>	        
