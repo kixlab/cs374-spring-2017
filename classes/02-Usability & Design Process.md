@@ -30,7 +30,7 @@ CS374 Project: how to host my interface?
 Mentality: 
 
 Will feel fast-paced, rushed
-Will feel interreupted
+Will feel interrupted
 Will go through the full cycle
 Quick run-through of the entire process
 Trust the process
