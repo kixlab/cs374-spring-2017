@@ -1,0 +1,187 @@
+/*
+ * 6.005 Slide Style
+ */
+
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic);
+@import url(highlight-eclipse.css);
+
+body {
+  font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.markdown {
+  display: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  -webkit-font-variant-ligatures: common-ligatures;
+  font-variant-ligatures: common-ligatures;
+}
+
+code {
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  background-color: rgba(0,0,0,.04);
+  padding: 1px 6px;
+  border-radius: 6px;
+}
+pre {
+  background-color: rgba(0,0,0,.04);
+  padding: 6px;
+  border-radius: 6px;
+}
+pre code {
+  padding: 0;
+  border-radius: 0;
+}
+
+a {
+  color: #428bca;
+  text-decoration: none;
+}
+
+/* reduce margins... */
+.remark-slide-content {
+  padding: 20px 40px;
+}
+.remark-slide-content :first-child {
+  margin-top: 0;
+}
+
+/* ... and increase font size */
+.remark-slide-content {
+  font-size: 22px;
+}
+.remark-slide-content code {
+  font-size: 90%;
+}
+.remark-slide-content.smallcode code {
+  font-size: 80%;
+}
+.remark-slide-content h1,
+.remark-slide-content h2,
+.remark-slide-content h3,
+.remark-slide-content p,
+.remark-slide-content pre,
+.remark-slide-content ol {
+  margin: 18px 0;
+}
+.remark-slide-content.squeeze h1,
+.remark-slide-content.squeeze h2,
+.remark-slide-content.squeeze h3,
+.remark-slide-content.squeeze p,
+.remark-slide-content.squeeze pre,
+.remark-slide-content.squeeze ol {
+  margin: 9px 0;
+}
+
+strike {
+  position: relative;
+}
+strike::after {
+  content: '';
+  border-bottom: .15em solid rgba(0,0,0,.8);
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+}
+
+/* show blackout mode in presenter view
+   note that clones created while in blackout mode do NOT start in blackout mode */
+body.remark-container.remark-blackout-mode {
+  background: black;
+}
+
+/* don't show slide numbers */
+body.remark-container:not(.remark-presenter-mode) .remark-slide-number {
+  display: none;
+}
+
+/* chapter titles */
+.remark-slide-content.chapter h1 {
+  margin: -20px -40px 0 -40px;
+  padding: 200px 0 20px 40px;
+  background: #933;
+  color: white;
+}
+.remark-slide-content.chapter h2 {
+  margin-bottom: 40px;
+}
+.remark-slide-content.chapter p {
+  font-size: 75%;
+  color: #999;
+}
+
+/* slides with A. B. C. lists */
+.remark-slide-content.abc > ol {
+  list-style-type: upper-alpha;
+}
+.remark-slide-content.sub_abc > ol > li > ol {
+  list-style-type: upper-alpha;
+}
+
+/* reveal content */
+.remark-slide-content .reveal-hidden {
+  display: none;
+}
+.remark-slide-content.reveal:not(.build) .reveal-hidden,
+.remark-slide-content.reveal.build._1 .reveal-hidden._1,
+.remark-slide-content.reveal.build._2 .reveal-hidden._2,
+.remark-slide-content.reveal.build._3 .reveal-hidden._3,
+.remark-slide-content.reveal.build._4 .reveal-hidden._4,
+.remark-slide-content.reveal.build._5 .reveal-hidden._5,
+.remark-slide-content.reveal.build._6 .reveal-hidden._6,
+.remark-slide-content.reveal.build._7 .reveal-hidden._7,
+.remark-slide-content.reveal.build._8 .reveal-hidden._8,
+.remark-slide-content.reveal.build._9 .reveal-hidden._9,
+.remark-slide-content.reveal.build._10 .reveal-hidden._10
+ {
+  display: initial;
+}
+
+/* reveal circled list items */
+.remark-slide-content.reveal:not(.build) li .reveal-circle,
+.remark-slide-content.reveal.build._1 li .reveal-circle._1,
+.remark-slide-content.reveal.build._2 li .reveal-circle._2,
+.remark-slide-content.reveal.build._3 li .reveal-circle._3,
+.remark-slide-content.reveal.build._4 li .reveal-circle._4,
+.remark-slide-content.reveal.build._5 li .reveal-circle._5,
+.remark-slide-content.reveal.build._6 li .reveal-circle._6,
+.remark-slide-content.reveal.build._7 li .reveal-circle._7,
+.remark-slide-content.reveal.build._8 li .reveal-circle._8,
+.remark-slide-content.reveal.build._9 li .reveal-circle._9,
+.remark-slide-content.reveal.build._10 li .reveal-circle._10
+ {
+  border: 5px solid rgba(250, 172, 63, 0.8);
+  border-radius: 10px;
+  display: inline-block;
+  padding-left: 40px;
+  padding-right: 5px;
+  padding-bottom: 1px;
+  margin-top: -5px;
+  margin-bottom: -6px;
+  position: relative;
+  left: -45px;
+}
+
+/* on-slide countdown timers */
+.remark-slide-timer {
+  border: 2px solid black;
+  border-radius: 10px;
+  background: black;
+  color: white;
+  display: inline-block;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  padding: 5px 10px;
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-size: 35px;
+  text-align: center;
+  letter-spacing: 1px;
+}
+.remark-slide-timer.remark-slide-timer-expired {
+  background: rgb(238, 95, 91);
+  border-color: rgb(238, 95, 91);
+}

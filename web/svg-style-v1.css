@@ -1,0 +1,8 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700);
+
+text[font-family=Sans-serif] {
+  font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+text[font-family=Monospace] {
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+}
