@@ -5,7 +5,7 @@
 // configuration
 var PREVIEW = document.location.protocol == 'file:';
 var SEMESTER = 'Spring 2017';
-var AUTHORS = 'This material is a derivative of <a href="http://web.mit.edu/6.813/www/sp17/">MIT\'s 6.813/6.831</a> reading material, used under <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC&nbsp;BY-SA&nbsp;4.0</a>. This work is licensed under <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC&nbsp;BY-SA&nbsp;4.0</a>.';
+var AUTHORS = 'This material is a derivative of <a href="http://web.mit.edu/6.813/www/sp16/">MIT\'s 6.813/6.831</a> reading material, used under <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC&nbsp;BY-SA&nbsp;4.0</a>. This work is licensed under <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC&nbsp;BY-SA&nbsp;4.0</a>.';
 var HOME = 'https://kixlab.org/courses/hci';
 
 // load jQuery, run setup, load other dependencies, and render
