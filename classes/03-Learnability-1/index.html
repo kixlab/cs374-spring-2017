@@ -230,7 +230,7 @@ Next we have direct manipulation: the preeminent interface style for graphical u
 
 2. The user interacts with the visual representation using **physical actions** or **labeled button presses**. Physical actions might include clicking on an object to select it, dragging it to move it, or dragging a selection handle to resize it. Physical actions are the most direct kind of actions in direct manipulation--you're interacting with the virtual objects in a way that feels like you're pushing them around directly. But not every interface function can be easily mapped to a physical action (e.g., converting text to boldface), so we also allow for "command" actions triggered by pressing a button--but the button should be visually rendered in the interface, so that pressing it is analogous to pressing a physical button.
 
-3. The effects of actions should be **rapid** (visible as quickly as possible), **incremental** (you can drag the scrollbar thumb a little or a lot, and you see each incremental change), **reversible*** (you can undo your operation--with physical actions this is usually as easy as moving your hand back to the original place, but with labeled buttons you typically need an Undo command), and **immediately visible** (the user doesn't have to do anything to see the effects; by contrast, a command like "cp a.txt b.txt" has no immediately visible effect).
+3. The effects of actions should be **rapid** (visible as quickly as possible), **incremental** (you can drag the scrollbar thumb a little or a lot, and you see each incremental change), **reversible** (you can undo your operation--with physical actions this is usually as easy as moving your hand back to the original place, but with labeled buttons you typically need an Undo command), and **immediately visible** (the user doesn't have to do anything to see the effects; by contrast, a command like "cp a.txt b.txt" has no immediately visible effect).
 
 Why is direct manipulation so powerful? It exploits perceptual and motor skills of the human machine--and depends less on linguistic skills than command or menu/form interfaces. So it's more "natural" in a sense, because we learned how to manipulate the physical world long before we learned how to talk, read, and write.
 
@@ -259,7 +259,7 @@ Speech dialog leans heavily on knowledge in the head. Much of this knowledge is 
 </ul>
 </div>
 
-Let's compare and contrast the three styles: command language (CL), menus and forms (MF), direct manipulation (DM), and speech dialog (SD).
+Let's compare and contrast the four styles: command language (CL), menus and forms (MF), direct manipulation (DM), and speech dialog (SD).
 
 **Learnability**: knowledge in the head vs. knowledge in the world. CL requires significant learning. Users must put a lot of knowledge into their heads in order to use the language, by reading, training, practice, etc. (Or else compensate by having manuals, reference cards, or online help close at hand while using the system.)
 The MF style puts much more information into the world, i.e. into the interface itself. Well-designed DM also has information in the world, delivered by the affordances, feedback, and constraints of the visual metaphor.
