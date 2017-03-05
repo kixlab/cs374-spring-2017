@@ -271,12 +271,12 @@ Since recognition is so much easier than recall, this means that MF and DM is mu
 
 **Synchrony**: Command languages are synchronous (first the user types a complete command, then the system does it). So are menu systems and forms; e.g., you fill out a web form, and then you submit it. Speech requires turn-taking between the system and user, so it's synchronous as well. DM, on the other hand, is asynchronous: the user can point the mouse anywhere and do anything at any time. DM interfaces are necessarily event driven.
 
-<div class="slide">
+<!-- <div class="slide">
 <h1>Using Multiple Interaction Styles</h1>
 <img src="figures/13.png" />
 </div>
 
-Real user interfaces often combine multiple interaction styles to make up for deficiencies in one style. For example, the Siri system built into iOS has both speech dialog (the user speaks something like "wake me up in one hour", and the system replies with speech) and menu/form (the alarm time and on/off setting can be manipulated here).
+Real user interfaces often combine multiple interaction styles to make up for deficiencies in one style. For example, the Siri system built into iOS has both speech dialog (the user speaks something like "wake me up in one hour", and the system replies with speech) and menu/form (the alarm time and on/off setting can be manipulated here). -->
 
 <div class="slide">
 <h1>Example: Twitter's Tweet Creation UI</h1>
@@ -332,9 +332,9 @@ As a software engineer, you should be quite familiar with this notion. A module 
 
 In software engineering, this divergence between interface and implementation is valued as a way to manage complexity and plan for change. In user interface design, we value it primarily for other reasons: the interface model should be simpler and more closely reflect the user's model of the actual task.
 
-Note that we're using model in a more general and abstract sense here than when we talk about the model-view-controller pattern (which you may have heard of previously, and which we'll discuss more in a future reading). In MVC, the model is a software component (like a class or group of classes) that stores application data and implements the application behavior behind an interface. Here, a model is an abstracted description of how a system works. The system model on this slide might describe the way an MVC model class behaves (for example, storing text as a list of lines). The interface model might describe the way an MVC view class presents that system model (e.g., allowing end-of-lines to be "deleted" just as if they were characters). Finally, the user model isn't software at all; it's all in the user's mind.
+<!-- Note that we're using model in a more general and abstract sense here than when we talk about the model-view-controller pattern (which you may have heard of previously, and which we'll discuss more in a future reading). In MVC, the model is a software component (like a class or group of classes) that stores application data and implements the application behavior behind an interface. Here, a model is an abstracted description of how a system works. The system model on this slide might describe the way an MVC model class behaves (for example, storing text as a list of lines). The interface model might describe the way an MVC view class presents that system model (e.g., allowing end-of-lines to be "deleted" just as if they were characters). Finally, the user model isn't software at all; it's all in the user's mind. -->
 
-<div class="slide">
+<!-- <div class="slide">
 <h1>Example: Back vs. Previous</h1>
 <img src="figures/18.png" />
 </div>
@@ -365,7 +365,7 @@ Similarly, most modern text editors model a text file as a single string, in whi
 
 When this implementation model is exposed in the user interface, as in old Unix text editors like ed, line endings can't be deleted in the same way as other characters. ed has a special join command for deleting line endings.
 
-text editor: one-dimensional sequence of characters; cursor is an insertion point typewriter: two-dimensional page; cursor is a rectangle on the page different effects of space, return, backspace.
+text editor: one-dimensional sequence of characters; cursor is an insertion point typewriter: two-dimensional page; cursor is a rectangle on the page different effects of space, return, backspace. -->
 
 <div class="slide">
 <h1>User's Model May Be Wrong</h1>
