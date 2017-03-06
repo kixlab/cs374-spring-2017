@@ -147,7 +147,8 @@ p {
     margin-left: 0px;
 }
 .markdown a {
-    color: inherit;
+    /*color: inherit;*/
+    /*font-weight: bold;*/
     border-bottom: 1px solid #0FACCB;
     text-decoration: none;
     transition: all .5s;
