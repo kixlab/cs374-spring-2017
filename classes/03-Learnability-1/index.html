@@ -10,7 +10,7 @@
 -->
 <meta charset="UTF-8">
 
-<title>Reading: Learnability, Part 1</title>
+<title>Reading: Learnability (1/2)</title>
 
 <link href="../../web/handout-style-v1.css" rel="stylesheet"></link>
 </head>
@@ -201,7 +201,7 @@ The earliest computer interfaces were command languages: job control languages f
 Although a command language is rarely the first choice of a user interface designer nowadays, they still have their place--often as an advanced feature embedded inside another interaction style. For example, Google's query operators form a command language. Even the URL in a web browser is a command language, with particular syntax and semantics.
 
 <div class="slide">
-<h1>Interaction Style #2: Menu and Forms</h1>
+<h1>Interaction Style #2: Menus and Forms</h1>
 <ul>
 <li>User is prompted to choose from menus and fill in forms
 <ul><li>all knowledge in the world; far more learnable</li></ul>
@@ -209,7 +209,7 @@ Although a command language is rarely the first choice of a user interface desig
 <img src="figures/10.png" />
 </div>
 
-A menu/form interface presents a series of menus or forms to the user. Traditional (Web 1.0) web sites behave this way. Most graphical user interfaces have some kind of menu/forms interaction, such as a menubar (which is essentially a tree of menus) and dialog boxes (which are essentially forms).
+A menu/form interface presents a series of menus or forms to the user. Traditional (Web 1.0) web sites behave this way. Most graphical user interfaces have some kind of menu/form interaction, such as a menubar (which is essentially a tree of menus) and dialog boxes (which are essentially forms).
 
 <div class="slide">
 <h1>Interaction Style #3: Direct Manipulation</h1>
@@ -226,13 +226,13 @@ A menu/form interface presents a series of menus or forms to the user. Tradition
 
 Next we have direct manipulation: the preeminent interface style for graphical user interfaces. Direct manipulation is defined by three principles [Shneiderman, Designing the User Interface, 2004]
 
-1. **A continuous visual representation** of the system's data objects. Examples of this visual representation include: icons representing files and folders on your desktop; graphical objects in a drawing editor; text in a word processor; email messages in your inbox. The representation may be verbal (words) or iconic (pictures), but it's continuously displayed, not displayed on demand. Contrast that with the behavior of ed, a command language- style text editor: ed only displayed the text file you were editing when you gave it an explicit command to do so.
+1. **A continuous visual representation** of the system's data objects. Examples of this visual representation include: icons representing files and folders on your desktop; graphical objects in a drawing editor; text in a word processor; email messages in your inbox. The representation may be verbal (words) or iconic (pictures), but it's continuously displayed, not displayed on demand. Contrast that with the behavior of [`ed`](https://en.wikipedia.org/wiki/Ed_(text_editor)), a command language-style text editor: `ed` only displayed the text file you were editing when you gave it an explicit command to do so.
 
 2. The user interacts with the visual representation using **physical actions** or **labeled button presses**. Physical actions might include clicking on an object to select it, dragging it to move it, or dragging a selection handle to resize it. Physical actions are the most direct kind of actions in direct manipulation--you're interacting with the virtual objects in a way that feels like you're pushing them around directly. But not every interface function can be easily mapped to a physical action (e.g., converting text to boldface), so we also allow for "command" actions triggered by pressing a button--but the button should be visually rendered in the interface, so that pressing it is analogous to pressing a physical button.
 
-3. The effects of actions should be **rapid** (visible as quickly as possible), **incremental** (you can drag the scrollbar thumb a little or a lot, and you see each incremental change), **reversible** (you can undo your operation--with physical actions this is usually as easy as moving your hand back to the original place, but with labeled buttons you typically need an Undo command), and **immediately visible** (the user doesn't have to do anything to see the effects; by contrast, a command like "cp a.txt b.txt" has no immediately visible effect).
+3. The effects of actions should be **rapid** (visible as quickly as possible), **incremental** (you can drag the scrollbar thumb a little or a lot, and you see each incremental change), **reversible** (you can undo your operation--with physical actions this is usually as easy as moving your hand back to the original place, but with labeled buttons you typically need an Undo command), and **immediately visible** (the user doesn't have to do anything to see the effects; by contrast, a command like `cp a.txt b.txt` has no immediately visible effect).
 
-Why is direct manipulation so powerful? It exploits perceptual and motor skills of the human machine--and depends less on linguistic skills than command or menu/form interfaces. So it's more "natural" in a sense, because we learned how to manipulate the physical world long before we learned how to talk, read, and write.
+Why is direct manipulation so powerful? It exploits perceptual and motor skills of the human and depends less on linguistic skills than command or menu/form interfaces. So it's more "natural" in a sense, because we learned how to manipulate the physical world long before we learned how to talk, read, and write.
 
 <div class="slide">
 <h1>Interaction Style #4: Speech Dialog</h1>
@@ -262,12 +262,12 @@ Speech dialog leans heavily on knowledge in the head. Much of this knowledge is 
 Let's compare and contrast the four styles: command language (CL), menus and forms (MF), direct manipulation (DM), and speech dialog (SD).
 
 **Learnability**: knowledge in the head vs. knowledge in the world. CL requires significant learning. Users must put a lot of knowledge into their heads in order to use the language, by reading, training, practice, etc. (Or else compensate by having manuals, reference cards, or online help close at hand while using the system.)
-The MF style puts much more information into the world, i.e. into the interface itself. Well-designed DM also has information in the world, delivered by the affordances, feedback, and constraints of the visual metaphor.
+The MF style puts much more information into the world, i.e., into the interface itself. Well-designed DM also has information in the world, delivered by the affordances, feedback, and constraints of the visual metaphor.
 Since recognition is so much easier than recall, this means that MF and DM is much more learnable and memorable than CL or SD.
 
-**Error messages**: CL, MF, and SD often have error messages (e.g. "you didn't enter a phone number"), but DM rarely needs error messages. There's no error message when you drag a scrollbar too far, for example; the scrollbar thumb simply stops, and the visual constraints of the scrollbar make it obvious why it stopped.
+**Error messages**: CL, MF, and SD often have error messages (e.g., "you didn't enter a phone number"), but DM rarely needs error messages. There's no error message when you drag a scrollbar too far, for example; the scrollbar thumb simply stops, and the visual constraints of the scrollbar make it obvious why it stopped.
 
-**Efficiency**: Experts can be very efficient with CL, since they don't need to wait for and visually scan system prompts, and many CL systems have command histories and scripting facilities that allow commands to be reused rather than constantly retyped. Efficient performance with MF interfaces demands good shortcuts (e.g. keyboard shortcuts, tabbing between form fields, typeahead). Efficient performance with DMs is possible when the DM is appropriate to the task; but using DM for a task it isn't well-suited for may feel like manual labor with a mouse.
+**Efficiency**: Experts can be very efficient with CL, since they don't need to wait for and visually scan system prompts, and many CL systems have command histories and scripting facilities that allow commands to be reused rather than constantly retyped. Efficient performance with MF interfaces demands good shortcuts (e.g., keyboard shortcuts, tabbing between form fields, typeahead). Efficient performance with DMs is possible when the DM is appropriate to the task; but using DM for a task it isn't well-suited for may feel like manual labor with a mouse.
 
 **User type**: CL is generally better for expert users, who keep their knowledge active and who are willing to invest in training and learning in exchange for greater efficiency. MF, DM, and SD are generally better for novices and infrequent users.
 
@@ -283,11 +283,11 @@ Real user interfaces often combine multiple interaction styles to make up for de
 <div class="slide">
 <h1>Example: Twitter's Tweet Creation UI</h1>
 <ul><li>What aspects of this UI use knowledge in the head?</li>
-<li>What aspects use knowledge in the world?</li></ul>
+<li>What aspects of this UI use knowledge in the world?</li></ul>
 <img src="figures/14.png" />
 </div>
 
-Let's look at Twitter's interface--specifically, let's focus on the interface for creating a new tweet. What aspects of this interface are knowledge-in-the-world, and what aspects require knowledge in the head? In what way is Twitter a hybrid of a command language and a menu/form interface?
+Let's look at Twitter's interface--specifically, let's focus on the interface for creating a new tweet. What aspects of this interface are knowledge in the world, and what aspects require knowledge in the head? In what way is Twitter a hybrid of a command language and a menu/form interface?
 
 Twitter is actually an unusual kind of command interface in that examples of "commands" (formatted tweets generated by other users) are constantly flowing at the user. So the user can do a lot of learning by watching on Twitter. On the other hand, learning by doing is somewhat more embarrassing, because your followers can all see your mistakes (the incorrect tweets you send out while you're still figuring out how to use it).
 
@@ -298,7 +298,7 @@ Twitter is actually an unusual kind of command interface in that examples of "co
 
 **Self-disclosure** is a technique for making a command language more visible, helping the user learn the available commands and syntax. Self-disclosure is useful for interfaces that have both a traditional GUI (with menus and forms and possibly direct manipulation) as well as a command language (for scripting). When the user issues a command in the GUI part, the interface also displays the command in the command language that corresponds to what they did. A primitive form of self-disclosure is the address bar in a web browser--when you click on a hyperlink, the system displays to you the URL that you could have typed in order to visit the page. A more sophisticated kind of self-disclosure happens in Excel: when you choose the sum function from the toolbar, and drag out a range of cells to be summed, Excel shows you how you could have typed the formula instead. (Notice that Excel also uses a tooltip, to make the syntax of the formula more visible.)
 
-On the bottom is another example of self-disclosure: Google's Advanced Search form, which allows the user to specify search options by selecting them from menus, the results of which are also displayed as a commandbased query ("microsoft windows" "operating system" OR OS -glass -washing site:microsoft.com) which can be entered on the main search page. (example suggested by Geza Kovacs)
+On the bottom is another example of self-disclosure: Google's Advanced Search form, which allows the user to specify search options by selecting them from menus, the results of which are also displayed as a commandbased query (`microsoft windows` `operating system` OR `OS -glass -washing site:microsoft.com`) which can be entered on the main search page (example suggested by Geza Kovacs).
 
 
 
@@ -378,7 +378,7 @@ The user's model may be totally wrong without affecting the user's ability to us
 
 But a wrong user model can also lead to problems. Consider a household thermostat, which controls the temperature of a room. If the room is too cold, what's the fastest way to bring it up to the desired temperature?
 
-Some people would say the room will heat faster if the thermostat is turned all the way up to maximum temperature. This response is triggered by an incorrect mental model about how a thermostat works: either the timer model, in which the thermostat controls the duty cycle of the furnace, i.e. what fraction of time the furnace is running and what fraction it is off; or the valve model, in which the thermostat affects the amount of heat coming from the furnace. In fact, a thermostat is just an on-off switch at the set temperature. When the room is colder than the set temperature, the furnace runs full blast until the room warms up. A higher thermostat setting will not make the room warm up any faster. (Norman, Design of Everyday Things, 1988)
+Some people would say the room will heat faster if the thermostat is turned all the way up to maximum temperature. This response is triggered by an incorrect mental model about how a thermostat works: either the timer model, in which the thermostat controls the duty cycle of the furnace, i.e., what fraction of time the furnace is running and what fraction it is off; or the valve model, in which the thermostat affects the amount of heat coming from the furnace. In fact, a thermostat is just an on-off switch at the set temperature. When the room is colder than the set temperature, the furnace runs full blast until the room warms up. A higher thermostat setting will not make the room warm up any faster. (Norman, Design of Everyday Things, 1988)
 
 These incorrect models shouldn't simply be dismissed as "ignorant users." (Remember, the user is always right! If there's a consistent problem in the interface, it's probably the interface's fault.) These user models for heating are perfectly correct for other systems: a car heater and a stove burner both use the valve model. And users have no problem understanding the model of a dimmer switch, which performs the analogous function for light that a thermostat does for heat. When a room needs to be brighter, the user model says to set the dimmer switch right at the desired brightness.
 
