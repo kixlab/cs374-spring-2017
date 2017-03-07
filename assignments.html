@@ -27,7 +27,7 @@
 	    border: solid 1px lightgrey;
 	}
   .well {
-    font-size: 16px;  
+    font-size: 16px;
     position: relative;
   }
   .question {
@@ -49,7 +49,7 @@
   }*/
   .well p {
       font-weight: normal !important;
-  }  
+  }
 	.topic {
 
 	}
@@ -62,11 +62,17 @@
 	.due, .points {
 		font-weight: bold;
 	}
+	.code {
+		background-color: lightgrey;
+		color: #B0384A;
+		padding: 2px;
+		margin-bottom: 1px;
+	}
   </style>
   <title>CS374: Intro to HCI | KAIST Spring 2017</title>
 </head>
 <body>
-	
+
 
 <div class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
@@ -105,7 +111,7 @@
             	<li><a href="#hw2">Homework 2: Heuristic Evaluation</a></li>
             </ul>
           </div>
-        <div id="source-button" class="btn btn-primary btn-xs" style="display: none;">&lt; &gt;</div></div>		
+        <div id="source-button" class="btn btn-primary btn-xs" style="display: none;">&lt; &gt;</div></div>
 	</div>
 
 	<div class="row">
@@ -153,10 +159,10 @@
 	              <h2>How do I submit?</h2>
 	              	Make a single PDF file of your report, and submit it on <a href="http://klms.kaist.ac.kr/course/view.php?id=56631">KLMS</a>. Please ask questions about the assignment on <a href="https://piazza.com/kaist.ac.kr/spring2017/cs374/home">Piazza</a>.
 	            </div>
-	          </div>         
-	        </div>	     
-        </div>         
-    </div>    
+	          </div>
+	        </div>
+        </div>
+    </div>
 
 	<div class="row">
 		<div class="col-md-12">
@@ -169,10 +175,126 @@
 	            <div class="panel-body">
 	              <div class="due">Due: 11:59pm on 3/16 (Thu)</div>
 	              <div class="points">40 points (4% of your total grade)</div>
+								<h2>Intro</h2>
+								How many capitals of countries do you know? Throughout three programming assignments, we will build a simple quiz game with various countries and their capitals. For PR1, we will design a layout of the game using HTML / CSS.
+
+								<h2>Where to start from?</h2>
+								We provide you with the starter kit, <a href="./assets/pr1/pr1.zip">pr1.zip</a>. It includes
+								<ul>
+									<li><span class="code">capital_game.css</span>: a skeleton stylesheet for your CSS code.</li>
+									<li><span class="code">index.html</span>: a skeleton HTML file for your HTML elements. capital_game.css above is included.</li>
+								</ul>
+
+								<h2>How to submit?</h2>
+								<ul>
+									<li>Compress your code into <span class="code">studentnumber_pr1.zip</span>. Please do not create any subfolders.</li>
+									<li>Then upload the <strong>zip</strong> file to the course <strong>KLMS</strong> until the due date stated above.</li>
+									<li>Late policy in <a href="https://kixlab.org/courses/hci/logistics.html#grading">course webpage</a> will be applied.</li>
+								</ul>
+
+								<h2>How to test my code before submitting it?</h2>
+								<ul>
+									<li>TAs will evaluate your code using the latest Chrome for OSX. We expect no browser compatibility issue in this assignment (we're not making a cutting-edge web application), but please test your code in your platform's Chrome before submission.</li>
+									<li>If there is a browser issue between Chrome versions in different platforms, TAs will follow the behavior in the student’s platform. However, please make sure that you are not using any custom stylesheet in your Chrome.</li>
+								</ul>
+
+								<h2>Where to ask question?</h2>
+								<ul>
+									<li>If you have questions about this assignment, please post it on our Piazza (in ‘pr1’ folder as ‘question’). TA will answer within a day.</li>
+									<li>If you believe your question should be kept private, please send email to <a href="mailto:hyeungshik.jung@kaist.ac.kr">hyeungshik.jung@kaist.ac.kr</a></li>
+								</ul>
+
+								<h2>OK, what should I do?</h2>
+									Your job is to build a layout of the capital quiz app based on the starter kit. Please note that we don’t implement any interactive features(input, checking answers, etc.) in this programming assignment. Points assigned to each task will be normalized for total 40 points in the final grade.
+
+								<h3>STEP1:  Add basic components (60pt)</h3>
+								<img src="./assets/pr1/step1.png" class="img-responsive"></img>
+								You have to add a <strong>title</strong>(1) and a <strong>table</strong> first. In detail,
+								<ul>
+									<li class="points">(10pt) Title</li>
+										<ul><li>Your title’s <span class="code">font-size</span> should be bigger than other texts below.</li></ul>
+									<li class="points">(10pt) Shape of table</li>
+										<ul><li>The table should have 3 columns.</li></ul>
+									<li class="points">(10pt) Table header</li>
+										<ul><li>Each of the 3 columns has its own header, named <i>‘Country’</i>, <i>‘Capital’</i>, and <i>‘Answer’</i>, respectively.</li></ul>
+									<li class="points">(10pt) Row for entering answer</li>
+										<ul><li>The second row (the row below the header) should contain the example country, the text <span class="code">input</span>, and the ‘See Answer’ <span class="code">button</span>.</li></ul>
+									<li class="points">(10pt) Row for correct past entry</li>
+										<ul><li>The third row should contain a correct entry example. Since <i>Tokyo</i> is the capital of Japan, we display ‘CORRECT’ in the answer column.</li></ul>
+									<li class="points">(10pt) Row for incorrect past entry</li>
+										<ul><li>The fourth row should contain an incorrect entry example. Since <i>New York</i> is not the capital of the USA, we display the correct answer (<i>Washington, D.C.</i>) in the answer column.</li></ul>
+								</ul>
+
+								<h3>STEP2: Styling components-1 (50pt)</h3>
+								<img src="./assets/pr1/step2.png" class="img-responsive"></img>
+								Let’s give some style to components so their functions are easily recognizable. In detail,
+								<ul>
+									<li class="points">(10pt) Header</li>
+										<ul>
+											<li>Make text in table’s header bolder than other texts in table’s body.</li>
+										</ul>
+									<li class="points">(10pt) Correct past entry</li>
+										<ul>
+											<li>(5pt) Change the <span class="code">font-color</span> of correct entry into <span class="code">blue</span>.</li>
+											<li>(5pt) Change ‘CORRECT’ in answer column to a check icon. You can easily insert icons by using libraries like <a href="http://fontawesome.io/">FontAwesome</a>, without inserting images. FontAwesome is included in index.html. Check this <a href="http://fontawesome.io/">link</a> to learn how to use it.</li>
+										</ul>
+									<li class="points">(10pt) Incorrect past entry</li>
+										<ul>
+											<li>(5pt) Change the <span class="code">font-color</span> of an incorrect entry into <span class="code">red</span>.</li>
+											<li>(5pt) Strikethrough the wrong answer (In example, <i>New York</i>).
+										</ul>
+									<li class="points">(20pt) Alignment</li>
+										<ul>
+											<li>All elements in a column should be aligned <span class="code">left</span>.</li>
+											<li>The title and the first column should be aligned <span class="code">left</span>.</li>
+										</ul>
+								</ul>
+
+
+								<h3>STEP3: Styling components-2 (50pt)</h3>
+								<img src="./assets/pr1/step3.png" class="img-responsive"></img>
+								<ul>
+									<li class="points">(10pt) Change title font with web fonts.</li>
+										<ul>
+											<li>With web fonts, you can load any type of font into your web page.</li>
+											<li><a href="https://fonts.google.com/">Google Fonts</a> is one of the most popular services. If you are new to it, <a href="https://developers.google.com/fonts/docs/getting_started">this tutorial</a> and <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Web_fonts">article will be helpful.</a></li>
+										</ul>
+									<li class="points">(10pt) Align elements to the center.</li>
+										<ul>
+											<li>Currently our elements are at the left of the page - let’s move them to the center as shown in the screenshot above.</li>
+											<li>It’s okay to wrap the content in a fixed width <span class="code">div</span>. However, make sure that the title is displayed in one line(no line break).</li>
+											<li>Aligning content to the center is a deep topic indeed. Here are some recommended articles from course staff.</li>
+											<ul>
+												<li><a href="http://www.tipue.com/blog/center-a-div/">The complete guide to centering a div</a></li>
+												<li><a href="https://www.w3.org/Style/Examples/007/center.en.html">CENTERING THINGS</a></li>
+											</ul>
+										</ul>
+									<li class="points">(30pt) Apply styles to the table</li>
+									<img src="./assets/pr1/step4.png" class="img-responsive"></img>
+									Let’s make our table look more like a table.
+									<ul>
+											<li class="points">(15pt) Add horizontal borders</li>
+											<ul>
+												<li>(5pt) No border for the uppermost border (above the header).</li>
+												<li>(5pt) Style is up to you, but there shouldn’t be any vertical borders between borders. </li>
+												<li>(5pt) The borders should not be separated(You will find a CSS property called <span class="code">border-collapse</span><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-collapse">(link)</a> useful).</li>
+											</ul>
+											<li class="points">(10pt) Add paddings</li>
+											<ul>
+												<li>Add <span class="code">5px</span> of <span class="code">padding</span> to every cell in the table.</li>
+											</ul>
+											<li class="points">(5pt) Apply different styles to the border below the header and other borders.</li>
+											<ul>
+												<li>In the example above, the border below the header is set to <i>'1px solid black’</i>, while other borders are <i>‘1px solid #cccccc'</i></li>
+												<li>You may apply different <span class="code">border-style</span> of your own. Please show your aesthetic sense.</li>
+											</ul>
+
+									</ul>
+								</ul>
 	            </div>
-	          </div>         
-	        </div>	     
-        </div>         
+	          </div>
+	        </div>
+        </div>
     </div>
 
 	<div class="row">
@@ -187,9 +309,9 @@
 	              <div class="due">Due: 11:59pm on 3/30 (Thu)</div>
 	              <div class="points">50 points (5% of your total grade)</div>
 	            </div>
-	          </div>         
-	        </div>	     
-        </div>         
+	          </div>
+	        </div>
+        </div>
     </div>
 
 	<div class="row">
@@ -204,9 +326,9 @@
 	              <div class="due">Due: 11:59pm on 5/4 (Thu)</div>
 	              <div class="points">50 points (5% of your total grade)</div>
 	            </div>
-	          </div>         
-	        </div>	     
-        </div>         
+	          </div>
+	        </div>
+        </div>
     </div>
 
 	<div class="row">
@@ -221,9 +343,9 @@
 	              <div class="due">Due: 11:59pm on 5/18 (Thu)</div>
 	              <div class="points">30 points (3% of your total grade)</div>
 	            </div>
-	          </div>         
-	        </div>	     
-        </div>         
+	          </div>
+	        </div>
+        </div>
     </div>
 
 
