@@ -16,7 +16,7 @@
 
 <div class="handout-info alert alert-info">Use [Hypothesis](https://hypothes.is/) for discussion, Q&A, and additional examples or references to improve the material.</div>
 
-<div class="slide">
+<!-- <div class="slide">
 <h1>UI Hall of Fame or Shame?</h1>
 <img src="figures/01.png" />
 </div>
@@ -31,7 +31,7 @@ But this interface adheres to its metaphor so carefully that it passes up some t
 - There are invisible **modes** in a desktop calculator -- states where pressing a number button does different things. What are these modes? How could they be made more visible?
 - What aspects of this interface depend on knowledge in the head? Contrast, for example, the Ans button with the numeric buttons.
 - The UI has many affordances for mouse operation -- clearly clickable buttons. But what about the keyboard-is it visible that keyboard can be used? How could you fix that? 
-
+ -->
 <h2 id="human-error">Human Error</h2>
 
 <div class="slide">
@@ -186,13 +186,13 @@ It's not a good approach, and should be used only sparingly, for several reasons
 - Confirmation dialogs can substantially reduce the efficiency of the interface. In the example above, a confirmation dialog pops up whenever the user deletes something, forcing the user to make two button presses for every delete, instead of just one. Frequent commands should avoid confirmations.
 - If a confirmation dialog is frequently seen - for example, every time the Delete button is pressed - then the expert users will learn to expect it, and will start to include it in their habitual procedure. In other words, to delete something, the user will learn to push Delete and then OK, without reading or even thinking about the confirmation dialog! The dialog has then completely lost its effectiveness, serving only to slow down the interface without actually preventing any errors.
 
-#### In general, reversibility (i.e. **undo**) is a far better solution than confirmation.
+In general, reversibility (i.e., **undo**) is a far better solution than confirmation.
 
 Even a web interface can provide at least single-level undo (undoing the last operation). Operations that are very hard to reverse may deserve confirmation, however. For example, quitting an application with unsaved work is hard to undo - but a welldesigned application could make even this undoable, using automatic save or keeping unsaved drafts in a special directory.
 
 
 
-<h2 id="user-control">User Control and Freedom</h2>
+<!-- <h2 id="user-control">User Control and Freedom</h2>
 
 <div class="slide">
 <h1>User Control and Freedom</h1>
@@ -201,7 +201,7 @@ Even a web interface can provide at least single-level undo (undoing the last op
 <li>User is sentinent, computer is not</li></ul>
 </div>
 
-#### Good interfaces are **explorable**. Recall that a major way users learn is by doing: poking around an interface, trying things out. An interface should encourage this kind of exploration, not only by making things more visible, but also by making the consequences of errors less severe. 
+Good interfaces are **explorable**. Recall that a major way users learn is by doing: poking around an interface, trying things out. An interface should encourage this kind of exploration, not only by making things more visible, but also by making the consequences of errors less severe. 
 
 For example, users navigating around a 3D world or a complex web site can easily get lost; give them an easy, obvious way to get back to some "home", or default view. Users should be able to explore the interface without fear of being trapped in a corner.
 
@@ -286,10 +286,10 @@ Providing user control and freedom can have strong effects on your backend model
 If an interface allows users to name things, then users should be free to choose long, descriptive names, with any characters or punctuation they want. Artificial limits on length or content should be avoided. DOS used to have a strong limit on filenames, an 8 character name and a 3 character extension, and a variety of punctuation characters are forbidden from filenames. Echoes of these limits persist in Windows even today.
 
 Here's a bizarre requirement from Facebook (source: Error'd--The Daily WTF). No doubt the programmer's intention was to reject randomly-generated or nonsensical names which would reduce Facebook's appearance of professionalism, but the rule clearly doesn't work.
+ -->
 
 
-
-<h2 id="undo">Undo</h2>
+<!-- <h2 id="undo">Undo</h2>
 
 <div class="slide">
 <h1>Support Undo</h1>
@@ -354,7 +354,7 @@ Interacting with Computers, v4 n3, 1992].
 </ul>
 <li>Semantic level</li>
 <ul>
-<li>Changes to application data structures (e.g. the result of an entire Format dialog</li>
+<li>Changes to application data structures (e.g., the result of an entire Format dialog</li>
 <li>This is the normal level</li>
 </ul>
 <li>Text entry is aggregated into a single action</li>
@@ -467,7 +467,7 @@ What else is wrong here? As the screenshot shows, the animation wasn't even done
 </ul>
 </div>
 
-The upshot of all these questions is that it's very hard for users to predict what Undo will do. Faced with this unpredictability, a common strategy is to press Undo until you see the effect you want to reverse actually go away, or until you realize it's gone too far without solving the problem (i.e., it's reversed an older, still-desired effect). So visibility of Undo's effects is a critical part of making it usable. Whenever Undo undoes a command, it should make sure that the effects of that have a visible change on the screen. If the user has changed the viewpoint (e.g. scrolling) since doing the command that is now being undone, the viewpoint should be changed back, so that it's easy to see what was reversed.
+The upshot of all these questions is that it's very hard for users to predict what Undo will do. Faced with this unpredictability, a common strategy is to press Undo until you see the effect you want to reverse actually go away, or until you realize it's gone too far without solving the problem (i.e., it's reversed an older, still-desired effect). So visibility of Undo's effects is a critical part of making it usable. Whenever Undo undoes a command, it should make sure that the effects of that have a visible change on the screen. If the user has changed the viewpoint (e.g., scrolling) since doing the command that is now being undone, the viewpoint should be changed back, so that it's easy to see what was reversed.
 
 The unit actions should correspond to chunks of the user's interaction: whole typed words (or strings), complete dialogs, user-defined macros.
 
@@ -480,7 +480,7 @@ For consistency, reserve the Undo command for model changes. You can use other c
 
 There are other commands that move through other action streams (Back), and physical manipulations (like scrollbar dragging) support direct reversibility.
 Users may not even think of reaching for Undo if the rest of your interface makes it easy to reverse undesired changes. Undo is a form of backward error recovery, which fixes errors by going back in time. A more natural way of thinking is forward error recovery - using other commands to reverse the change. For example, to undo a Bold command by forward error recovery, you select the text again and toggle Bold off. If your interface supports forward error recovery as much as possible, then warts in the Undo model won't hurt as much.
-
+ -->
 
 
 <h2 id="error-messages">Error Messages</h2>
@@ -513,7 +513,7 @@ The figure shows an example of an error message that simply shouldn't happen. Fo
 
 Assuming you can't design the error message out of the system, here are some guidelines for writing good ones.
 
-#### Be precise. Don't lump together multiple error conditions into a single all-purpose message. Find out what's really wrong, and display a targeted message. 
+Be precise. Don't lump together multiple error conditions into a single all-purpose message. Find out what's really wrong, and display a targeted message. 
 
 If the error is due to limitations of your system, like sizes or allowed characters, then be specific about what the limitations are, so that the user can adapt. (Then ask yourself why you have those limitations!)
 
@@ -555,12 +555,14 @@ Many words that are unfortunately common in technical error messages have emotio
 Windows and DOS have historically been littered with messages like these.
 
 The tooltip shown at the bottom isn't strictly an error message, but it actually appeared in a production version of AutoCad! As the story goes, it was inserted by a programmer as a joke, but somehow never removed before release. Even as a joke, it demonstrates a lack of respect for the intelligence of the human being on the other side of the screen. That attitude is exactly wrong for user interface design.
-
+<!-- 
 <div class="slide">
 <h1>Summary</h1>
 <img src="figures/21.png" />
-</div>
+</div> -->
 
+
+<div class="handout-info alert alert-info">Answer this question: [error self-observation](https://docs.google.com/forms/d/e/1FAIpQLSemdJIHVfnYGwnN1DadAE7X8QfI2Np5-9npyBVE7OgszwIZ2Q/viewform?usp=sf_link)</div>
 
 
 </div>
