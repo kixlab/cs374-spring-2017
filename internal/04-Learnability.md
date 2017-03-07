@@ -1,11 +1,39 @@
 # 04-Learnability Part 2
 
 
+# Recap
+
+
 # Admin
 
 
 # UI HOFS
 - RealCD
+
+## RealCD home view
+- How is a metaphor used here?
+- Player uses a CD case, not a CD player as a metaphor. why is this problematic?
+- What's tricky about metaphors is that sometimes it's not clear to what extent the interface follows the rules of the original object.
+- What would you hope to do with a real CD case?
+- One of the metaphors: It's a CD case so you can open it. How do you open it?
+- Why use green light to turn off the interface?
+
+## Opened view
+- Playmode options: disabled buttons
+- Volume: shift up and down, not left and right as shortcut
+- What other information did it lose with this "creative" scrollbar? Where you are.
+     - scrolls one track at a time. not paginated!
+- Green dots: disable a track. Somewhat consistent with the power off button.
+
+- Bullets to the right of track names: reordering control
+- Track names are editable
+- Help book: when you open it, now the interface has three sides open.
+
+## Mouse over
+- What makes it so hard to learn?
+- They are professional designers. They must have thought this was a great idea. What do you think that idea was?
+- Hope: transfer real-world knowledge into a computer representation.
+
 
 # Nanoquiz
 
@@ -73,6 +101,9 @@ Xerox Star
 
 ===
 
+# Recap
+
+
 # Admin
 
 
@@ -86,8 +117,13 @@ Xerox Star
 
 
 # Video Break
-Xerox Star
 
 
 # Part 2
+
+
+# Diff with Reading
+
+
+# Post Class Notes
 

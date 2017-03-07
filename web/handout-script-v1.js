@@ -71,6 +71,10 @@ function setup() {
   if ( ! $('head meta[name="viewport"]').length) {
     $('head').append($('<meta>').attr({ name: 'viewport', content: 'width=device-width, initial-scale=1' }));
   }
+
+  // align text and slide
+  $(".slide").before('<div style="clear: both;"></div>');
+
 }
 
 // render the page with all dependencies loaded

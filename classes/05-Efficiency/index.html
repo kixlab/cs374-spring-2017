@@ -66,7 +66,7 @@ If your interface has a potentially large number of related questions to ask the
 Here's an example of how to do it right, found in Eclipse. If there's anything to criticize in Eclipse's dialog box, it might be the fact that it initially doesn't show the filenames, just their count -- you have to press
 Details to see the whole dialog box. Simply knowing the *number* of files not under version control is rarely enough information to decide whether you want to say yes or no, so most users are likely to press Details anyway. -->
 
-<h2 id="chunking">Chunking</h2>
+<!-- <h2 id="chunking">Chunking</h2>
 <div class="slide">
 <h1>Chunking</h1>
 <ul>
@@ -122,6 +122,95 @@ Take advantage of this as a designer: don't present information as long undiffer
 </div>
 
 You probably saw this example when you signed up for your MIT Athena account. The keywords that you use to prove you have this account coupon are words--much easier to remember and type than the 10-digit, unchunked MIT identifier right above them. Thanks to Kyle Murray for this example) 
+
+ -->
+
+
+<h2 id="shortcuts">Shortcuts</h2>
+
+<div class="slide">
+<h1>Keyboard Shortcuts</h1>
+<ul>
+<li>Keyboard commands</li>
+<li>Menu accelerators</li>
+</ul>
+<img src="figures/15.png" />
+</div>
+
+A common way to increase efficiency of an interface is to add **keyboard shortcuts** ---- easily memorable key combinations. There are conventional techniques for displaying keyboard shortcuts (like Ctrl+N and Ctrl-O) in the menubar. Menubars and buttons often have **accelerators** as well (the underlined letters, which are usually invoked by holding down Alt to give keyboard focus to the menubar, then pressing the underlined letter). Choose keyboard shortcuts so that they are easily associated with the command in the user's memory.
+
+Keyboard operation also provides **accessibility** benefits, since it allows your interface to be used by users who can't see well enough to point a mouse. We'll have more to say about accessibility in a future reading. 
+
+
+<div class="slide">
+<h1>Defaults & Pending Delete</h1>
+<ul>
+<li>Fill in a form with defaults
+<ul><li>from history, by prediction</li></ul></li>
+<li>Make the defaults fragile</li>
+</ul>
+<img src="figures/16.png" />
+<img src="figures/17.png" />
+</div>
+
+**Defaults** are common answers already filled into a form. Defaults help in lots of ways: they provide shortcuts to both novices and frequent users; and they help the user learn the interface by showing examples of legal entries. Defaults should be **fragile**; when you click on or Tab to a field containing a default value, it should be fully selected so that frequent users can replace it immediately by simply starting to type a new value. (This technique, where typing replaces the selection, is called **pending delete**. It's the way most GUIs work, but not all. Emacs, for example, doesn't use pending delete; when you highlight some text, and then start typing, it doesn't delete the highlighted text automatically.) If the default value is wrong, then using a fragile default allows the correct value to be entered as if the field were empty, so having the default costs nothing.
+
+Incidentally, it's a good idea to remove the word "default" from your interface's vocabulary. It's a technical term with some very negative connotations in the lending world.
+
+<div class="slide">
+<h1>History</h1>
+<ul>
+<li>Offer recently-used or frequently-used choices</li>
+</ul>
+<img src="figures/18.png" />
+<img src="figures/19.png" />
+</div>
+
+Many inputs exhibit temporal locality--i.e., the user is more likely to enter a value they entered recently. File editing often exhibits temporal locality, which is why Recently-Used Files menus (like this) are very helpful for making file opening more efficient. Keep histories of users' previous choices, not just of files but of any values that might be useful. When you display the Print dialog again, for example, remember and present as defaults the settings the user provided before. 
+
+<div class="slide">
+<h1>Autocomplete</h1>
+
+<ul>
+<li>Minimize typing with autocomplete</li>
+</ul>
+<img src="figures/20.png" />
+</div>
+Autocomplete doesn't just help with efficiency. What other usability dimensions does it help? 
+
+
+
+<div class="slide">
+<h1>Aggregation</h1>
+<img src="figures/21.png" />
+<p>multiple selection for action</p>
+<img src="figures/22.png" />
+<p>multiple drag & drop</p>
+</div>
+
+**Aggregation** is an excellent way to add efficiency to an interface. Think about ways that a user can collect a number of items--data objects, decisions, graphical objects, whatever--and handle them all at once, as a group. Multiple selection is a good design pattern for aggregation, and there are many idioms now for multiple selection with mouse and keyboard (dragging an outline around the items, shift-click to select a range, etc.)
+
+Not every command needs aggregation, however. If the common case is only one item, and it's never more than a handful of items, than it may not be worth the complexity.
+
+
+<div class="slide">
+<h1>Anticipation</h1>
+<img src="figures/23.png" />
+</div>
+
+**Anticipation** means that a good design should put all needed information and tools for a particular task within the user's easy reach. If the task requires a feature from the interface that isn't immediately available in the current mode, then the user may have to back out of what they're doing, at a cost to efficiency.
+
+For example, here's the File Open dialog in Windows XP. This dialog demonstrates a number of anticipations:
+
+* The toolbar icons across the top show some evidence of anticipating the user's needs. Probably the most important is the New Folder icon, which lets you create a new folder to save your file in.
+* The icons on the left side are bookmarks for very common places that users go to open files, like the Desktop or the My Documents folder.
+* The History icon captures another aspect of the file-opening task: that users often need to open a file that they've opened recently.
+* If you click on My Network Places, you'll see more evidence of anticipation: not just a list of the network places that you've already created (network places are basically bookmarks pointing to file servers), but also icons for the common subtasks involved in managing the list of network places: Add Network Place to add a new one; and the Network Setup Wizard if you aren't connected to the network yet.
+
+It's worth noting that all these operations are available elsewhere in Windows--recently opened files are found in PowerPoint's File menu, the Network Setup wizard can be found from the Start menu or the Control Panel, and new folders can be made with Windows Explorer. So they're here only as shortcuts to functionality that was already available--shortcuts that serve both **learnability** (since the user doesn't have to learn about all those other places in order to perform the task of this dialog) and **efficiency** (since even if I know about those other places, I'm not forced to navigate to them to get the job done). 
+
+
+<div class="handout-info alert alert-info">Answer this question: [techniques for efficiency](https://docs.google.com/forms/d/e/1FAIpQLSdQOuMsiA3kUrNxHLYCgTbDKZE0EK2Ejl4HyBE6V7d7SYpFYg/viewform?usp=sf_link)</div>
 
 
 
@@ -197,7 +286,7 @@ Marking Menus](http://www.billbuxton.com/MMUserLearn.html)," CHI 1994.)
 </ul>
 </div>
 
-As we discussed in the first reading, cascading submenus are hard to use, because the mouse pointer is constrained to a narrow tunnel in order to get over into the submenu. Unlike the pointing tasks that Fitts's Law applies to, this steering task puts a strong requirement on the error your hand is allowed to make: instead of iteratively reducing the error until it falls below the size of the target, you have to continuously keep the error smaller than the size of the tunnel. The figure shows an intuition for why this works. Each cycle of the motor system can only move a small distance d such that the error &epsilon;d is kept below S. The total distance D therefore takes D/d = &epsilon;D/S cycles to cover. As a result, the time is proportional to D/S, not log D/S. It takes *exponentially longer* to hit a menu item on a cascading submenu than it would if you weren't constrained to move down the tunnel to it.
+Cascading submenus are hard to use, because the mouse pointer is constrained to a narrow tunnel in order to get over into the submenu. Unlike the pointing tasks that Fitts's Law applies to, this steering task puts a strong requirement on the error your hand is allowed to make: instead of iteratively reducing the error until it falls below the size of the target, you have to continuously keep the error smaller than the size of the tunnel. The figure shows an intuition for why this works. Each cycle of the motor system can only move a small distance d such that the error &epsilon;d is kept below S. The total distance D therefore takes D/d = &epsilon;D/S cycles to cover. As a result, the time is proportional to D/S, not log D/S. It takes *exponentially longer* to hit a menu item on a cascading submenu than it would if you weren't constrained to move down the tunnel to it.
 Windows tries to solve this problem with a 500 ms timeout, and now we know another reason that this solution isn't ideal: it exceeds T_p (even for the slowest value of T_p, so it destroys perceptual fusion and our sense of causality. Intentionally moving the mouse down to the next menu results in a noticeable delay.
 
 The Mac gets a Hall of Fame nod here: when a submenu opens, it provides an invisible triangular zone, spreading from the mouse to the submenu, in which the mouse pointer can move without losing the submenu.
@@ -235,94 +324,9 @@ Finally, since steering tasks are so much slower than pointing tasks, avoid stee
 
 
 
-<h2 id="shortcuts">Shortcuts</h2>
-
-<div class="slide">
-<h1>Keyboard Shortcuts</h1>
-<ul>
-<li>Keyboard commands</li>
-<li>Menu accelerators</li>
-</ul>
-<img src="figures/15.png" />
-</div>
-
-A common way to increase efficiency of an interface is to add **keyboard shortcuts** ---- easily memorable key combinations. There are conventional techniques for displaying keyboard shortcuts (like Ctrl+N and Ctrl-O) in the menubar. Menubars and buttons often have **accelerators** as well (the underlined letters, which are usually invoked by holding down Alt to give keyboard focus to the menubar, then pressing the underlined letter). Choose keyboard shortcuts so that they are easily associated with the command in the user's memory.
-
-Keyboard operation also provides **accessibility** benefits, since it allows your interface to be used by users who can't see well enough to point a mouse. We'll have more to say about accessibility in a future reading. 
-
-<div class="slide">
-<h1>Defaults & Pending Delete</h1>
-<ul>
-<li>Fill in a form with defaults
-<ul><li>from history, by prediction</li></ul></li>
-<li>Make the defaults fragile</li>
-</ul>
-<img src="figures/16.png" />
-<img src="figures/17.png" />
-</div>
-
-**Defaults** are common answers already filled into a form. Defaults help in lots of ways: they provide shortcuts to both novices and frequent users; and they help the user learn the interface by showing examples of legal entries. Defaults should be **fragile**; when you click on or Tab to a field containing a default value, it should be fully selected so that frequent users can replace it immediately by simply starting to type a new value. (This technique, where typing replaces the selection, is called **pending delete**. It's the way most GUIs work, but not all. Emacs, for example, doesn't use pending delete; when you highlight some text, and then start typing, it doesn't delete the highlighted text automatically.) If the default value is wrong, then using a fragile default allows the correct value to be entered as if the field were empty, so having the default costs nothing.
-
-Incidentally, it's a good idea to remove the word "default" from your interface's vocabulary. It's a technical term with some very negative connotations in the lending world.
-
-<div class="slide">
-<h1>History</h1>
-<ul>
-<li>Offer recently-used or frequently-used choices</li>
-</ul>
-<img src="figures/18.png" />
-<img src="figures/19.png" />
-</div>
-
-Many inputs exhibit temporal locality--i.e., the user is more likely to enter a value they entered recently. File editing often exhibits temporal locality, which is why Recently-Used Files menus (like this) are very helpful for making file opening more efficient. Keep histories of users' previous choices, not just of files but of any values that might be useful. When you display the Print dialog again, for example, remember and present as defaults the settings the user provided before. 
-
-<div class="slide">
-<h1>Autocomplete</h1>
-
-<ul>
-<li>Minimize typing with autocomplete</li>
-</ul>
-<img src="figures/20.png" />
-</div>
-Autocomplete doesn't just help with efficiency. What other usability dimensions does it help? 
 
 
-<div class="row">
-
-<div class="slide">
-<h1>Aggregation</h1>
-<img src="figures/21.png" />
-<p>multiple selection for action</p>
-<img src="figures/22.png" />
-<p>multiple drag & drop</p>
-</div>
-
-Hearkening back to the Hall of Fame & Shame for this reading, **aggregation** is an excellent way to add efficiency to an interface. Think about ways that a user can collect a number of items--data objects, decisions, graphical objects, whatever--and handle them all at once, as a group. Multiple selection is a good design pattern for aggregation, and there are many idioms now for multiple selection with mouse and keyboard (dragging an outline around the items, shift-click to select a range, etc.)
-
-Not every command needs aggregation, however. If the common case is only one item, and it's never more than a handful of items, than it may not be worth the complexity.
-
-</div>
-<div class="row">
-
-<div class="slide">
-<h1>Anticipation</h1>
-<img src="figures/23.png" />
-</div>
-
-**Anticipation** means that a good design should put all needed information and tools for a particular task within the user's easy reach. If the task requires a feature from the interface that isn't immediately available in the current mode, then the user may have to back out of what they're doing, at a cost to efficiency.
-
-For example, here's the File Open dialog in Windows XP. This dialog demonstrates a number of anticipations:
-
-* The toolbar icons across the top show some evidence of anticipating the user's needs. Probably the most important is the New Folder icon, which lets you create a new folder to save your file in.
-* The icons on the left side are bookmarks for very common places that users go to open files, like the Desktop or the My Documents folder.
-* The History icon captures another aspect of the file-opening task: that users often need to open a file that they've opened recently.
-* If you click on My Network Places, you'll see more evidence of anticipation: not just a list of the network places that you've already created (network places are basically bookmarks pointing to file servers), but also icons for the common subtasks involved in managing the list of network places: Add Network Place to add a new one; and the Network Setup Wizard if you aren't connected to the network yet.
-
-It's worth noting that all these operations are available elsewhere in Windows--recently opened files are found in PowerPoint's File menu, the Network Setup wizard can be found from the Start menu or the Control Panel, and new folders can be made with Windows Explorer. So they're here only as shortcuts to functionality that was already available--shortcuts that serve both **learnability** (since the user doesn't have to learn about all those other places in order to perform the task of this dialog) and **efficiency** (since even if I know about those other places, I'm not forced to navigate to them to get the job done). 
-
-</div>
-
-<h2 id="keystroke-level-model">Keystroke level model</h2>
+<h2 id="keystroke-level-model">Keystroke Level Model</h2>
 
 <div class="slide">
 <h1>Predictive Evaluation</h1>
@@ -337,9 +341,12 @@ It's worth noting that all these operations are available elsewhere in Windows--
 </ul>
 </div>
 
-Now we're going to turn to the question of how we can predict the efficiency of a user interface before we build it. Predictive evaluation is one of the holy grails of usability engineering. There's something worthy of envy in other branches of engineering--even in computer systems and computer algorithm design--in that they have techniques that can predict (to some degree of accuracy) the behavior of a system or algorithm before building it. Order-of-growth approximation in algorithms is one such technique. You can, by analysis, determine that one sorting algorithm takes O(n log n) time, while another takes O(n^2) time, and decide between the algorithms on that basis. Predictive evaluation in user interfaces follows the same idea.
+Now we're going to turn to the question of how we can predict the efficiency of a user interface before we build it. Predictive evaluation is one of the holy grails of usability engineering. There's something worthy of envy in other branches of engineering--even in computer systems and computer algorithm design--in that they have techniques that can predict (to some degree of accuracy) the behavior of a system or algorithm before building it. 
+
+<!-- Order-of-growth approximation in algorithms is one such technique. You can, by analysis, determine that one sorting algorithm takes O(n log n) time, while another takes O(n^2) time, and decide between the algorithms on that basis. Predictive evaluation in user interfaces follows the same idea. -->
 
 At its heart, any predictive evaluation technique requires a **model** for how a user interacts with an interface.
+
 This model needs to be **abstract** -- it can't be as detailed as an actual human being (with billions of neurons, muscles, and sensory cells), because it wouldn't be practical to use for prediction.
 
 It also has to be **quantitative**, i.e., assigning numerical parameters to each component. Without parameters, we won't be able to compute a prediction. We might still be able to do qualitative comparisons, such as we've already done to compare, say, Mac menu bars with Windows menu bars, or cascading submenus. But our goals for predictive evaluation are more ambitious.
@@ -348,7 +355,7 @@ These numerical parameters are necessarily **approximate**; first because the ab
 
 Where do the parameters come from? They're estimated from experiments with real users. The numbers seen here for the general model of human information processing (e.g., cycle times of processors and capacities of memories) were inferred from a long literature of cognitive psychology experiments. But for more specific models, parameters may actually be estimated by setting up new experiments designed to measure just that parameter of the model.
 
-<div class="slide">
+<!-- <div class="slide">
 <h1>Advantages of Predictive Evaluation</h1>
 <ul>
 <li>Don't have to build UI prototype
@@ -364,23 +371,29 @@ Predictive evaluation doesn't need real users (once the parameters of the model 
 Not only that, but predictive evaluation doesn't even need a **prototype**. Designs can be compared and evaluated without even producing design sketches or paper prototypes, let alone code.
 
 Another key advantage is that the predictive evaluation not only identifies usability problems, but actually provides an **explanation** of them based on the theoretical model underlying the evaluation. So it's much better at pointing to solutions to the problems than either inspection techniques or user testing. User testing might show that design A is 25% slower than design B at a doing a particular task, but it won't explain why.
-Predictive evaluation breaks down the user's behavior into little pieces, so that you can actually point at the part of the task that was slower, and see why it was slower. 
+Predictive evaluation breaks down the user's behavior into little pieces, so that you can actually point at the part of the task that was slower, and see why it was slower.  -->
 
 <div class="slide">
 <h1>Keystroke-Level Model (KLM)</h1>
 
-<ul>
+Keystroke or mouse button press / release<br/>
+Point with mouse<br/>
+Home hands between mouse and keyboard<br/>
+Draw line with mouse<br/>
+Mentally prepare
+
+
+<!-- <ul>
 <li><strong>K</strong>eystroke</li>
 <li><strong>B</strong>utton press or release with mouse</li>
 <li><strong>P</strong>oint with mouse</li>
 <li><strong>D</strong>raw line with mouse</li>
 <li><strong>H</strong>ome hands between mouse and keyboard</li>
 <li><strong>M</strong>entally prepare</li>
-</ul>
+</ul> -->
 </div>
 
-The first predictive model was the **keystroke level model** (proposed by Card, Moran & Newell, "The
-Keystroke Level Model for User Performance Time with Interactive Systems", *CACM*, v23 n7, July 1978).
+The first predictive model was the **keystroke level model** (proposed by Card, Moran & Newell, "[The Keystroke Level Model for User Performance Time with Interactive Systems](http://dl.acm.org/citation.cfm?id=358895)", *CACM*, v23 n7, July 1978).
 
 This model seeks to predict efficiency (time taken by expert users doing routine tasks) by breaking down the user's behavior into a sequence of the five primitive operators shown here.
 
@@ -410,7 +423,9 @@ Next, insert the mental preparation operators at the appropriate places, before 
 
 Finally, using estimated times for each operator, add up all the times to get the total time to run the whole method.
 
-<div class="slide">
+The operator times can be estimated in various ways. For example, keystroke time can be approximated by typing speed, and pointing time can be modelled by Fitts's Law. Figuring out where to insert the Ms is tricky, because it's not always clear where the chunk boundaries are. Kieras has suggested heuristic rules in "[Using the Keystroke-Level Model to Estimate Execution Times](http://www.cs.loyola.edu/~lawrie/CS774/S06/homework/klm.pdf)", 2001.
+
+<!-- <div class="slide">
 <h1>Estimated Operator Times</h1>
 <ul>
 <li><strong>K</strong>eystroke determined by typing speed</li>
@@ -488,7 +503,7 @@ This mental time was then divided by the number of chunks in the method. The res
 </div>
 
 One of the trickiest parts of keystroke-level modeling is figuring out where to insert the M's, because it's not always clear where the chunk boundaries are in the method. Here are some heuristic rules, suggested by
-Kieras ("Using the Keystroke-Level Model to Estimate Execution Times", 2001). 
+Kieras ("Using the Keystroke-Level Model to Estimate Execution Times", 2001).  -->
 
 <div class="slide">
 <h1>Example: Deleting a Word</h1>
@@ -526,7 +541,7 @@ The first method clicks at the start of the word, shift-clicks at the end of the
 
 The second method clicks at the start of the word, then presses Del enough times to delete all the characters in the word.
 
-<div class="slide">
+<!-- <div class="slide">
 <h1>Empirical Validation of KLM</h1>
 <img src="figures/25.png" />
 </div>
@@ -543,10 +558,9 @@ The results are pretty close--the predicted time for most tasks is within 20% of
 
 One flaw in this study is the way they estimated the time for mental operators--it was estimated from the study data itself, rather than from separate, prior observations.
 
-For more details, see the paper from which this figure was taken: Card, Moran & Newell, "The Keystroke
-Level Model for User Performance Time with Interactive Systems", *CACM*, v23 n7, July 1978.
+For more details, see the paper from which this figure was taken: Card, Moran & Newell, "The Keystroke Level Model for User Performance Time with Interactive Systems", *CACM*, v23 n7, July 1978. -->
 
-<div class="slide">
+<!-- <div class="slide">
 <h1>Applications of KLM</h1>
 <ul>
 <li>Comparing designs & methods</li>
@@ -563,7 +577,7 @@ Using the approximations in our keystroke level model, the shift-click method is
 Del-n-times method is linear in n. So there will be some point n below which the Del key is the faster method, and above which Shift-click is the faster method. Predictive evaluation not only tells us that this point exists, but also gives us an estimate for n.
 
 But here the limitations of our approximate models become evident. The shift-click method isn't really constant with n--as the word grows, the distance you have to move the mouse to click at the end of the word grows likewise. Our keystroke-level approximation hasn't accounted for that, since it assumes that all P operators take constant time. On the other hand, Fitts's Law says that the pointing time would grow at most logarithmically with n, while pressing Del n times clearly grows linearly. So the approximation may be fine in this case. 
-
+ -->
 <div class="slide">
 <h1>Limitations of KLM</h1>
 <ul>
