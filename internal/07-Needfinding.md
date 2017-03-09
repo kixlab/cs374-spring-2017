@@ -1,4 +1,5 @@
-# 06-Safety
+# 07-Needfinding
+
 
 # Recap
 
@@ -14,8 +15,6 @@
 
 
 # Part 1
-Designing cancel and undo
-Wizard vs center stage
 
 
 # Video Break
@@ -25,7 +24,7 @@ Wizard vs center stage
 
 
 # Diff with Reading
-Removed undo
-Removed user control and freedom
+
 
 # Post Class Notes
+

@@ -4,6 +4,8 @@
 
 
 # Admin
+- nanoquiz: shoutkey.com/
+- try, pair, share as one activity design pattern. also look into Weiman active learning process
 
 
 # UI HOFS
