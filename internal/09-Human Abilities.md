@@ -1,5 +1,13 @@
 # 09-Human Abilities
 
+Locus of attention
+Perceptual fusion
+Chunking
+GOMS
+MHP
+Distributed congnition: look at Chapter 3 of "Interaction Design"
+
+
 # Recap
 
 

@@ -1,5 +1,11 @@
 # 08-Discovery
 
+Task Analysis
+Storyboarding
+Scenarios
+Brainstorming
+Affinity Diagram
+
 # Recap
 
 

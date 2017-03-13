@@ -244,8 +244,8 @@ We can explain Fitts's Law by appealing to the human information processing mode
 
 where a is the reaction time for getting your hand moving, and b = - (T_p + T_c + T_m)/log &epsilon;.
 
-The graphs above show the typical trajectory of a person's hand, demonstrating this correction cycle in action.
-The position-time graph shows an alternating sequence of movements and plateaus; each one corresponds to one cycle. The velocity-time graph shows the same effect, and emphasizes that hand velocity of each subsequent cycle is smaller, since the motor processor must achieve more precision on each iteration.
+<!-- The graphs above show the typical trajectory of a person's hand, demonstrating this correction cycle in action.
+The position-time graph shows an alternating sequence of movements and plateaus; each one corresponds to one cycle. The velocity-time graph shows the same effect, and emphasizes that hand velocity of each subsequent cycle is smaller, since the motor processor must achieve more precision on each iteration. -->
 
 
 <div class="slide">
@@ -287,7 +287,8 @@ Marking Menus](http://www.billbuxton.com/MMUserLearn.html)," CHI 1994.)
 </div>
 
 Cascading submenus are hard to use, because the mouse pointer is constrained to a narrow tunnel in order to get over into the submenu. Unlike the pointing tasks that Fitts's Law applies to, this steering task puts a strong requirement on the error your hand is allowed to make: instead of iteratively reducing the error until it falls below the size of the target, you have to continuously keep the error smaller than the size of the tunnel. The figure shows an intuition for why this works. Each cycle of the motor system can only move a small distance d such that the error &epsilon;d is kept below S. The total distance D therefore takes D/d = &epsilon;D/S cycles to cover. As a result, the time is proportional to D/S, not log D/S. It takes *exponentially longer* to hit a menu item on a cascading submenu than it would if you weren't constrained to move down the tunnel to it.
-Windows tries to solve this problem with a 500 ms timeout, and now we know another reason that this solution isn't ideal: it exceeds T_p (even for the slowest value of T_p, so it destroys perceptual fusion and our sense of causality. Intentionally moving the mouse down to the next menu results in a noticeable delay.
+
+Windows tries to solve this problem with a 500 ms timeout, and now we know another reason that this solution isn't ideal: it exceeds T_p (even for the slowest value of T_p, so it destroys perceptual fusion and our sense of causality. Intentionally moving the mouse down to the next menu results in a noticeable delay).
 
 The Mac gets a Hall of Fame nod here: when a submenu opens, it provides an invisible triangular zone, spreading from the mouse to the submenu, in which the mouse pointer can move without losing the submenu.
 
