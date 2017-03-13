@@ -7,6 +7,8 @@
 - nanoquiz: shoutkey.com/
 - try, pair, share as one activity design pattern. also look into Weiman active learning process
 - no late submission for team project milestones
+- feedback / confirmation on the initial problem: will be sent by your mentor TA individually
+- group on Piazza will be created
 - 전산학부 MT, 행사 소개
 
 

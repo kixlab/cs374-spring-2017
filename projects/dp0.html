@@ -1,0 +1,163 @@
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <!-- Material Design fonts -->
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/icon?family=Material+Icons">
+
+  <!-- Bootstrap -->
+  <!-- <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"> -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <!-- Bootstrap Material Design -->
+  <link rel="stylesheet" type="text/css" href="../dist/css/bootstrap-material-design.css">
+  <link rel="stylesheet" type="text/css" href="../dist/css/ripples.min.css">
+  <style>
+  body {
+  	padding-top: 70px;
+  	font-weight: normal;
+    font-size: 14px;
+  }
+  th {
+  	font-weight: bold;
+  }
+	th, td {
+	    font-size: 14px;
+	    padding: 10px;
+	    border: solid 1px lightgrey;
+	}
+  .well {
+    font-size: 16px;  
+    position: relative;
+  }
+  .question {
+  	margin-bottom: 20px;
+  }
+/*  .well:after {
+    content: "";
+    background: url("dist/img/task1.jpg");
+    opacity: 0.15;
+    filter: alpha(opacity=15);
+    display: block;
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+  }*/
+  .well p {
+      font-weight: normal !important;
+  }  
+	.topic {
+
+	}
+	.reading {
+		max-width: 450px;
+	}
+	.no-class {
+		background-color: lightgrey;
+	}
+  .due {
+    font-weight: bold;
+  }
+  </style>
+  <title>CS374: Intro to HCI | KAIST Spring 2017</title>
+</head>
+<body>
+	
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">CS374: Intro to HCI</a>
+    </div>
+    <div class="navbar-collapse collapse navbar-responsive-collapse">
+      <ul class="nav navbar-nav">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../calendar.html">Calendar</a></li>
+        <li class="active"><a href="../projects.html">Studio & Projects</a></li>
+        <li><a href="../assignments.html">Assignments</a></li>
+        <li><a href="../logistics.html">Class Logistics</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<div class="container-fluid main">
+<!--   <div class="row">
+    <div class="col-md-12">
+          <div class="well">
+            <h1>Studio and Projects</h1>
+            <ul>
+              <li><strong>Design Project 0: Team Formation</strong></li>
+              <li><a href="dp1.html">Design Project 1: Needfinding</a></li>
+              <li><a href="dp2.html">Design Project 2: Storyboards</a></li>
+              <li><a href="dp3.html">Design Project 3: Paper Prototyping</a></li>
+              <li><a href="dp4.html">Design Project 4: Lo-fi Prototyping</a></li>
+              <li><a href="dp5.html">Design Project 5: Mid-fi Prototyping</a></li>
+              <li><a href="dp6.html">Design Project 6: Hi-fi Prototyping</a></li>
+              <li><a href="dp7.html">Design Project 7: User Testing</a></li>
+              <li><a href="dp8.html">Design Project 8: Iteration & Wrap-up</a></li>
+            </ul>
+          </div>
+        <div id="source-button" class="btn btn-primary btn-xs" style="display: none;">&lt; &gt;</div></div>   
+  </div> -->
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="well">
+        <h1>Design Project 0: Team Formation</h1>
+
+            <div class="alert alert-info">
+              <div class="due">Due: 11:59pm on 3/13 (Mon)</div>
+            </div>
+
+            <h2>What will we do in a team?</h2>
+            Your team will go through a semester-long design process together, finding & identifying target users' needs, prototyping & implementing ideas, and testing & iterating on solutions. You will build a <strong>web-based graphical user interface</strong>, which means no native apps, no physical interfaces, no sensors, and no robots. 
+
+            <h2>How do we find a topic?</h2>
+            You don't have to commit to one idea yet. Remember that the whole purpose of the design process is to make sure you carefully understand the user's needs before jumping to a solution. In this phase, your team needs to answer the following questions: (1) Who's your tentative target user population? and (2) What experience do you want to redesign for the target user population? (e.g., "redesign how a user gives gifts to their family", "redesign how a KAIST visitor takes a school tour", and "redesign how a blind user watches video")<br/><br/>
+
+            Please shoot for a <i>stretch</i> idea, for a target user population that is not like you. A course planning app for undergrads is a bad idea. But also keep in mind you have access to the target user population, since you'll need to actually observe and talk to them throughout the design process. Please talk to course staff if you want to run by your ideas.
+
+            <h2>How do I find teammates?</h2>
+            Use <a href="https://piazza.com/class/ix9uxqy8vo41xn?cid=5">Piazza</a> for finding teammates. In addition, we'll spend 15 minutes in the beginning of the tutorial session on 3/13 (Mon) to give you a chance to advertise you or your team.
+
+            <h2>What should my team look like?</h2>
+            Each team should have four students. The more diverse the members are (e.g., major, year, gender, nationality, interest, skillset), the better. You become more creative, learn more, and ultimately perform better when you work with people who are not like you.<br/><br/>
+
+            Please note that <strong>each of you should contribute to designing and implementing the frontend</strong>. This means that you cannot have two people just work on the server-side. Indeed, we'll enforce a limitation on how much backend your interface can have. More on that later.
+
+            <h2>Okay, we have a team now. How do we submit?</h2>
+            Each team needs to submit the <a href="https://docs.google.com/forms/d/e/1FAIpQLSeFeuzqQfc2FHIFbc5bZJmZtNxlDHCnZF2XMOzqs-mh8ZYS8g/viewform?usp=sf_link">team signup form</a>. Note that your team just needs to submit once; not everyone should submit the form separately.    
+
+      </div>   
+    </div>         
+  </div>           
+
+
+  
+</div>
+
+<script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../dist/js/ripples.min.js"></script>
+<script src="../dist/js/material.min.js"></script>
+<script>
+  $(function () {
+    $.material.init();
+  });
+</script>
+
+</body>
+</html>
+
+

@@ -1,0 +1,231 @@
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <!-- Material Design fonts -->
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/icon?family=Material+Icons">
+
+  <!-- Bootstrap -->
+  <!-- <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"> -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <!-- Bootstrap Material Design -->
+  <link rel="stylesheet" type="text/css" href="../dist/css/bootstrap-material-design.css">
+  <link rel="stylesheet" type="text/css" href="../dist/css/ripples.min.css">
+  <style>
+  body {
+  	padding-top: 70px;
+  	font-weight: normal;
+    font-size: 14px;
+  }
+  th {
+  	font-weight: bold;
+  }
+	th, td {
+	    font-size: 14px;
+	    padding: 10px;
+	    border: solid 1px lightgrey;
+	}
+  .well {
+    font-size: 16px;  
+    position: relative;
+  }
+  .question {
+  	margin-bottom: 20px;
+  }
+/*  .well:after {
+    content: "";
+    background: url("dist/img/task1.jpg");
+    opacity: 0.15;
+    filter: alpha(opacity=15);
+    display: block;
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+  }*/
+  .well p {
+      font-weight: normal !important;
+  }  
+	.topic {
+
+	}
+	.reading {
+		max-width: 450px;
+	}
+	.no-class {
+		background-color: lightgrey;
+	}
+  .due {
+    font-weight: bold;
+  }
+  </style>
+  <title>CS374: Intro to HCI | KAIST Spring 2017</title>
+</head>
+<body>
+	
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">CS374: Intro to HCI</a>
+    </div>
+    <div class="navbar-collapse collapse navbar-responsive-collapse">
+      <ul class="nav navbar-nav">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../calendar.html">Calendar</a></li>
+        <li class="active"><a href="../projects.html">Studio & Projects</a></li>
+        <li><a href="../assignments.html">Assignments</a></li>
+        <li><a href="../logistics.html">Class Logistics</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<div class="container-fluid main">
+<!--   <div class="row">
+    <div class="col-md-12">
+          <div class="well">
+            <h1>Studio and Projects</h1>
+            <ul>
+              <li><strong>Design Project 0: Team Formation</strong></li>
+              <li><a href="dp1.html">Design Project 1: Needfinding</a></li>
+              <li><a href="dp2.html">Design Project 2: Storyboards</a></li>
+              <li><a href="dp3.html">Design Project 3: Paper Prototyping</a></li>
+              <li><a href="dp4.html">Design Project 4: Lo-fi Prototyping</a></li>
+              <li><a href="dp5.html">Design Project 5: Mid-fi Prototyping</a></li>
+              <li><a href="dp6.html">Design Project 6: Hi-fi Prototyping</a></li>
+              <li><a href="dp7.html">Design Project 7: User Testing</a></li>
+              <li><a href="dp8.html">Design Project 8: Iteration & Wrap-up</a></li>
+            </ul>
+          </div>
+        <div id="source-button" class="btn btn-primary btn-xs" style="display: none;">&lt; &gt;</div></div>   
+  </div> -->
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="well">
+        <h1>Design Project 1: Needfinding</h1>
+
+            <div class="alert alert-info">
+              <div class="due">Studio: 3/20 (Mon)</div>
+              <div class="due">Final Write-up: 11:59pm on 3/23 (Thu)</div>
+            </div>
+            
+
+            <h2>What do we do?</h2>
+
+            Remember the design thinking workshop in the first week of class? It's important that you gain empathy and understand needs of your target users by observing and talking to them. In this assignment, you will observe and interview at least <strong>three</strong> potential target users or domain experts. Please make sure you meet with people who are experiencing the problem you are tackling. Also, include at least one <a href="http://dschool-old.stanford.edu/wp-content/themes/dschool/method-cards/extreme-users.pdf"><strong>extreme user</strong></a>, who is experiencing non-average constraints and situations. <a href="http://dschool-old.stanford.edu/wp-content/themes/dschool/method-cards/interview-preparation.pdf">Preparing for an interview</a> is a good idea.
+            
+            <br/><br/>
+
+            For each participant, do the following: (1) <strong>Observe</strong> them dealing with the experience you're trying to redesign in a real environment. Ask the participant to perform the task as realistically as possible, so that you have a good understanding of the actual practice. (2) <strong>Record</strong>: Carefully take notes, sketch, and capture photos about what you observe. Do not record video, as the participant might feel uncomfortable and perform unnaturally. (3) <strong>Interview</strong>: Spend 10-20 minutes interviewing the participant about what you observed. Ask "why" questions, focus on "feelings", and seek "stories". <a href="http://dschool-old.stanford.edu/wp-content/themes/dschool/method-cards/interview-for-empathy.pdf">This checklist</a> might help.
+
+            <br/><br/>
+
+            Now your team needs to reflect on what you learned from the participants, and identify <strong>needs</strong> and <strong>insights</strong>. Needs are what your user is trying to accomplish, expressed as verbs. They indicate your user's activities and desires. Insights are discoveries that you might use in creating solutions. They are opportunities, not features or solutions. There are no bad ideas in this stage -- go for volume, and generate at least 10 needs and 10 insights. Using <a href="http://dschool-old.stanford.edu/wp-content/themes/dschool/method-cards/empathy-map.pdf">an empathy map</a> might help, although it's not required.
+
+            <h2>Your Report</h2>
+            <ul>
+              <li><strong>Experience</strong> you are planning to redesign (one sentence)</li>
+              <li><strong>Observations & Interviews</strong>: 
+                <ul>
+                  <li>A narrative of the people you observed and interviewed. For each narrative, focus on interesting moments and breakdowns -- when the user is trying to do something but fails, takes long to do, or doesn't know how to do. Use at least one photo or sketch for each person to highlight the specific points.</li>
+                  <li>Note: Each member should observe and interview at least one person. Next to each interviewee, write down members of your team who were there for the interview.</li>
+                  <li>Note: Do not use real names of the users, but describe who they were in detail.</li>
+                </ul>
+              </li>
+              <li><strong>Needs</strong>: List at least 10 needs.</li>
+              <li><strong>Insights</strong>: List at least 10 insights.</li>
+              <li><strong>Studio Reflections</strong>: Summarize the feedback from the studio session, and mention how you addressed it or will address it later in the process.</li>
+            </ul>
+
+            <h2>Grading</h2>
+            <ul>
+              <li><strong>Experience</strong> (10%)
+                <ul>
+                  <li>Problem-driven not solution-driven?</li>
+                  <li>Stretch in the target user population?</li>
+                </ul>
+              </li>
+              <li><strong>Observations & Interviews</strong> (30%)
+                <ul>
+                  <li>Explain how each user is related to the Experience.</li>
+                  <li>At least three people?</li>
+                  <li>Demonstration of interesting moments?</li>
+                  <li>Clearly written and informative</li>
+                  <li>Photos or sketches?</li>
+                </ul>
+              </li>
+              <li><strong>Needs</strong> (20%)
+                <ul>
+                  <li>10+ needs submitted?</li>
+                  <li>Distinct, relevant needs?</li>
+                  <li>Non-trivial?</li>
+                  <li>Problem-driven not solution-driven?</li>
+                </ul>
+              </li>
+              <li><strong>Insights</strong> (20%)
+                <ul>
+                  <li>10+ insights submitted?</li>
+                  <li>Distinct, relevant insights?</li>
+                  <li>Non-trivial?</li>
+                  <li>Opportunity-driven not solution-driven?</li>
+                </ul>
+              </li>
+              <li><strong>Studio Reflections</strong> (10%) 
+                <ul>
+                  <li>Is feedback well summarized?</li>
+                  <li>Is feedback addressed, or is the plan for addressing feedback concrete?</li>
+                </ul>
+              </li>
+              <li><strong>Studio Presentation</strong> (10%) 
+                <ul>
+                  <li>Preparation and organization?</li>
+                  <li>Articulation and clear delivery?</li>
+                  <li>Effective use of visual aids?</li>
+                  <li>Time management?</li>
+                </ul>
+              </li>
+            </ul>
+
+            <h2>Deliverables</h2>
+            <strong>Studio Presentation</strong>: In studio, your team will present your main findings for 5 minutes, with 5 minutes for Q&A and feedback. You need to prepare a Google Slides presentation, by adding your slides to the link your TA will send you. The slides should be sent to your TA by <strong>5pm on Monday</strong>. <strong>Every team member</strong> needs to participate in the presentation. Write down the questions and feedback you receive during your presentation, and reflect on them in your report.
+
+            <br/><br/>
+
+            <strong>Team Report</strong>: One report per team. Your report should be submitted as a zip file. The main report should be written in <a href="https://daringfireball.net/projects/markdown/">Markdown</a> (please use the <em>.md</em> extension). We're going to publish your reports on the course website. Submit your team's report on <a href="http://klms.kaist.ac.kr/course/view.php?id=56631">KLMS</a>.
+
+<!-- Self-assessment form. Remember to complete your individual self-assessment forms in advance of the deadline. The checklist is very similar to the TAs' grading rubric, and is intended to help you make sure your submission is complete and on target.             -->
+            
+      </div>   
+    </div>         
+  </div>           
+
+
+  
+</div>
+
+<script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../dist/js/ripples.min.js"></script>
+<script src="../dist/js/material.min.js"></script>
+<script>
+  $(function () {
+    $.material.init();
+  });
+</script>
+
+</body>
+</html>
+
+
