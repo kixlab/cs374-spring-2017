@@ -379,7 +379,8 @@ Predictive evaluation breaks down the user's behavior into little pieces, so tha
 <div class="slide">
 <h1>Keystroke-Level Model (KLM)</h1>
 
-Keystroke or mouse button press / release<br/>
+Keystroke<br/>
+Button press or release with mouse<br/>
 Point with mouse<br/>
 Home hands between mouse and keyboard<br/>
 Draw line with mouse<br/>
@@ -398,14 +399,14 @@ Mentally prepare
 
 The first predictive model was the **keystroke level model** (proposed by Card, Moran & Newell, "[The Keystroke Level Model for User Performance Time with Interactive Systems](http://dl.acm.org/citation.cfm?id=358895)", *CACM*, v23 n7, July 1978).
 
-This model seeks to predict efficiency (time taken by expert users doing routine tasks) by breaking down the user's behavior into a sequence of the five primitive operators shown here.
+This model seeks to predict efficiency (time taken by expert users doing routine tasks) by breaking down the user's behavior into a sequence of the six primitive operators shown here.
 
 Most of the operators are physical--the user is actually moving their muscles to perform them. The M operator is different--it's purely mental (which is somewhat problematic, because it's hard to observe and estimate). The M operator stands in for any mental operations that the user does. M operators separate the task into chunks, or steps, and represent the time needed for the user to recall the next step from long-term memory. 
 
 <div class="slide">
 <h1>KLM Analysis</h1>
 <ul>
-<li>Encode a method as a sequence of physical operators (KPHD)</li>
+<li>Encode a method as a sequence of physical operators (KBPHD)</li>
 <li>Use heuristic rules to insert mental operators (M)</li>
 <li>Add up times for each operator to get total time for method</li>
 </ul>
@@ -413,7 +414,7 @@ Most of the operators are physical--the user is actually moving their muscles to
 
 Here's how to create a keystroke level model for a task.
 
-First, you have to focus on a particular **method** for doing the task. Suppose the task is deleting a word in a text editor. Most text editors offer a variety of methods for doing this, e.g.:
+First, you have to focus on a particular **method** for doing the task. Suppose the task is deleting a word in a text editor. Most text editors offer a variety of methods for doing this, e.g.,:
 
 1. click and drag to select the word, then press the Del key
 2. click at the start and shift-click at the end to select the word, then press the Del key
@@ -428,20 +429,20 @@ Finally, using estimated times for each operator, add up all the times to get th
 
 The operator times can be estimated in various ways. For example, keystroke time can be approximated by typing speed, and pointing time can be modelled by Fitts's Law. Figuring out where to insert the Ms is tricky, because it's not always clear where the chunk boundaries are. Kieras has suggested heuristic rules in "[Using the Keystroke-Level Model to Estimate Execution Times](http://www.cs.loyola.edu/~lawrie/CS774/S06/homework/klm.pdf)", 2001.
 
-<!-- <div class="slide">
+<div class="slide">
 <h1>Estimated Operator Times</h1>
 <ul>
-<li><strong>K</strong>eystroke determined by typing speed</li>
+<li>Keystroke determined by typing speed</li>
 </ul>
 <p>0.28 s  average typist (40 wpm)<br/>
 0.08 s  best typist (155 wpm)<br/>
 1.20 s  worst typist</p>
 <ul>
-<li><strong>B</strong>utton press or release</li>
+<li>Button press or release</li>
 </ul>
 <p>0.1 s   highly practiced, no need to acquire button</p>
 <ul>
-<li><strong>P</strong>ointing determined by Fitts's Law</li>
+<li>Pointing determined by Fitts's Law</li>
 </ul>
 <p>T = a + b log(d/s + 1) = a + b ID<br/>
 0.8 + 0.1 ID        [Card 1978]<br/>
@@ -452,7 +453,7 @@ OR<br/>
 T ~ 1.1 s for all pointing tasks
 </p>
 <ul>
-<li><strong>D</strong>rawing determined by steering law</li>
+<li>Drawing determined by steering law</li>
 </ul>
 </div>
 
@@ -470,11 +471,11 @@ Empirically, you get a better fit to measurements if the index of difficulty is 
 <div class="slide">
 <h1>Estimated Operator Times</h1>
 <ul>
-<li><strong>H</strong>oming estimated by measurement</li>
+<li>Homing estimated by measurement</li>
 </ul>
 <p>0.4 s (between keyboard and mouse)</p>
 <ul>
-<li><strong>M</strong>ental preparation estimated by measurement</li>
+<li>Mental preparation estimated by measurement</li>
 </ul>
 <p>1.2 s</p>
 </div>
@@ -486,7 +487,7 @@ Finally we have the **Mental** operator. The M operator does not represent plann
 The time for each M operator was estimated by modeling a variety of methods, measuring actual user time on those methods, and subtracting the time used for the physical operators--the result was the total mental time.
 This mental time was then divided by the number of chunks in the method. The resulting estimate (from the 1978 Card & Moran paper) was 1.35 sec--unfortunately large, larger than any single physical operator, so the number of M operators inserted in the model may have a significant effect on its overall time. (The standard deviation of M among individuals is estimated at 1.1 sec, so individual differences are sizeable too.) Kieras recommends using 1.2 sec based on more recent estimates. 
 
-<div class="slide">
+<!-- <div class="slide">
 <h1>Heuristic Rules for adding M's</h1>
 <ul>
 <li>Basic idea: 
@@ -512,7 +513,7 @@ Kieras ("Using the Keystroke-Level Model to Estimate Execution Times", 2001).  -
 <h1>Example: Deleting a Word</h1>
 
 <ul>
-<li><p>Shift-click selection
+<li><p><strong>Shift-click selection</strong>
 M <br />
 P [start of word] <br />
 BB [click] <br />
@@ -525,7 +526,8 @@ M <br />
 K [Del] <br /></li>
 <li>Total: 3M + 2P + 4B + 1K <br />
 = 6.93 sec</p></li>
-<li><p>Del key N times <br />
+<br/>
+<li><p><strong>Del key N times</strong>
 M <br />
 P [start of word] <br />
 BB [click] <br />
@@ -590,7 +592,7 @@ But here the limitations of our approximate models become evident. The shift-cli
 <li>Ignores
 <ul><li>errors (methods must be error-free)</li>
 <li>parallel action (shift-click)</li>
-<li>mental workload (e.g. attention & WM limits)</li>
+<li>mental workload (e.g., attention & WM limits)</li>
 <li>planning & problem solving (how does user select the method?)</li>
 <li>fatigue</li></ul></li>
 </ul>
