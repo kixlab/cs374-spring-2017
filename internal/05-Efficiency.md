@@ -4,15 +4,57 @@
 
 
 # Admin
-- nanoquiz: shoutkey.com/
+- nanoquiz: shoutkey.com/clean
 - try, pair, share as one activity design pattern. also look into Weiman active learning process
+
+
 - no late submission for team project milestones
 - feedback / confirmation on the initial problem: will be sent by your mentor TA individually
 - group on Piazza will be created
+
 - 전산학부 MT, 행사 소개
 
 
 # UI HOFS
+
+(1) Message when use Windows Explorer to delete IE cache
+
+  * browse to the cache directory
+  * select a file containing one of IE's browser cookies,
+  * delete it.
+  * enough information for user to decide?
+
+Suppose selected all your cookie files and delete. 
+
+  * get one dialog for every cookie you tried to delete!  (2)
+  * What button is missing?
+
+Yes to all (3)
+
+  * short-circuit questions by blanket answer.  
+  * helpful shortcut improves efficiency
+
+Not a panacea. 
+
+  * dialog is from Microsoft's Web Publishing Wizard, 
+  * uploads local files to a remote web site.  
+  * usually develop complete local copy, and then upload 
+  * so the wizard suggests deleting orphan files on host
+  * what if want to keep some file?
+  * What would you have to do?
+
+Aggregate many related questions in one dialog
+
+*  Provide a list of the files, 
+*  ask the user to select which ones should be deleted.  
+*  Select All and Unselect All buttons serve as Yes to All and No to All.
+
+(4) Eclipse does it right
+
+*  Small flaw: initially doesn't show the filenames, just their count
+*  press Details to see the whole dialog box. 
+*  Counting files rarely enough information to decide 
+*  most users are likely to press Details anyway.
 
 
 # Nanoquiz
@@ -20,7 +62,21 @@
 
 # Part 1
 
+## Shortcuts
+
+
+* aggregation
+* autocomplete
+* pending delete
+* defaults
+* history
+* anticipation
+* 
+
 ## Bubble Cursor
+http://ieor.berkeley.edu/~anandk/bubbleCursor.html
+
+How does this technique improve efficiency?
 
 
 # Video Break
@@ -37,10 +93,39 @@ Supple: Automatic Generation of Personalizable User Interfaces
 - also mention the calibration phase of asking users to perform simple tasks (pointing, selection, etc.)
 - explore the large design space of possible interfaces and pick an "optimal" one
 
+
 # Part 2
 
 
 ## KLM Modeling
+https://kixlab.org/courses/hci/activities/klm/klm.html
+
+- do it yourself with your preferred method
+- write the KLM model
+- reflect on the difference
+- submit the form
+- repeat with mouse-only or keyboard-only
+
+Whole class
+
+- who were faster? slower? why?
+- what does this tell us about the "modeling" approach?
+
+
+* predictive evaluation: predict performance without building prototype
+* let's you explain usability issues by reference to model
+* quantitative
+* approximate
+* Pieces
+  * Keypress
+  * Button click
+  * Pointing
+  * Draw line.
+  * Mental: recall next step (chunk) from long term memory
+  * Difference between K and B?
+  * Difference between P and D?
+  * Note coarseness of P modeling--skip Fitts law and assume 1.1s
+## Lab in the Wild
 
 
 # Diff with Reading
@@ -48,3 +133,4 @@ Supple: Automatic Generation of Personalizable User Interfaces
 
 # Post Class Notes
 - GOMS, KLM, and Fitts' Law probably should be covered in a single class
+- Fitts' law introduced before talking about MHP / Human Information Processing Model. Make sure to fit this in first.

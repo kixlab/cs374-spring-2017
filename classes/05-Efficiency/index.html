@@ -221,9 +221,9 @@ It's worth noting that all these operations are available elsewhere in Windows--
 <ul>
 <li><p>Fitt's Law</p>
 <ul><li><p>Time T to move your hand to a target of size S at distance D away is:</p>
-<ul><li>T = RT + MT = a + b log (D/S + 1)</li></ul></li>
+<ul><li>T = RT + MT = a + b log_2 (D/S + 1)</li></ul></li>
 <img src="figures/09.png" />
-<li><p>Depends only on index of difficulty log(D/S + 1)</p></li></ul></li>
+<li><p>Depends only on index of difficulty log_2 (D/S + 1)</p></li></ul></li>
 </ul>
 </div>
 
@@ -238,9 +238,11 @@ Fitts's Law specifies how fast you can move your hand to a target of a certain s
 <img src="figures/10.png" />
 </div>
 
-We can explain Fitts's Law by appealing to the human information processing model. Fitt's Law relies on closed-loop control. Assume that D >> S, so your hand is initially far away from the target. In each cycle, your motor system instructs your hand to move the entire remaining distance D. The accuracy of that motion is proportional to the distance moved, so your hand gets within some error &epsilon;D of the target (possibly undershooting, possibly overshooting). Your perceptual and cognitive processors perceive where your hand arrived and compare it to the target, and then your motor system issues a correction to move the remaining distance &epsilon;D--which it does, but again with proportional error, so your hand is now within &epsilon;^2 D. This process repeats, with the error decreasing geometrically, until n iterations have brought your hand within the target--i.e., &epsilon;^n D &le; S. Solving for n, and letting the total time T = n (T_p + T_c + T_m), we get:
+<!-- We can explain Fitts's Law by appealing to the human information processing model. Fitt's Law relies on closed-loop control. Assume that D >> S, so your hand is initially far away from the target. In each cycle, your motor system instructs your hand to move the entire remaining distance D. The accuracy of that motion is proportional to the distance moved, so your hand gets within some error &epsilon;D of the target (possibly undershooting, possibly overshooting). Your perceptual and cognitive processors perceive where your hand arrived and compare it to the target, and then your motor system issues a correction to move the remaining distance &epsilon;D--which it does, but again with proportional error, so your hand is now within &epsilon;^2 D. This process repeats, with the error decreasing geometrically, until n iterations have brought your hand within the target--i.e., &epsilon;^n D &le; S. Solving for n, and letting the total time T = n (T_p + T_c + T_m), we get: -->
 
-> T = a + b log (D/S)
+We can explain Fitts’s Law by appealing to a simplified model of human information processing. Fitts’s Law relies on closed-loop control. Assume that D >> S, so your hand is initially far away from the target. In each cycle, your motor system instructs your hand to move the entire remaining distance D. Your motor system can do that in one big motion of roughly constant time, T_m, but the accuracy of that single motion is proportional to the distance moved, so your hand gets within some error εD of the target (possibly undershooting, possibly overshooting). Your perceptual system perceives where your hand arrived in constant time T_p, and your cognitive system compares that location with the target in time T_c. Then your motor system issues a correction to move the remaining distance εD–which it does, but again with proportional error, so your hand is now within ε^2 D. This process repeats, with the error decreasing geometrically, until n iterations have brought your hand within the target–i.e., ε^n D ≤ S. Solving for n, and letting the total time T = n (T_p + T_c + T_m), we get:
+
+> T = a + b log_2 (D/S)
 
 where a is the reaction time for getting your hand moving, and b = - (T_p + T_c + T_m)/log &epsilon;.
 
@@ -263,7 +265,7 @@ The position-time graph shows an alternating sequence of movements and plateaus;
 Fitts's Law has some interesting implications.
 
 The edge of the screen stops the mouse pointer, so you don't need more than one correcting cycle to hit it.
-Essentially, the edge of the screen acts like a target with infinite size. (More precisely, the distance D to the center of the target is virtually equal to S, so T = a + b log (D/S + 1) solves to the minimum time T=a.) So edge-of-screen real estate is precious. The Macintosh menu bar, positioned at the top of the screen, is faster to use than a Windows menu bar (which, even when a window is maximized, is displaced by the title bar).
+Essentially, the edge of the screen acts like a target with infinite size. (More precisely, the distance D to the center of the target is virtually equal to S, so T = a + b log_2 (D/S + 1) solves to the minimum time T=a.) So edge-of-screen real estate is precious. The Macintosh menu bar, positioned at the top of the screen, is faster to use than a Windows menu bar (which, even when a window is maximized, is displaced by the title bar).
 
 Similarly, if you put controls at the edges of the screen, they should be active all the way to the edge to take advantage of this effect. Don't put an unclickable margin beside them.
 
