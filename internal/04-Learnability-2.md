@@ -49,7 +49,10 @@
 ## Metaphor (1:16, 3m)
 Amazon's Kindle e-book reader
 
-- What is the metaphor here? Physical book- How does this metaphor break down? How is it enhanced?- How is it better than a physical book? How is it worse?- What kinds of affordances are there?
+- What is the metaphor here? Physical book
+- How does this metaphor break down? How is it enhanced?
+- How is it better than a physical book? How is it worse?
+- What kinds of affordances are there?
 
 - desktop: very successful, everyone knows it, now it's not really a metaphor anymore.
 
@@ -126,8 +129,18 @@ Status bar in a web browser as a case study
 - Do we really need progress bars when page loading is fast enough with fast internet connection? But how long is long? We need to understand human perception and capabilities.
 
 
-## Activity: Unix Shell (1:55, 10m)Unix may be beautiful for many reasons, but learnability is not one of them.- The actions available to the user are completely invisible; the user must recall a command name from memory, along with the syntax for its arguments.- The state of the underlying system is likewise mostly hidden.  Many users customize their prompts to make some state visible, such as the current directory or the hostname.  The contents of the current directory are not visible, even though many commands operate on files.- The feedback from a command is minimal – in fact, one Unix design principle is that commands should say nothing when they succeed.  But that’s not a good thing.  It’s true that a generic feedback message like “command completed successfully” would indeed be useless; the subsequent appearance of a command prompt is sufficient feedback that the command has completed.  So what kind of visible feedback would be useful?- show my custom shell prompt with syntax highlighting and custom shell: in what way does this help and not?
-
+## Activity: Unix Shell (1:55, 10m)
+
+Unix may be beautiful for many reasons, but learnability is not one of them.
+
+- The actions available to the user are completely invisible; the user must recall a command name from memory, along with the syntax for its arguments.
+
+- The state of the underlying system is likewise mostly hidden.  Many users customize their prompts to make some state visible, such as the current directory or the hostname.  The contents of the current directory are not visible, even though many commands operate on files.
+
+- The feedback from a command is minimal – in fact, one Unix design principle is that commands should say nothing when they succeed.  But that’s not a good thing.  It’s true that a generic feedback message like “command completed successfully” would indeed be useless; the subsequent appearance of a command prompt is sufficient feedback that the command has completed.  So what kind of visible feedback would be useful?
+
+- show my custom shell prompt with syntax highlighting and custom shell: in what way does this help and not?
+
 
 
 # Information Scent
@@ -150,6 +163,9 @@ Try searching for different information types
 
 
 # Post Class Notes
+- not enough time to do the affordances (removing text) task, had to skip
+- students really liked Draco
+
 
 ===
 

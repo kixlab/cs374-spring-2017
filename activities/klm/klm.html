@@ -1,0 +1,468 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+    <title>Keystroke Level Modeling (KLM)</title>
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <meta name="read-only" content="true">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="author" content="none">
+    <style type="text/css">
+      #button_start{
+
+      }
+
+      #timer {
+       
+      }
+
+      #text_area{
+        width: 50%;
+        height: 15%;
+        border: 1px solid;
+        overflow: auto;
+        resize: none;
+        overflow: hidden;
+        font-size: 12pt;
+        font-family: Times;
+      }
+      #text_answer{
+        visibility: hidden;
+      }
+      #text_template{
+        display: none;
+      }
+
+      #new {
+
+      }
+
+      #old{
+        
+        /* display: none; */
+      }
+      #action_sequence{
+        width: 80%;
+        height: 25%;
+      }
+
+      #top_content{
+        width: 100%;
+        height: 50%;
+        display: block;
+      }
+
+      #top_klm {
+        width: 45%;
+        float: right;
+      }
+
+      #top_recorder {
+        width: 45%;
+        float: left;
+      }
+
+      h1 {
+        margin-bottom: -5px;
+      }
+
+      #activity_content {
+
+      }
+      </style>
+      <script src="convert.js"></script>
+    <script src="http://code.jquery.com/jquery-1.5.min.js"></script>
+    <script>
+
+      var timeoutHandle = null;
+      var startTime;
+      var actionSequence = new Array();
+      var isActivityRunning = false;
+
+      $(document).ready(function() {
+
+        init();
+
+        /////////////////////////////////////////////////////////////////
+
+        /**
+          * Performs initialization when the document is loaded and ready.
+          *   - Adds all listeners required.
+          *   - Hides timer
+          *   - Hides action sequence area
+          *   - Disables text-area
+          *   - Performs recalculation on KLM calculator
+        */
+        function init() {
+
+          // attach listener for mouse down events on text area
+          $("#text_area").mousedown(function(event) {
+            var name = getMouseButtonType(event.which);
+            addAction("mousedown("+name+")");
+          })
+
+          // attach listener for mouse up events on text area
+          $("#text_area").mouseup(function(event) {
+            var name = getMouseButtonType(event.which);
+            addAction("mouseup("+name+")");
+            
+          })
+
+          // attach listener for key up events on text area
+          $("#text_area").keydown(function(event) {
+            var name = getKeyType(event.which); 
+            addAction("keydown("+name+")");
+          })
+
+          // attach listener for key up events on text area
+          $("#text_area").keyup(function(event) {
+            var name = getKeyType(event.which); 
+            addAction("keyup("+name+")");
+          })
+
+          // attach listener starting the activity
+          $("#button_start").click(function() {
+            startActivity();
+          });
+
+          // attach listener for resetting the activity
+          $("#button_reset").click(function() {
+            stopTimer();
+            resetActivity();
+            $("#button_start").removeAttr("disabled");
+          });
+
+          // listen for any changes to the text-area
+          $("#text_area").bind('input propertychange', function() {
+            validate();
+          });
+          
+          // reset the activity
+          resetActivity();
+
+          // perform recalculation (old stuff)
+          recalculate();
+        }
+
+        function startTimer() {
+          if (timeoutHandle == null) {
+            timeoutHandle = setTimeout(onTimerTick, 1);
+          }
+          
+        }
+
+        function stopTimer() {
+          if (timeoutHandle != null) {
+            clearTimeout(timeoutHandle);
+            timeoutHandle = null;
+          }
+        }
+
+        function onTimerTick() {
+          
+          var now = new Date();
+          var delta = now.getTime() - startTime.getTime();
+          
+          $("#timer").val(delta);
+          
+          timeoutHandle = setTimeout(onTimerTick, 1);
+        }
+
+        /**
+          * Resets the activity to the start state, ready for the user.
+        */
+        function resetActivity() {
+          
+          // clear the action sequence buffer
+          actionSequence = new Array();
+
+          // set the timer to zero
+          $("#timer").val("0");
+
+          // disable the text-area
+          $("#text_area").attr("disabled", "disabled");
+
+          // hide the timer display area
+          // $("#timer_contents").hide();
+
+          // hide the action sequence area
+          // $("#action_sequence_contents").hide();
+
+          // clear the action sequence textarea
+          $("#action_sequence").val("");
+
+          // grey the text area a little
+          $("#text_area").css("background-color", "DBDBDB");
+          
+          // reset the text input area to template
+          $("#text_area").val($("#text_template").text());
+
+          // console.log($("#text_template").text());
+        }
+
+        /**
+          * Starts the activity. Usually called after the 'Start' button
+          * or 'Restart' button is pressed.
+          *   - Enables the text-area
+          *   - Sets keyboard focus to the text-area.
+        */
+        function startActivity() {
+
+          // reset all conditions back to start start
+          resetActivity();
+
+          // change disable the start button
+          $("#button_start").attr("disabled", "disabled");
+
+          // record the time activity was started
+          startTime = new Date();
+
+          // star the timer ticker
+          startTimer();
+
+          // flag the start of activity
+          isActivityRunning = true;
+
+          // enable the text_area
+          $("#text_area").removeAttr("disabled");
+          $("#text_area").css("background", "none");
+          $("#text_area").focus();
+        }
+
+        /**
+          * End the activity
+          *
+        */
+        function endActivity() {
+          
+          // flag the end of activity
+          isActivityRunning = false;
+
+          // disable the text-area
+          $("#text_area").attr("disabled", "disabled");
+          $("#text_area").blur();
+          $("#text_area").css({"background-color" : "#C7FFC8"});
+
+          // calculate and display the time taken
+          // var now = new Date();
+          // var delta = now.getTime() - startTime.getTime();
+          // console.log("time taken:" + delta);
+          // $("#timer").val(delta + " milliseconds");
+          
+          // stop the timer
+          stopTimer();
+
+          // show the timer area
+          // $("#timer_contents").slideToggle();
+
+          // set the action sequence 
+          refreshActionSequence();
+
+          // re-enable start button
+          $("#button_start").removeAttr("disabled");
+
+          // show the action sequence area
+          // $("#action_sequence_contents").slideToggle();
+        }
+
+        /**
+          * Pushes an action onto the action-sequence stack.
+        */
+        function addAction(c) {
+          actionSequence.push(c);
+          refreshActionSequence();
+        }
+
+        /**
+          * Sets the action sequence div based on the stack.
+        */
+        function refreshActionSequence() {
+          $("#action_sequence").val(actionSequence.toString())
+        }
+
+        /**
+          * Utility method for converting event.which to readable string.
+        */
+        function getMouseButtonType(which) {
+          switch (which) {
+            case 1:
+              return "left"; 
+            case 2:
+              return "middle"; 
+            case 3:
+              return "right"; 
+            default:
+              return "unknown"; 
+          }
+        }
+
+        function getKeyType(charcode) {
+          console.log("charcode:" + charcode);
+          var name = getNameFromCharCode(charcode);
+          if (name == "") {
+            return String.fromCharCode(charcode);
+          }
+          else {
+            return name;
+          }
+        }
+
+        /**
+          *
+          * Checks if the text in #text_area matches text in #text_answer.
+          *
+        */
+        function isTextEqualsAnswer() {
+          var equal = $("#text_area").val() == $("#text_answer").val();
+          console.log("answers are equal? " + equal);
+          return equal;
+        }
+
+        /**
+          *
+          * Validates that user has finished the task.
+          * Steps:
+          *   - checks that the user's text area matches the answer.
+          *   - produces the KLM sequence based on user's interaction
+          *   - stops timer
+          *
+        */
+        function validate() {
+          if (isTextEqualsAnswer()) {
+            endActivity();
+          }
+        }
+      });
+
+      /////////////////////////////////////////////////////////////////
+
+      function recalculate() {
+        var time = klm(get("actions").value)
+        get("time").innerHTML = time
+      }
+
+      function klm(str) {
+        var t = count(str, "K") * get("K").value
+                      + count(str, "B") * get("B").value
+                      + count(str, "P") * get("P").value
+                      + count(str, "H") * get("H").value
+                      + count(str, "M") * get("M").value
+        return t.toFixed(2)
+      }
+      
+      function count(str, letter) {
+        var matches = str.match(new RegExp(letter,"gi"))
+        return matches ? matches.length : 0 
+      }
+      
+      function get(id) {
+        return document.getElementById(id)
+      }
+
+    </script>
+</head>
+<body onload="recalculate()">
+
+<div id="body-pane">
+    <div id="content-box">
+
+      <h1>KLM modeling</h1>
+
+      
+      <div id="activity_content">
+          <!-- Instructions -->
+          <h2>Task Instructions</h2>
+          <p>Delete the word "tell" from the third line. Ensure that you maintain a single space between words.</p>
+          <p>Click on Start Activity, then do the task.  Your actions will be automatically recorded.  Once the word is deleted, recording will automatically stop.</p>
+          <!-- Button to start the Activity -->
+          <button id="button_start">Start Activity</button>
+         
+          <button id="button_reset">Reset</button>
+          <br />
+          <br />
+          
+          <!-- Template text_area (Hidden). Used for initialization. -->
+          <textarea id="text_template">I never saw a Purple Cow,
+I never hope to see one.
+But I can tell you, anyhow,
+I'd rather see than be one.
+          </textarea>
+
+          <!-- User text area for manipulation -->
+          <textarea id="text_area">I never saw a Purple Cow,
+I never hope to see one.
+But I can tell you, anyhow,
+I'd rather see than be one.
+          </textarea>
+
+          <!-- Answer text-area (Hidden). Used for comparison -->
+          <textarea id="text_answer">I never saw a Purple Cow,
+I never hope to see one.
+But I can you, anyhow,
+I'd rather see than be one.
+          </textarea>
+      </div>
+
+<hr />
+
+      <div id="top_content">
+        <div id="top_klm">
+          <h2>KLM Calculator</h2>
+          <p>Enter an action string below to calculate its cost in the Keystroke Level Model.</p>        
+
+          <table>
+          <tr>
+          <td colspan="2">KLM Actions:&nbsp;<td colspan="2"><input id="actions" type="text" value="m p bb h m kkkkk" size="70" onchange="recalculate()" onkeyup="recalculate()"/>
+          <tr>
+          <td >Time:&nbsp;<td colspan="2"><span id="time"></span> sec
+          <tr style="height: 2ex;">
+          <tr>
+          <td><td><b>K</b>eystroke <td width="100%"><input id="K" value="0.28" size="3" onchange="recalculate()" onkeyup="recalculate()"> sec 
+          <tr>
+          <td><td><b>B</b>utton <td><input id="B" value="0.1" size="3" onchange="recalculate()" onkeyup="recalculate()"> sec
+          <tr>
+          <td><td><b>P</b>oint <td><input id="P" value="1.1" size="3" onchange="recalculate()" onkeyup="recalculate()"> sec
+          <tr>
+          <td><td><b>H</b>ome <td><input id="H" value="0.4" size="3" onchange="recalculate()" onkeyup="recalculate()"> sec
+          <tr>
+          <td><td><b>M</b>ental <td><input id="M" value="1.2" size="3" onchange="recalculate()" onkeyup="recalculate()"> sec
+          </table>
+        </div>
+        <div id="top_recorder">
+
+          <h2>Task Recorder</h2>
+          <p>The fields for total time and action sequence will be automatically populated when you begin and complete the activity.</p>
+          <!-- Timer -->
+          <div id="timer_contents">
+          <h3>Time Elapsed</h3>
+          <input id="timer" value="0" readonly></input> milliseconds
+          </div>
+
+          <!-- Action Sequence -->
+          <div id="action_sequence_contents">
+          <h3>Action Sequence</h3>
+          <textarea id="action_sequence" readonly></textarea>
+          </div>
+        </div>
+      </div>
+
+<br />
+
+      <hr />
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfRU6wi6dDhQXQ2RInTHyCq0WUGFAwmEcf8eEenWKOFFsXYOQ/viewform?usp=sf_link" width="760" height="1100" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+        
+
+<p>
+<h4>References</h4>
+<ul>
+   <li>Card, Moran, &amp; Newell, "<a href="http://doi.acm.org/10.1145/358886.358895">The keystroke-level model for user performance time with interactive systems</a>,"
+       <i>CACM</i>, July 1980.                 
+   <li>Card, Moran, &amp; Newell, <i>The Psychology of Human-Computer Interaction</i>, CRC, 1986.
+   <li>David Kieras, "<a href="ftp://ai.eecs.umich.edu/people/kieras/GOMS/KLM.pdf">Using the Keystroke-Level Model to Estimate Execution Times</a>," 2001. 
+</ul> 
+  
+    </div>
+</div>
+
+</body>
+</html>
