@@ -4,13 +4,16 @@ Task Analysis
 Storyboarding
 Scenarios
 Brainstorming
+
 Affinity Diagram
+Personas: make a video
 
 # Recap
 
 
 # Admin
 - nanoquiz: shoutkey.com/
+- sit with your group!
 
 # UI HOFS
 

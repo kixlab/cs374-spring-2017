@@ -5,7 +5,6 @@
 
 # Admin
 - nanoquiz: shoutkey.com/clean
-- try, pair, share as one activity design pattern. also look into Weiman active learning process
 
 
 - no late submission for team project milestones
@@ -17,6 +16,7 @@
 
 # UI HOFS
 
+This message used to appear when you tried to delete the contents of your Internet Explorer cache from inside Windows Explorer (i.e., you browse to the cache directory, select a file containing one of IE’s browser cookies, and delete it).Put aside the fact that the message is almost tautological (“Cookie… is a Cookie”) and overexcited (“!!”).  Does it give the user enough information to make a decision?
 (1) Message when use Windows Explorer to delete IE cache
 
   * browse to the cache directory
@@ -24,13 +24,11 @@
   * delete it.
   * enough information for user to decide?
 
-Suppose selected all your cookie files and delete. 
+Suppose selected all your cookie files and delete. You get one dialog for every cookie you tried to delete!  
 
-  * get one dialog for every cookie you tried to delete!  (2)
-  * What button is missing?
+(2) What button is missing? Yes to all 
 
-Yes to all (3)
-
+(3)
   * short-circuit questions by blanket answer.  
   * helpful shortcut improves efficiency
 
@@ -64,19 +62,24 @@ Aggregate many related questions in one dialog
 
 ## Shortcuts
 
-
 * aggregation
 * autocomplete
 * pending delete
 * defaults
 * history
 * anticipation
-* 
+
+Covered by HOFS mostly, so don't spend extra time on this. Make sure some of these techniques are actually brought up and discussed in the HOFS.
+
 
 ## Bubble Cursor
 http://ieor.berkeley.edu/~anandk/bubbleCursor.html
+https://www.youtube.com/watch?v=JUBXkD_8ZeQ
 
 How does this technique improve efficiency?
+
+- S is not affected, but D is dramaticaly reduced.
+
 
 
 # Video Break
@@ -100,37 +103,31 @@ Supple: Automatic Generation of Personalizable User Interfaces
 ## KLM Modeling
 https://kixlab.org/courses/hci/activities/klm/klm.html
 
-- do it yourself with your preferred method
-- write the KLM model
-- reflect on the difference
-- submit the form
-- repeat with mouse-only or keyboard-only
+* predictive evaluation: predict performance without building prototype
 
 Whole class
 
-- who were faster? slower? why?
+- who were faster than prediction? slower? why?
 - what does this tell us about the "modeling" approach?
+	- strong assumption about the user: originally expert users (Card et al.) who are likely to have specific cognitive processes in performing simple text editing tasks.
 
+Notes
+- Students asked about where to insert M.
+- Make sure to live test it on the server. Some students had "unsafe JavaScript" error in Chrome, due to https vs http mismatch.
 
-* predictive evaluation: predict performance without building prototype
-* let's you explain usability issues by reference to model
-* quantitative
-* approximate
-* Pieces
-  * Keypress
-  * Button click
-  * Pointing
-  * Draw line.
-  * Mental: recall next step (chunk) from long term memory
-  * Difference between K and B?
-  * Difference between P and D?
-  * Note coarseness of P modeling--skip Fitts law and assume 1.1s
+  
 ## Lab in the Wild
+Brief note on large-scale experimentation, beyond lab studies. 
+- Pros: large, diverse user population
+- Cons: noise in the data, scientific validity
+- How to attract such a large group of volunteers? Gamification & social comparison. There were some "aha"s in the class when I mentioned "age guessing game".
 
 
 # Diff with Reading
 - removed chunking: move to human abilities
 
 # Post Class Notes
+
 - GOMS, KLM, and Fitts' Law probably should be covered in a single class
-- Fitts' law introduced before talking about MHP / Human Information Processing Model. Make sure to fit this in first.
+- Fitts' law introduced before talking about MHP / Human Information Processing Model. Make sure to fit this in first. Perceptual fuison is also mentioned in the Fitts law part.
+- In the reading, students have provided some photos and references. Go over them all.
