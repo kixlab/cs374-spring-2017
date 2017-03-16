@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+    <title>Undo Models</title>
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <meta name="read-only" content="true">
+    <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+    <meta name="author" content="none">
+    <style>
+        .half-page-horizontal {
+            width:49%; 
+            display:inline-block;
+            vertical-align: top;
+        }
+    </style>
+</head>
+<body>
+
+<div id="body-pane" style="width:100%">
+    <div id="content-box" style="width:100%">
+
+    <div class="half-page-horizontal">
+      <h1>Undo Models</h1>
+
+        
+        <p>The purpose of this activity is to explore the undo models
+        used in single-user text editing.  You will find a few different kinds of textboxes below.  
+        Experiment with your web browser's undo model
+		for text editing by typing, deleting, changing properties, and using Undo, and answer the questions in the form on the right. 
+        
+        <h3>one line, plain text</h3>
+        <div><input type="text" style="border: 1px solid; width: 400px" value="Purple Cow by Gelett Burgess (published in The Lark, 1895)"/></div>
+        
+        <h3>multi-line, plain text</h3>
+        <div><textarea rows="6" style="border: 1px solid; width: 400px">I never saw a Purple Cow,
+I never hope to see one.
+But I can tell you, anyhow,
+I'd rather see than be one.</textarea></div>
+        
+        <h3>multi-line, rich text</h3>
+        <button onclick="document.execCommand('bold')">Bold</button> 
+        <button onclick="document.execCommand('italic')">Italic</button>
+        <div contenteditable="true" style="border: 1px solid; width: 400px; height: 300px; overflow:auto" >
+			<p align="center">
+			<b>Reply (To The "Purple Cow")</b><br>
+			<font size=2>by Gelett Burgess</font><br>
+			<font size=2><i>Apres Cinq Ans,</i>1914</font></p>
+			<p align="center">
+			Ah, yes, I wrote the "Purple Cow"--<br>
+			I'm sorry, now, I wrote it!<br>
+			But I can tell you anyhow,<br>
+			I'll kill you if you quote it.</p>
+		</div>
+        
+    </div>
+
+    <div class="half-page-horizontal">
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSciXG7ReGKR2CIhzZnLUrWE9Vube4j1lqAGWraJd5KLTeoBqQ/viewform?usp=sf_link" width="760" height="1400" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+    </div>
+
+    </div>
+</div>
+
+</body>
+</html>

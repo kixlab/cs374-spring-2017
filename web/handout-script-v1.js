@@ -74,6 +74,7 @@ function setup() {
 
   // align text and slide
   $(".slide").before('<div style="clear: both;"></div>');
+  $(".markdown > h2").before('<div style="clear: both;"></div>');
 
 }
 
