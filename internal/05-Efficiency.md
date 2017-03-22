@@ -16,7 +16,9 @@
 
 # UI HOFS
 
-This message used to appear when you tried to delete the contents of your Internet Explorer cache from inside Windows Explorer (i.e., you browse to the cache directory, select a file containing one of IE’s browser cookies, and delete it).Put aside the fact that the message is almost tautological (“Cookie… is a Cookie”) and overexcited (“!!”).  Does it give the user enough information to make a decision?
+This message used to appear when you tried to delete the contents of your Internet Explorer cache from inside Windows Explorer (i.e., you browse to the cache directory, select a file containing one of IE’s browser cookies, and delete it).
+Put aside the fact that the message is almost tautological (“Cookie… is a Cookie”) and overexcited (“!!”).  Does it give the user enough information to make a decision?
+
 (1) Message when use Windows Explorer to delete IE cache
 
   * browse to the cache directory
@@ -131,3 +133,5 @@ Brief note on large-scale experimentation, beyond lab studies.
 - GOMS, KLM, and Fitts' Law probably should be covered in a single class
 - Fitts' law introduced before talking about MHP / Human Information Processing Model. Make sure to fit this in first. Perceptual fuison is also mentioned in the Fitts law part.
 - In the reading, students have provided some photos and references. Go over them all.
+- Read and incorpoate https://blog.codinghorror.com/fitts-law-and-infinite-width/
+

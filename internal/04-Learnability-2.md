@@ -166,6 +166,8 @@ Try searching for different information types
 - not enough time to do the affordances (removing text) task, had to skip
 - students really liked Draco
 
+- Door design suggested by Kamil Veli TORAMAN: https://www.youtube.com/watch?v=yY96hTb8WgI
+- 
 
 ===
 
