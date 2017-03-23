@@ -307,7 +307,7 @@
 	            </div>
 	            <div class="panel-body">
 	              <div class="due">Due: 11:59pm on 3/30 (Thu)</div>
-	              <div class="points">50 points (5% of your total grade) -- 165 points will be scaled to 50 points</div>
+	              <div class="points">50 points (5% of your total grade) -- 180 points will be scaled to 50 points</div>
 								<h2>Intro</h2>
 								In the last assignment, we built a layout of the capital quiz game. For PR2, we will implement interactive features of our game using JavaScript based on the the layout you built.
 
@@ -344,10 +344,16 @@
 								<h2>OK, what should I do?</h2>
 								Your job is to implement basic functionalities of the capital quiz game - Choosing a new question, checking whether the user’s answer is correct, showing history, etc.
 
-								<h3>Step 1: Prepare a new question (30pt)</h3>
+								<h3>Step 1: Prepare a new question (45pt)</h3>
 								<img src="./assets/pr2/step1.gif" class="img-responsive"></img>
 								In the previous programming assignment, we placed an example question and an example correct/wrong entry. In this step, you have to display a new question every time (1) when the page is loaded, or (2) the user clicks the ‘See Answer’ button. In detail,
 								<ul>
+									<li class="points">(15pt) Adding id to elements</li>
+										<ul>
+											<li>(5pt) The <span class="code">td</span> containing the question(the country's name) should have an <span class="code">id</span> of <i>"374__question"</i> (Note that there are two underscores).</li>
+											<li>(5pt) The <span class="code">input</span> for typing answer should have an <span class="code">id</span> of <i>"374__answer"</i>.</li>
+											<li>(5pt) The button for submitting answer of table body should have an <span class="code">id</span> of <i>"374__submit"</i>.</li>
+										</ul>
 									<li class="points">(5pt) Empty history</li>
 										<ul>
 											<li>There should be no example entries when the page is refreshed.</li>
