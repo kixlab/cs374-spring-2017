@@ -3,17 +3,19 @@
 <head>
 <meta charset="UTF-8">
 
-<title>Reading 6: UI Software Architecture</title>
+<title>Reading: UI Software Architecture</title>
 
-<link href="../../../web/handout-style-v1.css" rel="stylesheet"></link>
+<link href="../../web/handout-style-v1.css" rel="stylesheet"></link>
 </head>
 <body>
-<header>6.813/831 User Interface Design & Implementation</header>
+<header>CS374: Intro to HCI</header>
 <nav class="navigation"></nav>
 <div class="lecture">
 
 <div class="markdown">
-## UI Hall of Fame or Shame?
+
+
+<!-- ## UI Hall of Fame or Shame?
 
 <div class="slide">
 <h1>UI Hall of Fame or Shame?</h1>
@@ -46,14 +48,16 @@ Think about the usability of Expos&eacute;:
 - Is it learnable?
 - Is it efficient?
 - What about errors and safety?
-- How does it compare and contrast with Alt-Tab? Which is more efficient for what tasks, and why?
+- How does it compare and contrast with Alt-Tab? Which is more efficient for what tasks, and why? -->
 
 <div class="slide">
 <h1>Today's Topics</h1>
 <ul><li>Design patterns for GUIs
-<ul><li>View tree</li>
+<ul>
+<li>Model-view-controller</li>
+<li>View tree</li>
 <li>Listener</li>
-<li>Model-view-controller</li></ul>
+</ul>
 </li>
 <li>Approaches to GUI programming
 <ul><li>Procedural</li>
@@ -65,7 +69,7 @@ Think about the usability of Expos&eacute;:
 Today's reading is the first in a series of readings about how graphical user interfaces are implemented. Today we'll take a high-level look at the software architecture of GUI software, focusing on the **design patterns** that have proven most useful. Three of the most important patterns are the **model-view-controller** abstraction, which has evolved somewhat since its original formulation in the early 80's; the **view tree**, which is a central feature in the architecture of every important GUI toolkit; and the **listener** pattern, which is essential to decoupling the model from the view and controller.
 
 We'll also look at the three main approaches to implementing GUIs. We won't get into the details of HTML,
-CSS, Javascript, and JQuery here: they are well-covered in the labs we hosted earlier this semester (see course web site for materials). Also note that the backend development of web applications falls outside the scope of the course material in this class. So we won't be talking about things like SQL, PHP, Ruby on Rails, or even
+CSS, and JavaScript here: they are well-covered in the tutorials offered (see the [calendar](../../calendar.html) for details). Also note that the backend development of web applications falls outside the scope of the course material in this class. So we won't be talking about things like SQL, PHP, Ruby on Rails, or even
 AJAX.
 
 <h2 id="view-tree-and-the-listener-pattern">View Tree and the Listener Pattern</h2>
@@ -80,7 +84,7 @@ AJAX.
 
 The first important pattern we'll talk about today is the **view tree**. A view is an object that covers a certain area of the screen, generally a rectangular area called its bounding box. The view concept goes by a variety of names in various UI toolkits. In Java Swing, they're JComponents; in HTML, they're elements or nodes; in other toolkits, they may be called widgets, controls, or interactors.
 
-Views are arranged into a hierarchy of containment, in which some views contain other views. Typical containers are windows, panels, and toolbars. The view tree is not just an arbitrary hierarchy, but is aligned with the conceptual structure of the data, so that if a parent is not displayed, its children usually won't be displayed either. In old frameworks (such as Swing), a child was always visually contained (that is, spatially on the 2d display) in its parent's bounding box, but this is not true of the web browser view tree (called the DOM), which allows a designer to position a child independently of the parent.
+Views are arranged into a hierarchy of containment, in which some views contain other views. Typical containers are windows, panels, and toolbars. The view tree is not just an arbitrary hierarchy, but is aligned with the conceptual structure of the data, so that if a parent is not displayed, its children usually won't be displayed either. In old frameworks (such as Swing), a child was always visually contained (that is, spatially on the 2D display) in its parent's bounding box, but this is not true of the web browser view tree (called the DOM), which allows a designer to position a child independently of the parent.
 
 <div class="slide">
 <h1>How the View Tree is Used</h1>
@@ -102,14 +106,14 @@ GUIs change their output by mutating the view tree. For example, in the wiring d
 
 - **Input**. Views can have input handlers, and the view tree controls how mouse and keyboard input is processed.
 
-- **Layout**. The view tree controls how the views are laid out on the screen, i.e., how their bounding boxes are assigned. An automatic layout algorithm automatically calculates positions and sizes of views.
+- **Layout**. The view tree controls how the views are laid out on the screen, i.e., how their bounding boxes are assigned. A layout algorithm automatically calculates positions and sizes of views.
 
 We'll look at more about each of these areas in later readings.
 
 <div class="slide">
 <h1>Input Handling</h1>
 <ul><li>Input handlers are associated with views
-<ul><li>Also called <strong>listeners</strong>, event handlers, subscribers, observers</li></ul></li></ul>
+<ul><li>Also called **listeners**, event handlers, subscribers, observers</li></ul></li></ul>
 <img src="figures/04.png" />
 </div>
 
@@ -132,7 +136,7 @@ We'll look at more about each of these areas in later readings.
 - GUI input event handling is an instance of the Listener pattern (also known as Observer and Publish-Subscribe). In the Listener pattern, an event source generates a stream of discrete events, which correspond to state transitions in the source. One or more listeners register interest (subscribe) to the stream of events, providing a function to be called when a new event occurs. In this case, the mouse is the event source, and the events are changes in the state of the mouse: its x,y position or the state of its buttons (whether they are pressed or released). Events often include additional information about the transition (such as the x,y position of mouse), which might be bundled into an **event object** or passed as parameters.
 - When an event occurs, the event source distributes it to all subscribed listeners, by calling their callback functions.
 
-mitx:lecture06picoquiz0 Take Picoquiz
+
 
 <h2 id="model-view-controller">Model-View-Controller</h2>
 
@@ -245,7 +249,7 @@ So we need a place to keep the selection, and similar bits of data representing 
 </div>
 
 In principle, it's a nice idea to separate input and output into separate, reusable classes. In reality, it isn't always feasible, because input and output are tightly coupled in graphical user interfaces. As a result, the
-MVC pattern has largely been superseded by what might be called Model-View, in which the view and controllers are fused together into a single class, often called a **component** or a **widget**.
+MVC pattern has largely been superseded by what might be called Model-View, in which the view and the controller are fused together into a single class, often called a **component** or a **widget**.
 
 Most of the widgets in a GUI toolkit are fused view/controllers like this; you can't, for example, pull out the scrollbar's controller and reuse it in your own custom scrollbar. Internally, the scrollbar probably follows a model-view-controller architecture, but the view and controller aren't independently reusable.
 
@@ -261,7 +265,9 @@ In this perspective, the view is responsible not only for output, but also for l
 But listening to the model is no longer the view's responsibility. Instead, the controller listens to both the model and the view, passing changes back and forth. The controller receives high-level input events from the view, like selection-changed, button-activated, or textbox-changed, rather than low-level input device events.
 The Mac Cocoa framework uses this approach to MVC.
 
-mitx:lecture06picoquiz1 Take Picoquiz
+ <div class="handout-info alert alert-info">Answer this question: [GUI Design Patterns](https://docs.google.com/forms/d/e/1FAIpQLSeK0h25lBzmRBqcQ0Zo9Txtq9oL2Y9RAyrrdmL2EJFeian_qA/viewform?usp=sf_link)</div>
+
+
 
 <h2 id="gui-implementation-approaches">GUI Implementation Approaches</h2>
 
@@ -270,9 +276,9 @@ mitx:lecture06picoquiz1 Take Picoquiz
 
 <ul>
 <li>Procedural programming
-<ul><li>Code that says <em>how</em> to get what you want (flow of control)</li></ul></li>
+<ul><li>Code that says *how* to get what you want (flow of control)</li></ul></li>
 <li>Declarative programming
-<ul><li>Code that says <em>what</em> you want (no explicit flow of control)</li></ul></li>
+<ul><li>Code that says *what* you want (no explicit flow of control)</li></ul></li>
 <li>Direct manipulation
 <ul><li>Creating what you want in a direct manipulation interface</li></ul></li>
 </ul>
@@ -294,19 +300,19 @@ mitx:lecture06picoquiz1 Take Picoquiz
 </div>
 
 Now let's talk about how to construct the view tree, which will be a tale of three paradigms.
-In **procedural** style, the programmer has to say, step-by-step, how to reach the desired state. There's an explicit thread of control. This means you're writing code (in, say, Javascript) that calls constructors to create view objects, sets properties of those objects, and then connects them together into a tree structure (by calling, say, `appendChild()` methods). Virtually every GUI toolkit offers an API like this for constructing and mutating the view tree.
+In **procedural** style, the programmer has to say, step-by-step, how to reach the desired state. There's an explicit thread of control. This means you're writing code (in, say, JavaScript) that calls constructors to create view objects, sets properties of those objects, and then connects them together into a tree structure (by calling, say, `appendChild()` methods). Virtually every GUI toolkit offers an API like this for constructing and mutating the view tree.
 
 In **declarative** style, the programmer writes code that directly represents the desired view tree. There are many ways to describe tree structure in textual syntax, but the general convention today is to use an HTML/XML-style markup language. There's no explicit flow of control in a declarative specification of a tree; it doesn't do, it just is. An automatic algorithm translates the declarative specification into runtime structure or behavior.
 
 Finally, in **direct manipulation** style, the programmer uses a direct-manipulation graphical user interface to create the view tree. These interfaces are usually called GUI builders, and they offer a palette of view object classes, a drawing area to arrange them on, and a property editor for changing their properties.
 
-All three paradigms have their uses, but the sweet spot for GUI programming basically lies in an appropriate mix of declarative and procedural--which is what HTML/Javascript provides.
+All three paradigms have their uses, but the sweet spot for GUI programming basically lies in an appropriate mix of declarative and procedural--which is what HTML/JavaScript provides.
 
 <div class="slide">
 <h1>Markup Languages</h1>
 
 <ul>
-<li>HTML declaratively specifies a view tree</li>
+<li>HTML **declaratively** specifies a view tree</li>
 </ul>
 
 <img src="figures/12.png" />
@@ -314,6 +320,7 @@ All three paradigms have their uses, but the sweet spot for GUI programming basi
 <img src="figures/10.png" />
 
 <img src="figures/11.png" />
+
 
 </div>
 
@@ -326,7 +333,7 @@ HTML specification--it's simply an HTML parser, which matches up start tags with
 <h1>View Tree Manipulation</h1>
 
 <ul>
-<li>Javascript can **procedurally** mutate a view tree</li>
+<li>JavaScript can **procedurally** mutate a view tree</li>
 </ul>
 
 
@@ -348,15 +355,15 @@ HTML specification--it's simply an HTML parser, which matches up start tags with
 <img src="figures/10.png" />
 </div>
 
-Here's procedural code that generates the same HTML view tree, using Javascript and the **Document Object Model (DOM)**. DOM is a standard set of classes and methods for interacting with a tree of HTML or XML objects procedurally. DOM interfaces exist not just in Javascript, which is the most common place to see it, but also in Java and other languages.
+Here's procedural code that generates the same HTML view tree, using JavaScript and the **Document Object Model (DOM)**. DOM is a standard set of classes and methods for interacting with a tree of HTML or XML objects procedurally. DOM interfaces exist not just in JavaScript, which is the most common place to see it, but also in Java and other languages.
 
-Note that the name DOM is rather unfortunate from our point of view. It has nothing to do with "models" in the sense of model-view-controller---in fact, the DOM is a tree of views. It's a model in the most generic sense we discussed in the Learnability reading, a set of parts and interactions between them, that allows an HTML document to be treated as objects in an object-oriented programming language.
+Note that the name DOM is rather unfortunate from our point of view. It has nothing to do with "models" in the sense of model-view-controller---in fact, the DOM is a tree of views. It's a model in the most generic sense, a set of parts and interactions between them, that allows an HTML document to be treated as an object in an object-oriented programming language.
 
-Most people ignore what DOM means, and just use the word. In fact, DOM is often used to refer to the view tree.
+<!-- we discussed in the Learnability reading -->
 
-Compare the procedural code here with the declarative code earlier.
+<!-- Most people ignore what DOM means, and just use the word. In fact, DOM is often used to refer to the view tree. -->
 
-Raw DOM programming is painful, and worth avoiding. Instead, there are toolkits that substantially simplify procedural programming in HTML/Javascript---jQuery is a good example, and the one we'll be using.
+Compare the procedural code here with the declarative code earlier. Raw DOM programming is painful, and worth avoiding. Instead, there are toolkits that substantially simplify procedural programming in HTML/JavaScript---jQuery is a good example, and the one we use for the programming assignments.
 
 <div class="slide">
 <h1>Advantages & Disadvantages of Declarative UI</h1>
@@ -377,11 +384,52 @@ Now that we've seen our first simple example of declarative UI---HTML---let's co
 
 First, the declarative code is usually more compact than procedural code that does the same thing. That's mainly because it's written at a higher level of abstraction: it says *what* should happen, rather than *how*.
 
-But the higher level of abstraction can also make declarative code harder to debug. There's generally no notion of time, so you can't use techniques like breakpoints and print statements to understand what's going wrong. The automatic algorithm that translates the declarative code into working user interface may be complex and hard to control---i.e., small changes in the declarative specification may cause large changes in the output. Declarative specs need debugging tools that are customized for the specification, and that give insight into how the spec is being translated; without those tools, debugging becomes trial and error.
+But the higher level of abstraction can also make declarative code harder to debug. There's generally no notion of time, so you can't use techniques like breakpoints and print statements to understand what's going wrong. The automatic algorithm that translates the declarative code into a working user interface may be complex and hard to control---i.e., small changes in the declarative specification may cause large changes in the output. Declarative specs need debugging tools that are customized for the specification, and that give insight into how the spec is being translated; without those tools, debugging becomes trial and error.
 
 On the other hand, an advantage of declarative code is that it's much easier to build authoring tools for the code, like HTML editors or GUI builders, that allow the user interface to be constructed by direct manipulation rather than coding. It's much easier to load and save a declarative specification than a procedural specification.
 
 Some GUI builders do use procedural code as their file format---e.g., generating Java code and automatically inserting it into a class. Either the code generation is purely one-way (i.e., the GUI builder spits it out but can't read it back in again), or the procedural code is so highly stylized that it amounts to a declarative specification that just happens to use Java syntax. If the programmer edits the code, however, they may deviate from the stylization and break the GUI builder's ability to read it back in.
+
+
+<div class="slide col-sm-6">
+
+<h1>Declarative UI for Model/View Binding</h1>
+
+<ul>
+<li>A reactive template makes declarative connections between model
+and view  </li>
+</ul>
+
+```
+&lt;input type="text" ng-model="userName"&gt;
+Hello, {{userName}}!
+```
+
+<ul>
+<li>AngularJS, React, and Meteor are recent web toolkits that offer
+reactive templates</li>
+<li>But data binding exists in many other toolkits 
+too (e.g., Android, Visual Basic)</li>
+</ul>
+</div>
+
+<p>Modern web toolkits take declarative UI a step farther and make it possible to declaratively describe the connections between the model and the view using a **reactive template**, which eliminates the need to write explicit listener code.</p>
+
+<p>For example, the AngularJS code here binds the `&lt;input&gt;` textbox to a model variable named `userName`, so that whenever the user edits the content of the textbox, the `userName` variable will be updated to match the textbox.
+It’s a two-way binding, so if the model variable is changed programmatically, rather than by the user, then the textbox will update to match the model.</p>
+
+<p>The example also shows `{{...}}` template syntax that displays model data in the view.
+The AngularJS framework automatically takes care of updating or regenerating the HTML whenever the referenced part of the model changes.
+Template syntax can also include path references (e.g., `{{user.profile.imageURL}}`), `for` loops to generate HTML for every element in a collection, and `if` statements to generate HTML conditionally.</p>
+
+<p>Reactive templates save a lot of programmer effort.
+But as with other declarative code, when a complex reactive template goes wrong, it can be hard to debug, since the usual procedural methods of print-debugging and breakpoints are largely useless.</p>
+
+
+ <div class="handout-info alert alert-info">Answer this question: [GUI Implementation Paradigms](https://docs.google.com/forms/d/e/1FAIpQLSc1taRsNjrRd2C-gGHA-ivZPstf3WDvIF2D7iuFpw2EdHQu3Q/viewform?usp=sf_link)</div>
+
+
+
 
 <div class="slide">
 <h1>Summary</h1>
@@ -397,10 +445,10 @@ Some GUI builders do use procedural code as their file format---e.g., generating
 
 </div>
 
-mitx:lecture06picoquiz2 Take Picoquiz
+
 </div>
 <!-- <footer>(c) course staff</footer> -->
 <!-- <footer>MIT EECS</footer> -->
-<script src="../../../web/handout-script-v1.js"></script>
+<script src="../../web/handout-script-v1.js"></script>
 </body>
 </html>
