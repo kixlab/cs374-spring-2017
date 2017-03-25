@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 
-<title>Reading 6: UI Software Architecture</title>
+<title>Reading: UI Software Architecture</title>
 
-<link href="../../../web/handout-style-v1.css" rel="stylesheet"></link>
+<link href="../../web/handout-style-v1.css" rel="stylesheet"></link>
 </head>
 <body>
-<header>6.813/831 User Interface Design & Implementation</header>
+<header>CS374: Intro to HCI</header>
 <nav class="navigation"></nav>
 <div class="lecture">
 
@@ -109,7 +109,7 @@ We'll look at more about each of these areas in later readings.
 <div class="slide">
 <h1>Input Handling</h1>
 <ul><li>Input handlers are associated with views
-<ul><li>Also called <strong>listeners</strong>, event handlers, subscribers, observers</li></ul></li></ul>
+<ul><li>Also called **listeners**, event handlers, subscribers, observers</li></ul></li></ul>
 <img src="figures/04.png" />
 </div>
 
@@ -132,7 +132,7 @@ We'll look at more about each of these areas in later readings.
 - GUI input event handling is an instance of the Listener pattern (also known as Observer and Publish-Subscribe). In the Listener pattern, an event source generates a stream of discrete events, which correspond to state transitions in the source. One or more listeners register interest (subscribe) to the stream of events, providing a function to be called when a new event occurs. In this case, the mouse is the event source, and the events are changes in the state of the mouse: its x,y position or the state of its buttons (whether they are pressed or released). Events often include additional information about the transition (such as the x,y position of mouse), which might be bundled into an **event object** or passed as parameters.
 - When an event occurs, the event source distributes it to all subscribed listeners, by calling their callback functions.
 
-mitx:lecture06picoquiz0 Take Picoquiz
+
 
 <h2 id="model-view-controller">Model-View-Controller</h2>
 
@@ -261,7 +261,7 @@ In this perspective, the view is responsible not only for output, but also for l
 But listening to the model is no longer the view's responsibility. Instead, the controller listens to both the model and the view, passing changes back and forth. The controller receives high-level input events from the view, like selection-changed, button-activated, or textbox-changed, rather than low-level input device events.
 The Mac Cocoa framework uses this approach to MVC.
 
-mitx:lecture06picoquiz1 Take Picoquiz
+
 
 <h2 id="gui-implementation-approaches">GUI Implementation Approaches</h2>
 
@@ -270,9 +270,9 @@ mitx:lecture06picoquiz1 Take Picoquiz
 
 <ul>
 <li>Procedural programming
-<ul><li>Code that says <em>how</em> to get what you want (flow of control)</li></ul></li>
+<ul><li>Code that says *how* to get what you want (flow of control)</li></ul></li>
 <li>Declarative programming
-<ul><li>Code that says <em>what</em> you want (no explicit flow of control)</li></ul></li>
+<ul><li>Code that says *what* you want (no explicit flow of control)</li></ul></li>
 <li>Direct manipulation
 <ul><li>Creating what you want in a direct manipulation interface</li></ul></li>
 </ul>
@@ -314,6 +314,7 @@ All three paradigms have their uses, but the sweet spot for GUI programming basi
 <img src="figures/10.png" />
 
 <img src="figures/11.png" />
+
 
 </div>
 
@@ -383,6 +384,42 @@ On the other hand, an advantage of declarative code is that it's much easier to 
 
 Some GUI builders do use procedural code as their file format---e.g., generating Java code and automatically inserting it into a class. Either the code generation is purely one-way (i.e., the GUI builder spits it out but can't read it back in again), or the procedural code is so highly stylized that it amounts to a declarative specification that just happens to use Java syntax. If the programmer edits the code, however, they may deviate from the stylization and break the GUI builder's ability to read it back in.
 
+
+<div class="slide col-sm-6">
+
+<h1>Declarative UI for Model/View Binding</h1>
+
+<ul>
+<li>A reactive template makes declarative connections between model
+and view  </li>
+</ul>
+
+```
+&lt;input type="text" ng-model="userName"&gt;
+Hello, {{userName}}!
+```
+
+<ul>
+<li>AngularJS, ReactJS, and Meteor are recent web toolkits that offer
+reactive templates</li>
+<li>But data binding exists in many other toolkits 
+too (e.g., Android, Visual Basic)</li>
+</ul>
+</div>
+
+<p>Modern web toolkits take declarative UI a step farther and make it possible to declaratively describe the connections between the model and the view using a **reactive template**, which eliminates the need to write explicit listener code.</p>
+
+<p>For example, the AngularJS code here binds the `&lt;input&gt;` textbox to a model variable named `userName`, so that whenever the user edits the content of the textbox, the `userName` variable will be updated to match the textbox.
+It’s a two-way binding, so if the model variable is changed programmatically, rather than by the user, then the textbox will update to match the model.</p>
+
+<p>The example also shows `{{...}}` template syntax that displays model data in the view.
+The AngularJS framework automatically takes care of updating or regenerating the HTML whenever the referenced part of the model changes.
+Template syntax can also include path references (e.g., `{{user.profile.imageURL}}`), `for` loops to generate HTML for every element in a collection, and `if` statements to generate HTML conditionally.</p>
+
+<p>Reactive templates save a lot of programmer effort.
+But as with other declarative code, when a complex reactive template goes wrong, it can be hard to debug, since the usual procedural methods of print-debugging and breakpoints are largely useless.</p>
+
+
 <div class="slide">
 <h1>Summary</h1>
 
@@ -397,10 +434,10 @@ Some GUI builders do use procedural code as their file format---e.g., generating
 
 </div>
 
-mitx:lecture06picoquiz2 Take Picoquiz
+
 </div>
 <!-- <footer>(c) course staff</footer> -->
 <!-- <footer>MIT EECS</footer> -->
-<script src="../../../web/handout-script-v1.js"></script>
+<script src="../../web/handout-script-v1.js"></script>
 </body>
 </html>
