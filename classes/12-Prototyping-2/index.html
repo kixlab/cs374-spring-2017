@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--
+  Character encoding note: This file should be saved and opened in UTF-8. If
+  this is done correctly, then the following string should not be garbled in
+  your editor (it should be rendered as shown in chartest.png):
+
+  Character encoding test: «ÆØÅÉÈÑÜæøåéèñü¢~§'»
+-->
+<meta charset="UTF-8">
+
+<!-- Lecture title entered here: -->
+<title>Reading: Prototyping (2/2)</title>
+
+<link href="../../web/handout-style-v1.css" rel="stylesheet"></link>
+</head>
+<body>
+<header>CS374: Intro to HCI</header>
+<nav class="navigation"></nav>
+<div class="lecture">
+
+<div class="markdown">
+
+<!-- Markdown file pasted below. -->
+
+
+<!-- <div class="slide">
+<h1>UI Hall of Fame or Shame?</h1>
+<table>
+<tr><th>Ghostview</th><th>Acrobat</th></tr>
+<tr><td><img src="figures/01.png"/></td>
+<td><img src="figures/03.png"/></td>
+</tr>
+<tr><td><img src="figures/04.png"/></td>
+<td><img src="figures/02.png"/></td></tr>
+</table>
+</div>
+
+On the left is Ghostview, a Unix program that displays Postscript files. Ghostview has no scrollbars; instead, it scrolls by **direct manipulation** of the page image. Clicking and dragging on the page scrolls it around, and it turns out that dragging downward moves the page image upward. That is, when you drag the mouse down, more of the page image come into view at the bottom of the window. Does this make sense? What mental model, or physical analogy, does this correspond to?
+
+On the right is Acrobat, which displays PDF files. Acrobat has scrollbars, but you can also directly manipulate the page image, as in Ghostview - only now clicking and dragging downward moves the page downward, revealing more page image at the top of the window. What mental model does this correspond to?
+
+What if you used both Acrobat and Ghostview frequently (one for PDF, say, and the other for Postscript)?
+
+The Ghostview model is like a glass window that you're dragging around on top of the page. You're pressing on the glass and pushing it to the left should indeed make more of the page become visible on the left. 
+
+The Acrobat model treats the window like an empty frame, and you're actually reaching through and pushing the page itself around. Pushing it to the left should make more of the page visible on the right. 
+
+So two different physical analogies are possible here. Principles of direct manipulation alone don't help us decide. And Ghostview at least uses a **consistent** model -the light gray rectangle in the leftside toolbar (underneath the Save Marked button) is a miniature representation of the position of the glass window over the page, and you push it around using the same dragging direction that you use on the page image itself.
+
+If you had to use both Acrobat and Ghostview frequently, however, the **inconsistency** between them would be very painful. Yet we do have to use *both* models these days: direct-touch scrolling (smartphones and tablets) uses one model, and scrollbars and mouse scrollwheels use the opposite model. The directness vs. indirectness of the interaction and differences in the low-level muscle interaction may give enough cues to keep the model straight. But touchpads on laptops may be the hardest point of overlap, since they are indirect, and yet use the same finger swiping motion as direct touch. Apple decided to make a significant transition recently with Mac OS X Lion, switching its default touchpad scrolling from one mental model (the scrollwheel) to the other (direct touch).
+
+<div class="slide">
+<h1>UI Hall of Fame or Shame?</h1>
+<table>
+<tr><th>Xerox Star scrollbar</th>
+<th>Original Macintosh scrollbar</th>
+<th>Current Macintosh scrollbar</th></tr>
+<tr><td><img src="figures/05.png" /></td>
+<td><img src="figures/06.png" /></td>
+<td><img src="figures/07.png" /></td>
+</table>
+</div>
+
+Let's look at scrolling some more. Scrollbars have evolved considerably over the history of graphical user interfaces.
+
+The Xerox Star offered the earliest incarnation of a graphical user interface, and its scrollbar already had many of the features we recognize in modern scrollbars, such as a **track** containing a scrollbar **thumb** (the handle that you can drag up and down). Even its arrow buttons do the same thing - e.g., pushing on the top button makes more of the page appear at the top of the window, just like the modern scrollbar. But they're labeled the opposite way - the top button has a down arrow on it. Why is that? What mental model would lead you to call that button down? Is that consistent with the mental model of the scrollbar thumb?
+
+The button labels actually refer to the page-pushing model of scrolling - when you click on the top button, the page itself moves down. Alas, this is completely inconsistent with the thumb, which uses the glass-pane model of scrolling - the thumb represents the glass pane, and you can drag it up and down the document. So the Xerox Star scrollbar couldn't make up its mind about which model to represent.
+
+We can also say something about **natural mapping** here - the arrow buttons are on opposite sides of the scrollbar, so their positions map appropriately to the direction that they move the thumb. (But, alas, the Xerox Star's arrow labels disagree with the natural mapping.)
+
+Another interesting difference between the Star scrollbar and modern scrollbars are the - and + buttons, which move by whole pages. This functionality hasn't been eliminated from the modern scrollbar; instead, the modern scrollbar just drops the obvious affordance for it. You can still click on the track above or below the thumb in order to jump by whole pages. Removing the +/- buttons makes the scrollbar **simpler**, by forcing the track to do double-duty. But it also makes the page-jumping functionality less **visible**, so new users are unlikely to discover it on their own.
+
+Another improvement in the scrollbar is that the height of the thumb now indicates what fraction of the whole document is visible.
+
+<div class="slide">
+<h1>Should You Roll Your Own Scrollbar?</h1>
+<img src="figures/08.png" />
+</div>
+
+http://espadrine.github.com/aulx/
+
+ -->
+
+
+<h2 id="paper-prototypes">Paper Prototypes</h2>
+
+<div class="slide">
+<h1>Paper Prototype</h1>
+
+<ul>
+<li>Interactive paper mockup
+<ul><li>Sketches of screen appearance</li>
+<li>Paper pieces show windows, menus, dialog boxes</li></ul></li>
+<li>Interaction is natural
+<ul><li>Pointing with a finger = mouse click</li>
+<li>Writing = typing</li></ul></li>
+<li>A person simulates the computer's operation
+<ul><li>Putting down & picking up pieces</li>
+<li>Writing responses on the "screen"</li>
+<li>Describing effects that are hard to show on paper</li></ul></li>
+<li>Low fidelity in look & feel</li>
+<li>High fidelity in depth (person simulates the backend)</li>
+</ul>
+</div>
+
+**Paper prototypes** are an excellent choice for early design iterations. A paper prototype is a physical mockup of the interface, mostly made of paper. It's usually hand-sketched on mutiple pieces, with different pieces showing different menus, dialog boxes, or window elements. 
+
+The key difference between mere sketches and a paper prototype is **interactivity**. A paper prototype is brought to life by a design team member who simulates what the computer would do in response to the user's "clicks" and "keystrokes", by rearranging pieces, writing custom responses, and occasionally announcing some effects verbally that are too hard to show on paper. Because a paper prototype is actually interactive, you can actually user-test it: give users a task to do and watch how they do it.
+
+A paper prototype is clearly low fidelity in both look and feel. But it can be arbitrarily high fidelity in breadth at very little cost (just sketching, which is part of design anyway). Best of all, paper prototypes can be **high-fidelity in depth** at little cost, since a human being is simulating the backend.
+
+Much of the material about paper prototyping in this reading draws on the classic paper by Rettig et al, "Prototyping for tiny fingers" (CACM 1994), and Carolyn Snyder's book *Paper Prototyping: The Fast and Easy Way to Design and Refine User Interfaces* (Morgan Kaufmann, 2003).
+
+<div class="slide">
+<h1>Why Paper Prototyping?</h1>
+
+<ul>
+<li>Faster to build
+<ul><li>Sketching is faster than programming</li></ul></li>
+<li>Easier to change
+<ul><li>Easy to make changes between user tests, or even <em>during</em> a user test</li>
+<li>No code investment - everything will be thrown away (except the design)</li></ul></li>
+<li>Focuses attention on big picture
+<ul><li>Designer doesn't waste time on details</li>
+<li>Customer makes more creative suggestions, not nitpicking</li></ul></li>
+<li>Nonprogrammers can help
+<ul><li>Only kindergarten skills are required</li></ul></li>
+</ul>
+</div>
+
+But why use paper? And why hand sketching rather than a clean drawing from a drawing program?
+
+Hand-sketching on paper is faster. You can draw many sketches in the same time it would take to draw one user interface with code. For most people, hand-sketching is also faster than using a drawing program to create the sketch.
+
+Paper is easy to change. You can even change it during user testing. If part of the prototype was a problem for one user, you can scratch it out or replace it before the next user arrives. Surprisingly, paper is more malleable than digital bits in many ways.
+
+Hand-sketched prototypes in particular are valuable because they focus attention on the issues that matter in early design without distracting anybody with details. When you're sketching by hand, you aren't bothered with details like font, color, alignment, whitespace, etc. In a drawing program, you would be faced with all these decisions, and you might spend a lot of time on them - time that would clearly be wasted if you have to throw away this design. Hand sketching also improves the feedback you get from users. They're less likely to nitpick about details that aren't relevant at this stage. They won't complain about the color scheme if there isn't one. More important, however, a hand-sketch design seems less finished, less set in stone, and more open to suggestions and improvements. Architects have known about this phenomenon for many years. If they show clean CAD drawings to their clients in the early design discussions, the clients are less able to discuss needs and requirements that may require radical changes in the design. In fact, many CAD tools have an option for rendering drawings with a "sketchy" look for precisely this reason.
+
+A final advantage of paper prototyping: no special skills are required. So graphic designers, usability specialists, and even users can help create prototypes and operate them.
+
+<div class="slide">
+<h1>Tools for Paper Prototyping</h1>
+
+<ul>
+<li>White poster board (11"x14")
+<ul><li>For background, window frame</li></ul></li>
+<li>Big (unlined) index cards (4"x6", 5"x8")
+<ul><li>For menus, window contents, and dialog boxes</li></ul></li>
+<li>Restickable glue
+<ul><li>For keeping pieces fixed</li></ul></li>
+<li>White correction tape
+<ul><li>For text fields, checkboxes, short messages</li></ul></li>
+<li>Overhead transparencies
+<ul><li>For highlighting, user "typing"</li></ul></li>
+<li>Photocopier
+<ul><li>For making multiple blanks</li></ul></li>
+<li>Pens & markers, scissors, tape</li>
+</ul>
+</div>
+
+Here are the elements of a paper prototyping toolkit.
+
+Although standard (unlined) paper works fine, you'll get better results from sturdier products like **poster board** and **index cards**. Use poster board to draw a static background, usually a window frame. Then use index cards for the pieces you'll place on top of this background. You can cut the index cards down to size for menus and window internals.
+
+**Restickable Post-it Note glue**, which comes in a roll-on stick, is a must. This glue lets you make all of your pieces sticky, so they stay where you put them.
+
+**Post-it correction tape** is another useful tool. It's a roll of white tape with Post-it glue on one side. Correction tape is used for text fields, so that users can write on the prototype without changing it permanently. You peel off a length of tape, stick it on your prototype, let the user write into it, and then peel it off and throw it away. Correction tape comes in two widths, "2 line" and "6 line". The 2-line width is good for single-line text fields, and the 6-line width for text areas.
+
+**Overhead transparencies** are useful for two purposes. First, you can make a selection highlight by cutting a piece of transparency to size and coloring it with a transparency marker. Second, when you have a form with several text fields in it, it's easier to just lay a transparency over the form and let the users write on that, rather than sticking a piece of correction tape in every field.
+
+If you have many similar elements in your prototype, a **photocopier** can save you time.
+
+And, of course, the usual kindergarten equipment: pens, markers, scissors, tape.
+
+<div class="slide">
+<h1>Tips for Good Paper Prototypes</h1>
+
+<ul>
+<li>Make it larger than life</li>
+<li>Make it monochrome</li>
+<li>Replace tricky visual feedback with audible descriptions
+<ul><li>Tooltips, drag & drop, animation, progress bar</li></ul></li>
+<li>Keep pieces organized
+<ul><li>Use folders & open envelopes</li></ul></li>
+</ul>
+</div>
+
+A paper prototype should be larger than life-size. Remember that fingers are bigger than a mouse pointer, and people usually write bigger than 12 point. So it'll be easier to use your paper prototype if you scale it up a bit. It will also be easier to see from a distance, which is important because the prototype lies on the table, and because when you're testing users, there may be several observers taking notes who need to see what's going on. **Big is good.**
+
+Don't worry too much about color in your prototype. Use a single color. It's simpler, and it won't distract attention from the important issues.
+
+You don't have to render every visual effect in paper. Some things are just easier to say aloud: "the basketball is spinning." "A progress bar pops up: 20%, 50%, 75%, done." If your design supports tooltips, you can tell your users just to point at something and ask "What's this?", and you'll tell them what the tooltip would say. But if you actually want to test the tooltip messages you should prototype them on paper.
+
+Figure out a good scheme for organizing the little pieces of your prototype. One approach is a three-ring binder, with different screens on different pages. Most interfaces are not sequential, however, so a linear organization may be too simple. Two-pocket folders are good for storing big pieces, and letter envelopes (with the flap open) are quite handy for keeping menus.
+
+<div class="slide">
+<h1>Hand-Drawn or Not?</h1>
+<img src="figures/13.jpg" />
+<img src="figures/14.jpg" />
+<img src="figures/15.jpg" />
+</div>
+
+Here are some of the prototypes made by an earlier class. Should a paper prototype be hand-sketched or computer-drawn? Generally hand-sketching is better in early design, but sometimes realistic images can be constructive additions. Top left is a prototype for an interface that will be integrated into an existing program (Eclipse), so the prototype is mostly constructed of modified Eclipse screenshots. The result is very clean and crisp, but also tiny - it's hard to read from a distance. It may also be harder for a test user to focus on commenting about the new parts of the interface, since the new features look just like Eclipse. A hybrid hand-sketched/screenshot interface might work even better.
+
+The top right prototype shows such a hybrid - a interface designed to integrate into a web browser. Actual screenshots of web pages are used, mainly as props, to make the prototype more concrete and help the user visualize the interface better. Since web page layout isn't the problem the interface is trying to solve, there's no reason to hand-sketch a web page.
+
+The bottom photo shows a pure hand-sketched interface that might have benefited from such props -- a photo organizer could use real photographs to help the user think about what kinds of things they need to do with photographs. This prototype could also use a **window frame** - a big posterboard to serve as a static background.
+
+<div class="slide">
+<h1>Size Matters</h1>
+<img src="figures/16.jpg" />
+<img src="figures/17.jpg" />
+</div>
+
+Both of these prototypes have good window frames, but the big one on the right is easier to read and manipulate.
+
+<div class="slide">
+<h1>The Importance of Writing Big and Dark</h1>
+<img src="figures/18.jpg" />
+
+</div>
+
+This prototype is even easier to read. Markers are better than pencil. (Whiteout and correction tape can fix mistakes as well as erasers can!) Color is also neat, but don't bother unless color is a design decision that needs to be tested, as it is in this prototype. If color doesn't really matter, monochromatic prototypes work just as well.
+
+<div class="slide">
+<h1>Post-it Glue and Transparencies are Good</h1>
+<img src="figures/19.jpg" />
+<img src="figures/20.jpg" />
+
+</div>
+
+The prototype on the left has lots of little pieces that have trouble staying put. Post-it glue can help with that.
+
+On the right is a prototype that's completely covered with a transparency. Users can write on it directly with dry-erase marker, which just wipes off - a much better approach than water-soluble transparency markers. With multiple layers of transparency, you can let the user write on the top layer, while you use a lower layer for computer messages, selection highlighting, and other effects.
+
+<div class="slide">
+<h1>Paper Prototypes</h1>
+<img src="figures/21.jpg" />
+</div>
+
+Paper is great for prototyping features that would be difficult to implement. This project (a contact manager) originally envisioned showing your social network as a graph, but when they prototyped it, it turned out that it wasn't too useful. The cost of trying that feature on paper was trivial, so it was easy to throw it away. Trying it in code, however, would have taken much longer, and been much harder to discard.
+
+<div class="slide">
+<h1>Low-Fidelity Prototypes Aren't Always Paper</h1>
+<img src="figures/22.png" />
+<img src="figures/23.png" />
+</div>
+
+The spirit of low-fidelity prototyping is really about using cheap physical objects to simulate software. Paper makes sense for desktop and web UIs because they're flat. But other kinds of UI prototypes might use different materials. Jeff Hawkins carried a block of wood (not this one, but similar) around in his pocket as a prototype for the first PalmPilot. ([Interview here](http://www.designinginteractions.com/interviews/JeffHawkins))
+
+<div class="slide">
+<h1>Multiple Alternatives Generate Better Feedback</h1>
+<img src="figures/24.png" />
+<img src="figures/25.png" />
+<img src="figures/26.png" />
+</div>
+
+Doing several prototypes and presenting them to the same user is a great idea. When a design is presented with others, people tend to be **more ready to criticize** and offer problems, which is exactly what you want in the early stages of design. These three paper prototypes of a house thermostat were tested against users both singly and as a group of three, and it was found that people offered fewer positive comments when they saw the designs together than when they saw them alone.
+
+Pictures from Tohidi, Buxton, Baecker, Sellen. "Getting the Right Design and the Design Right: Testing Many Is Better Than One." *CHI 2006*.
+
+<div class="slide">
+<h1>How to Test a Paper Prototype</h1>
+
+<ul>
+<li>Roles for design team
+<ul><li>Computer
+ <ul><li>Simulates prototype</li>
+ <li>Doesn't give any feedback that the computer wouldn't</li>
+</ul></li>
+
+<li>Facilitator<ul>
+ <li>Presents interface and tasks to the user</li>
+ <li>Encourages user to "think aloud" by asking questions</li>
+ <li>Keeps user test from getting off track</li>
+</ul></li>
+<li>Observer<ul>
+ <li>Keeps mouth shut, sits on hands if necessary</li>
+ <li>Takes copious notes</li></ul></li>
+</ul></li>
+</ul>
+</div>
+
+Once you've built your prototype, you can put it in front of users and watch how they use it. We'll see much more about user testing in a later class, including ethical issues. But here's a quick discussion of user testing in the paper prototyping domain.
+
+There are three roles for your design team to fill:
+
+1. The **computer** is the person responsible for making the prototype come alive. This person moves around the pieces, writes down responses, and generally does everything that a real computer would do. In particular, the computer should not do anything that a real computer wouldn't. Think mechanically, and respond mechanically.
+
+2. The **facilitator** is the human voice of the design team and the director of the testing session. The facilitator explains the purpose and process of the user study, obtains the user's informed consent, and presents the user study tasks one by one. While the user is working on a task, the facilitator tries to elicit verbal feedback from the user, particularly encouraging the user to "think aloud" by asking probing (but not leading) questions. The facilitator is responsible for keeping everybody disciplined and the user test on the right track.
+
+3. Everybody else in the room (aside from the user) is an **observer**. The most important rule about being an observer is to keep your mouth shut and watch. Don't offer help to the user, even if they're missing something obvious. Bite your tongue, sit on your hands, and just watch. The observers are the primary note takers, since the computer and the facilitator are usually too busy with their duties.
+
+<div class="slide">
+<h1>What You Can Learn from a Paper Prototype</h1>
+
+<ul>
+<li>Conceptual model
+<ul><li>Do users understand it?</li></ul></li>
+<li>Functionality
+<ul><li>Does it do what's needed? Missing features?</li></ul></li>
+<li>Navigation & task flow
+<ul><li>Can users find their way around?</li>
+<li>Are information preconditions met? </li></ul></li>
+<li>Terminology
+<ul><li>Do users understand labels?</li></ul></li>
+<li>Screen contents
+<ul><li>What needs to go on the screen?</li></ul></li>
+</ul>
+</div>
+
+Paper prototypes can reveal many usability problems that are important to find in early stages of design. Fixing some of these problems require large changes in design. If users don't understand the metaphor or conceptual model of the interface, for example, the entire interface may need to be scrapped.
+
+<div class="slide">
+<h1>What You Can't Learn</h1>
+
+<ul>
+<li>Look: color, font, whitespace, etc</li>
+<li>Feel: efficiency issues</li>
+<li>Response time</li>
+<li>Are small changes noticed?
+<ul><li>Even the tiniest change to a paper prototype is clearly visible to user</li></ul></li>
+<li>Exploration vs. deliberation
+<ul><li>Users are more deliberate with a paper prototype; they don't explore or thrash as much</li></ul></li>
+</ul>
+</div>
+
+But paper prototypes don't reveal every usability problem, because they are low-fidelity in several dimensions. Obviously, graphic design issues that depend on a high-fidelity **look** will not be discovered. Similarly, interaction issues that depend on a high-fidelity **feel** will also be missed. For example, problems like buttons that are too small, too close together, or too far away will not be detected in a paper prototype. The human computer of a paper prototype rarely reflects the speed of an implemented backend, so issues of **response time** - whether feedback appears quickly enough, or whether an entire task can be completed within a certain time constraint -- can't be tested either.
+
+Paper prototypes don't help answer questions about whether subtle feedback will even be noticed. Will users notice that message down in the status bar, or the cursor change, or the highlight change? In the paper prototype, even the tiniest change is grossly visible, because a person's arm has to reach over the prototype and make the change. (If many changes happen at once, of course, then some of them may be overlooked even in a paper prototype. This is related to an interesting cognitive phenomenon called **change blindness**.)
+
+There's an interesting qualitative distinction between the way users use paper prototypes and the way they use real interfaces. Experienced paper prototypers report that users are more deliberate with a paper prototype, apparently thinking more carefully about their actions. This may be partly due to the simulated computer's slow response; it may also be partly a social response, conscientiously trying to save the person doing the simulating from a lot of tedious and unnecessary paper shuffling. More deliberate users make fewer mistakes, which is bad, because you want to see the mistakes. Users are also less likely to randomly explore a paper prototype.
+
+These drawbacks don't invalidate paper prototyping as a technique, but you should be aware of them. Several studies have shown that low-fidelity prototypes identify substantially the same usability problems as high-fidelity prototypes (Virzi, Sokolov, & Karis, "Usability problem identification using both low- and hi-fidelity prototypes", CHI '96; Catani & Biers, "Usability evaluation and prototype fidelity", Human Factors & Ergonomics 1998).
+
+
+
+<h2 id="computer-prototypes">Computer Prototypes</h2>
+
+<div class="slide">
+<h1>Computer Prototype</h1>
+
+<ul>
+<li>Interactive software simulation</li>
+<li>High-fidelity in look & feel</li>
+<li>Low-fidelity in depth
+<ul><li>Paper prototype had a human simulating the backend; computer prototype doesn't</li>
+<li>Computer prototype may be **horizontal**: covers most features, but no backend</li></ul></li>
+</ul>
+</div>
+
+So at some point we have to depart from paper and move our prototypes into software. A typical computer prototype is a **horizontal** prototype. It's high-fi in look and feel, but low-fi in depth - there's no backend behind it. Where a human being simulating a paper prototype can generate new content on the fly in response to unexpected user actions, a computer prototype cannot.
+
+<div class="slide">
+<h1>What You Can Learn From Computer Prototypes</h1>
+
+<ul>
+<li>Everything you learn from a paper prototype, plus:</li>
+<li>Screen layout
+<ul><li>Is it clear, overwhelming, distracting, complicated?</li>
+<li>Can users find important elements?</li></ul></li>
+<li>Colors, fonts, icons, other elements
+<ul><li>Well-chosen?</li></ul></li>
+<li>Interactive feedback
+<ul><li>Do users notice & respond to status bar messages, cursor changes, other feedback</li></ul></li>
+<li>Efficiency issues
+<ul><li>Controls big enough? Too close together? Scrolling list is too long?</li></ul></li>
+</ul>
+</div>
+
+Computer prototypes help us get a handle on the graphic design and dynamic feedback of the interface.
+
+<div class="slide">
+ <h1>Why Use Prototyping Tools?</h1>
+
+ <ul>
+ <li>Faster than coding</li>
+ <li>No debugging</li>
+ <li>Easier to change or throw away</li>
+ <li>Don't let your UI toolkit do your graphic design</li>
+ </ul>
+</div>
+
+One way to build a computer prototype is just to program it directly in an implementation language, like Java or C++, using a user interface toolkit, like Swing or MFC. If you don't hook in a backend, or use stubs instead of your real backend, then you've got a horizontal prototype.
+
+But it's often better to use a **prototyping tool** instead. Building an interface with a tool is usually faster than direct coding, and there's no code to debug. It's easier to change it, or even throw it away if your design turns out to be wrong. Recall Cooper's concerns about prototyping: your computer prototype may become so elaborate and precious that it becomes your final implementation, even though (from a software engineering point of view) it might be sloppily designed and unmaintainable.
+
+Also, when you go directly from paper prototype to code, there's a tendency to let your UI toolkit handle all the graphic design for you. That's a mistake. For example, Java has layout managers that automatically arrange the components of an interface. Layout managers are powerful tools, but they produce horrible interfaces when casually or lazily used. A prototyping tool will help you envision your interface and get its graphic design right first, so that later when you move to code, you know what you're trying to persuade the layout manager to produce.
+
+Even with a prototyping tool, computer prototypes can still be a tremendous amount of work. When drag & drop was being considered for Microsoft Excel, a couple of Microsoft summer interns were assigned to develop a prototype of the feature using Visual Basic. They found that they had to implement a substantial amount of basic spreadsheet functionality just to test drag & drop. It took two interns their entire summer to build the prototype that proved that drag & drop was useful. Actually adding the feature to Excel took a staff programmer only a week. This isn't a fair comparison, of course - maybe six intern-months was a cost worth paying to mitigate the risk of one fulltimer-week, and the interns certainly learned a lot. But building a computer prototype can be a slippery slope, so don't let it suck you in too deeply. Focus on what you want to test, i.e., the design risk you need to mitigate, and only prototype that.
+
+<div class="slide">
+<h1>Computer Prototyping Techniques</h1>
+
+<ul>
+<li>Storyboard
+<ul><li>Sequence of painted screenshots </li>
+<li>Sometimes connected by hyperlinks ("hotspots")</li></ul></li>
+<li>Form builder
+<ul><li>Real windows assembled from a palette of widgets (buttons, text fields, labels, etc.)</li></ul></li>
+<li>Wizard of Oz
+<ul><li>Computer frontend, human backend</li></ul></li>
+</ul>
+</div>
+
+There are two major techniques for building a computer prototype.
+
+A **storyboard** is a sequence (a graph, really) of fixed screens. Each screen has one or more **hotspots** that you can click on to jump to another screen. Sometimes the transitions between screens also involve some animation in order to show a dynamic effect, like mouse-over feedback or drag-drop feedback.
+
+A **form builder** is a tool for drawing real, working interfaces by dragging widgets from a palette and positioning them on a window. 
+
+A **Wizard of Oz** prototype is a kind of hybrid of a computer prototype and a paper prototype; the user interacts with a computer, but there's a human behind the scenes figuring out how the user interface should respond.
+
+<div class="slide">
+<h1>Storyboarding Tools</h1>
+
+<ul>
+<li>Photoshop</li>
+<li>Balsamiq Mockup</li>
+<li>Mockingbird</li>
+</ul>
+<img src="figures/27.png" />
+</div>
+
+Photoshop is classically used for storyboarding (also called "wireframe" prototypes), but here are some other tools that are increasing in popularity. Balsamiq Mockup and Mockingbird each offer a drawing canvas and a palette of graphical objects that look like widgets that can be dragged onto it. These tools are different from form builders, however, in that the result is just a picture - the widgets aren't real, and they aren't functional.
+
+These wireframe tools strive for some degree of "sketchiness" in their look, so these are really medium-fidelity tools. Not as low fidelity as hand sketch, but still not what the final interface will look like.
+
+<div class="slide">
+ <h1>Pros & Cons of Storyboarding</h1>
+ <ul>
+ <li><p>Pros</p>
+
+ <ul><li>You can draw anything</li></ul></li>
+ <li><p>Cons</p>
+
+ <ul><li>No text entry</li>
+ <li>Widgets aren't active</li>
+ <li>"Hunt for the hotspot"</li></ul></li>
+ </ul>
+</div>
+
+The big advantage of storyboarding is similar to the advantage of paper: you can draw anything on a storyboard. That frees your creativity in ways that a form builder can't, with its fixed palette of widgets.
+
+The disadvantages come from the storyboard's static nature. Some tools let you link the pictures together with hyperlinks, but even then all you can do is click, not really interact. Watching a real user in front of a storyboard often devolves into a game of "**hunt for the hotspot**", like children's software where the only point is to find things on the screen to click on and see what they do. The hunt-for-the-hotspot effect means that storyboards are largely useless for user testing, unlike paper prototypes. In general, horizontal computer prototypes are better evaluated with other techniques, like heuristic evaluation (which we'll discuss in a future reading).
+
+<div class="slide">
+<h1>Form Builders</h1>
+
+<ul>
+<li>Mac Interface Builder</li>
+<li>Qt Designer</li>
+<li>FlexBuilder</li>
+<li>Silverlight</li>
+<li><p>Visual Basic</p></li>
+<li><p>Tips</p>
+
+<ul><li>Use absolute positioning for now</li></ul></li>
+</ul>
+</div>
+Here are some form builder tools.
+
+<div class="slide">
+<h1>Pros & Cons of Form Builders</h1>
+
+<ul>
+<li><p>Pros</p>
+
+<ul><li>Actual controls, not just pictures of them</li>
+<li>Can hook in some backend if you need it<ul>
+<li>But then you won't want to throw it away</li></ul></li>
+</ul></li>
+<li><p>Cons</p>
+
+<ul><li>Limits thinking to standard widgets</li>
+<li>Less helpful for rich graphical interfaces</li></ul></li>
+</ul>
+</div>
+
+Unlike storyboards, form builders use actual working widgets, not just static pictures. So the widgets look the same as they will in the final implementation (assuming you're using a compatible form builder - a prototype in Visual Basic may not look like a final implementation in Java).
+
+Also, since form builders usually have an implementation language underneath them - which may even be the same implementation language that you'll eventually use for your final interface -- you can also hook in as much or as little backend as you want.
+
+On the down side, form builders give you a fixed palette of standard widgets, which limits your creativity as a designer, and which makes form builders far less useful for prototyping rich graphical interfaces, e.g., a circuit-drawing editor. Form builders are great for the menus and widgets that surround a graphical interface, but can't simulate the "insides" of the application window.
+
+<div class="slide">
+<h1 id="wizard-of-oz-prototypes">Wizard of Oz Prototype</h1>
+
+<ul>
+<li>Software simulation with a human in the loop to help</li>
+<li>"Wizard of Oz" = "man behind the curtain"
+<ul><li>Wizard is usually but not always hidden</li></ul></li>
+<li>Often used to simulate future technology
+<ul><li>Speech recognition</li>
+<li>Learning</li></ul></li>
+<li>Issues
+<ul><li>Two UIs to worry about: user's and wizard's</li>
+<li>Wizard has to be mechanical</li></ul></li>
+</ul>
+</div>
+
+Part of the power of paper prototypes is the depth you can achieve by having a human simulate the backend. A **Wizard of Oz prototype** also uses a human in the backend, but the frontend is an actual computer system instead of a paper mockup. The term Wizard of Oz comes from the movie of the same name, in which the wizard was a man hiding behind a curtain, controlling a massive and impressive display. 
+
+In a Wizard of Oz prototype, the "wizard" is usually but not always hidden from the user. Wizard of Oz prototypes are often used to simulate future technology that isn't available yet, particularly artificial intelligence. A famous example was the listening typewriter (Gould, Conti, & Hovanyecz, "Composing letters with a simulated listening typewriter," *CACM* v26 n4, April 1983). This study sought to compare the effectiveness and acceptability of isolated-word speech recognition, which was the state of the art in the early 80's, with continuous speech recognition, which wasn't possible yet. The interface was a speech-operated text editor. Users looked at a screen and dictated into a microphone, which was connected to a typist (the wizard) in another room. Using a keyboard, the wizard operated the editor showing on the user's screen. 
+
+The wizard's skill was critical in this experiment. She could type 80 wpm, she practiced with the simulation for several weeks (with some iterative design on the simulator to improve her interface), and she was careful to type exactly what the user said, even exclamations and parenthetical comments or asides. The computer helped make her responses a more accurate simulation of computer speech recognition. It looked up every word she typed in a fixed dictionary, and any words that were not present were replaced with X's, to simulate misrecognition. Furthermore, in order to simulate the computer's ignorance of context, homophones were replaced with the most common spelling, so "done" replaced "dun", and "in" replaced "inn". The result was an extremely effective illusion. Most users were surprised when told (midway through the experiment) that a human was listening to them and doing the typing.
+
+Thinking and acting mechanically is harder for a wizard than it is for a paper prototype simulator, because the tasks for which Wizard of Oz testing is used tend to be more "intelligent". It helps if the wizard is personally familiar with the capabilities of similar interfaces, so that a realistic simulation can be provided. (See Maulsby et al, "Prototyping an intelligent agent through Wizard of Oz", CHI 1993.) It also helps if the wizard's interface can intentionally dumb down the responses, as was done in the Gould study.
+
+A key challenge in designing a Wizard of Oz prototype is that you actually have two interfaces to worry about: the user's interface, which is presumably the one you're testing, and the wizard's.
+
+
+
+<!-- <div class="slide">
+<h1>Summary</h1>
+
+<ul>
+<li>Prototype fidelity
+<ul><li>Depth, breadth, look, feel</li></ul></li>
+<li>Kinds of prototypes
+<ul><li>Paper</li>
+<li>Computer: storyboard, forms</li>
+<li>Wizard of Oz</li></ul></li>
+<li>Don't get attached to a prototype
+<ul><li>Because it may need to be thrown away</li></ul></li>
+</ul>
+
+</div>  -->
+
+<!-- Markdown file pasted above. -->
+
+</div>
+
+</div>
+<footer id="authors">Copyright course staff. MIT EECS.</footer>
+<script src="../../web/handout-script-v1.js"></script>
+</body>
+</html>

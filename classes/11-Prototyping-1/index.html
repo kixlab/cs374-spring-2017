@@ -11,7 +11,7 @@
 <meta charset="UTF-8">
 
 <!-- Lecture title entered here: -->
-<title>Reading: Needfinding</title>
+<title>Reading: Prototyping (1/2)</title>
 
 <link href="../../web/handout-style-v1.css" rel="stylesheet"></link>
 </head>
@@ -210,6 +210,79 @@ The OMS also has some interesting cases reinforcing the point that the designers
 A video about OMS [can be found on YouTube](http://youtube.com/watch?v=W6UYpXc4czM&feature=related). Check it out---it includes a mime demonstrating the system.
 
 
+
+<h2 id="prototyping">Prototyping</h2>
+
+Prototyping producing cheaper, less accurate renditions of your target interface. Prototyping is essential in the early iterations of a spiral design process, and it's useful in later iterations too.<br/><br/>
+
+
+<div class="slide">
+<h1>Why Prototype?</h1>
+<ul>
+<li>Get feedback earlier, cheaper</li>
+<li>Experiment with alternatives</li>
+<li>Easier to change or throw away</li>
+</ul>
+</div>
+
+We build prototypes for several reasons, all of which largely boil down to cost.
+First, prototypes are much faster to build than finished implementations, so we can evaluate them sooner and get early feedback about the good and bad points of a design.
+Second, if we have a design decision that is hard to resolve, we can build multiple prototypes embodying the different alternatives of the decision.
+
+Third, if we discover problems in the design, a prototype can be changed more easily, for the same reasons it could be built faster. Prototypes are more malleable. Most important, if the design flaws are serious, a prototype can be **thrown away**. It's important not to commit strongly to design ideas in the early stages of design. Unfortunately, writing and debugging a lot of code creates a psychological sense of commitment which is hard to break. You don't want to throw away something you've worked hard on, so you're tempted to keep some of the code around, even if it really should be scrapped. (Alan Cooper, ["The Perils of Prototyping"](http://www.cooper.com/journal/2008/5/the_perils_of_prototyping), 1994. )
+
+Most of the prototyping techniques we'll see in this reading actually force you to throw the prototype away. For example, a paper mockup won't form any part of a finished software implementation. This is a good mindset to have in early iterations, since it maximizes your creative freedom.
+
+<div class="slide">
+<h1>Prototype Fidelity</h1>
+<ul>
+<li>Low fidelity: omits details</li>
+<li>High fidelity: more like finished product</li>
+</ul>
+</div>
+
+An essential property of a prototyping technique is its **fidelity**, which is simply how similar it is to the finished interface. Low-fidelity prototypes omit details, use cheaper materials, or use different interaction techniques. High-fidelity prototypes are very similar to the finished product.
+
+<div class="slide">
+<h1>Fidelity is Multidimensional</h1>
+<ul>
+<li>Breadth: % of features covered
+<ul><li>Only enough features for certain tasks</li></ul></li>
+<li>Depth: degree of functionality
+<ul><li>Limited choices, canned responses, no error handling</li></ul></li>
+</ul>
+
+<img src="figures/09.png" />
+</div>
+
+Fidelity is not just one-dimensional, however. Prototypes can be low- or high-fidelity in various different ways (Carolyn Snyder, Paper Prototyping, 2003).
+
+**Breadth** refers to the fraction of the feature set represented by the prototype. A prototype that is low-fidelity in breadth might be missing many features, having only enough to accomplish certain specific tasks. A word processor prototype might omit printing and spell-checking, for example.
+
+**Depth** refers to how deeply each feature is actually implemented. Is there a backend behind the prototype that's actually implementing the feature? Low-fidelity in depth may mean limited choices (e.g., you can't print double-sided), canned responses (always prints the same text, not what you actually typed), or lack of robustness and error handling (crashes if the printer is offline).
+
+A diagrammatic way to visualize breadth and depth is shown (following Nielsen, *Usability Engineering*, p. 94). A **horizontal prototype** is all breadth, and little depth; it's basically a frontend with no backend. A **vertical prototype** is the converse: one area of the interface is implemented deeply. The question of whether to build a horizontal or vertical prototype depends on what risks you're trying to mitigate. In user interface design, horizontal prototypes are more common, since they address usability risk. But if some aspect of the application is a risky implementation - you're not sure if it can be implemented to meet the requirements - then you may want to build a vertical prototype to test that.
+A special case lies at the intersection of a horizontal and a vertical prototype. A **scenario** shows how the frontend would look for a single concrete task.
+
+<div class="slide">
+<h1>More Dimensions of Fidelity</h1>
+
+<ul>
+<li>Look: appearance, graphic design
+<ul><li>Sketchy, hand-drawn</li></ul></li>
+<li>Feel: input method
+<ul><li>Pointing & writing feels very different from mouse & keyboard</li></ul></li>
+</ul>
+</div>
+Two more crucial dimensions of a prototype's fidelity are, loosely, its look and its feel. **Look** is the appearance of the prototype. A hand-sketched prototype is low-fidelity in look, compared to a prototype that uses the same widget set as the finished implementation. **Feel** refers to the physical methods by which the user interacts with the prototype. A user interacts with a paper mockup by pointing at things to represent mouse clicks, and writing on the paper to represent keyboard input. This is a low-fidelity feel for a desktop application (but it may not be far off for a tablet PC application).
+
+<div class="slide">
+<h1>Comparing Fidelity of Look & Feel</h1>
+<img src="figures/11.png" />
+<img src="figures/12.png" />
+</div>
+
+Here's the same dialog box in both low-fi and high-fi versions. How do they differ in the kinds of things you can test and get feedback about?
 
 
 <!-- Markdown file pasted above. -->
