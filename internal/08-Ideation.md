@@ -68,7 +68,15 @@ Added personas section
 
 https://www.youtube.com/watch?v=eg7NXRJwYXs
 
-- gong sound
+- gong sound helped quite a bit
+
+Students have to clear the board twice for each new phase. Ask them to take a photo of the board and clear.
+
+Setup takes 20-30 mins at least. Make sure to arrive early and put up the poster boards (전지) on the wall.
+
+Some groups had poster boards (하드보드지) in the middle.
+
+## contents to add / cover
 
 Task Analysis
 Storyboarding
@@ -76,7 +84,6 @@ Scenarios
 Brainstorming
 
 Affinity Diagram
-Personas: make a video
 
 modeling approach
 
