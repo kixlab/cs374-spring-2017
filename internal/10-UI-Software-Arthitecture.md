@@ -5,10 +5,11 @@
 
 
 # Admin
-- nanoquiz: shoutkey.com/
+- nanoquiz: shoutkey.com/broccoli
 - Essay Placement Test: Can we move the studio to 6:45?
 
 # UI HOFS
+1:05
 
 ## Alt-Tab
 
@@ -56,9 +57,13 @@ Dragging a window: window becomes smaller if you drag near the “desktop” spa
 Placement of the window may be arbitrary.
 
 # Nanoquiz
-
+1:12
 
 # View Tree
+1:15
+
+## Draw a view tree
+Give a URL
 
 ## View tree illustration
 - It’s as if there’s an empty panel/canvas, and you keep on stacking / glueing visual elements. This analogy conveys a hierarchical structure.
@@ -66,7 +71,9 @@ Placement of the window may be arbitrary.
 - Intermediate nodes often serve as containers.
 
 ## View tree in HTML
-Show the Chrome Inspector inside a Twitter search result page.
+Show the Chrome Inspector inside a Twitter search result page. (3 min)
+
+https://twitter.com/search?q=chi2017&src=typd
 
 https://twitter.com/search?q=boston%20snow&src=typd&mode=photos
 
@@ -77,26 +84,67 @@ https://twitter.com/search?q=boston%20snow&src=typd&mode=photos
 - With capturing, the event is first captured by the outermost element and propagated to the inner elements.
 
 
-# Video Break
+# Listeners
+1:20
 
+2 mins
 
-# Activity: todomvc
+#MVC
+1:23
+
+## Activity: todomvc
+1:27
 
 It uses localstorage to remember your history, but there’s no server-side.
 
-- Q1 (2 mins for self, 5 mins for group activity, 5 mins discussion)
-- Data: List of todo items item: text, isDone Number of items remaining Number of items completed
+### Q1 
+(2 mins for self, 5 mins for group activity, 5 mins discussion)
 
-View: checkbox text element destroy number/id complete count display remaining count display add new item textbox
+Data:- https://kixlab.org/courses/hci/activities/todomvc/js/models/todo.js
+- https://kixlab.org/courses/hci/activities/todomvc/js/collections/todos.js- `title`, `order`, and `completed`- List of todo items- item: text, isDone- Number of items remaining- Number of items completed    View:
 
-Controller events: enter on new-todo (addToModel(event, not completed) listener: click on destory (removeFromModel events: click on clear completed
+- https://kixlab.org/courses/hci/activities/todomvc/js/views/todos.js- checkbox    text element     destroy   number/id- complete count display - remaining count display- add new item textboxController:
+- events: enter on new-todo (addToModel(event, not completed)- listener: click on destory (removeFromModel- events: click on clear completed
+- ‘keypress #new-todo’: ‘createOnEnter’, 
+‘click #clear-completed’: ‘clearCompleted’, 
+‘click #toggle-all’: ‘toggleAllComplete’
 
-‘keypress #new-todo’: ‘createOnEnter’, ‘click #clear-completed’: ‘clearCompleted’, ‘click #toggle-all’: ‘toggleAllComplete’
+### Q2
+1:40
+5 min work, 3 min discussion
+
+### MVVM
+1:50
+3 mins
+
+- VC are often closely coupled, hard to tear apart
+- more interactive, data-driven, rich UIs accelerate this trend
+- view logic gets large and complicated
+- need for a dedicated layer for it
+- data binding
+- reduce the complexity of controller
+- https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel
+
+
+# Video Break
+1:55
+Keys to Creating Awesome Teams
+Cyriac Roeding, Shopkick
+http://ecorner.stanford.edu/videos/3200/Keys-to-Creating-Awesome-Teams
+
+# Successful Teamwork
+
 
 # Diff with Reading
 
 
 # Post Class Notes
+- Update the TODO app with more modern framework implementation such as Vue
+- But that probably means I have to explain MVVM first.
+- Sticking with more conventional MVC might be a good idea to get the basics straight.
+
+- The most important lesson understanding why M and V should be separated. Knowing what C does and should do is important, but various implementations of the idea keep changing.
+
 
 
 
