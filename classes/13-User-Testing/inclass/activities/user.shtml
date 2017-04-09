@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Phone WebSIS: User</title>
+  <link rel="stylesheet" type="text/css" href="/6.831/6831.css">
+  <meta name="read-only" content="true">
+  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+  <meta name="author" content="none">
+  <style>
+  table { border-collapse: collapse;}
+  table td { border: 1px black solid; }
+  </style>
+</head>
+<body>
+
+<div id="body-pane">
+  <h1>WebSIS Over the Phone: User</h1>
+  <p>
+  In this activity, you will be the <b>user</b> in a formative evaluation of <b>WebSIS Over the Phone</b>, a touchtone phone UI for enrolling in MIT classes.<br>As the user:
+  </p>
+  <ul>
+    <li>Perform each of the three tasks below, while <b>thinking aloud</b>.</li>
+    <li>Use the keypad as a guide, but <b>speak your number presses</b> to the facilitator.</li>
+    <li>At any time you can say <b>'hang up'</b> to restart the call.</li>
+  </ul>
+  <h2>Tasks</h2>
+  <p>You are enrolled in 6.003, MAS.132, 6.813.</p>
+  <ol>
+    <li>Enroll in both <b>8.01 - Physics I</b> and <b>3.091 - Introduction to Solid State Chemistry</b></li>
+    <li>Change status of <b>6.003 - Signals and Systems</b> to Listener</li>
+    <li>Drop <b>MAS.132 - Camera Culture</b></li>
+  </ol>
+
+  <img src="keypad.png">
+</div>
+
+</body>
+</html>

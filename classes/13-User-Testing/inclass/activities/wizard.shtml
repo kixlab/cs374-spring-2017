@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>Phone WebSIS: Wizard</title>
+  <link rel="stylesheet" type="text/css" href="/6.831/6831.css">
+  <meta name="read-only" content="true">
+  <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+  <meta name="author" content="none">
+  <style>
+  table { border-collapse: collapse;}
+  table td { border: 1px black solid; }
+  .say{
+    border: 1px solid rgb(160, 159, 129);
+    padding: 0.5em 1em;
+    background: rgb(250, 255, 226) none repeat scroll 0% 0%;
+  }
+  .say-inline{
+    border: 1px solid rgb(160, 159, 129);
+    background: rgb(250, 255, 226) none repeat scroll 0% 0%;
+  }
+  .wizard{
+    color:red;
+  }
+  </style>
+</head>
+<body>
+
+<div id="body-pane">
+  <h1>WebSIS Over the Phone: Wizard</h1>
+
+  <p>
+  In this activity, you will be the <b>wizard</b> in a formative evaluation of <b>WebSIS Over the Phone</b>, a touchtone phone UI for enrolling in MIT classes. As the wizard, ask the user to perform each of the three tasks below by <b>speaking number presses to you</b>. You should <b>observe the user</b> and encourage them to <b>think aloud</b> while they are performing the tasks.
+  </p>
+  <p>The user is enrolled in 6.003, MAS.132, 6.813.</p>
+  <ol>
+    <li>Enroll in both <b>8.01 - Physics I</b> and <b>3.091 - Introduction to Solid State Chemistry</b></li>
+    <li>Change status of <b>6.003 - Signals and Systems</b> to Listener</li>
+    <li>Drop <b>MAS.132 - Camera Culture</b></li>
+  </ol>
+  <h2>Wizard Instructions</h2>
+  <ul>
+    <li><b>Keep track of the user's enrollment at all times.</b></li>
+    <li>Directions for <b>YOU, THE WIZARD</b> are <span class="wizard">colored in red</span>.</li>
+    <li>Directions for <b>THE USER</b> <span class="say-inline">look like this and should be spoken by you.</span></li>
+    <li>If the user ever enters an invalid option, say <span class="say-inline">Invalid option, returning to <a href="#top">top</a>.</span></li>
+    <li>At any time, the user can say <b>"hang up"</b> to restart the call.</li>
+    <li>Start the call using the <a href="#top">top</a> menu!</li>
+  </ul>
+
+  <div id="top" class="menu">
+    <hr>
+    <h2>Top</h2>
+    <p class="wizard">Read the following to the user:</p>
+    <div class="say">
+      <p>Welcome to WebSIS Over the Phone.</p>
+      <ul>
+        <li><a href="#list-enrollment">Press 1</a> to list subject enrollment</li>
+        <li><a href="#change-status">Press 2</a> to change subject status</li>
+        <li><a href="#drop-subject">Press 3</a> to drop a subject</li>
+        <li><a href="#add-subject">Press 4</a> to add a subject</li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="list-enrollment" class="menu">
+    <hr>
+    <h2>List Enrollment</h2>
+    <p class="wizard">Read the user's enrollment (which you should be keeping track of) then return to <a href="#top">top</a>.</p>
+  </div>
+
+  <div id="change-status" class="menu">
+    <hr>
+    <h2>Change Subject Status</h2>
+    <div class="say">
+      <p>What subject would you like to change? First, enter course number:</p>
+      <ul>
+        <li>Press 1 for course <b>2</b></li>
+        <li>Press 2 for course <b>3</b></li>
+        <li>Press 3 for course <b>4</b></li>
+        <li>Press 4 for course <b>6</b></li>
+        <li>Press 5 for course <b>8</b></li>
+        <li><a href="#top">Press 6</a> to return to top</li>
+      </ul>
+    </div>
+    <p class="wizard">Note their <b>course</b> selection.</p>
+    <div class="say">
+      <p>You have selected course <b>course</b>. Enter subject number.</p>
+    </div>
+    <p class="wizard">Note their <b>subject</b> selection, usually a 3-digit number.</p>
+    <p class="wizard">If the user is not enrolled in the subject:</p>
+    <p class="say">You are not enrolled in <b>course.subject</b>. Returning to <a href="#top">top.</a></p>
+    <p class="wizard">Otherwise, if they are:</p>
+    <div class="say">
+      <ul>
+        <li>Press 1 for Listener</li>
+        <li>Press 2 for Credit</li>
+      </ul>
+    </div>
+    <p class="wizard">Note their <b>status</b> selection and update their enrollment.</p>
+    <p class="say">Status of <b>course.subject</b> changed to <b>status</b>. Returning to <a href="#top">top.</a></p>
+  </div>
+
+  <div id="drop-subject" class="menu" >
+    <hr>
+    <h2>Drop a Subject</h2>
+    <div class="say">
+      <p>What subject would you like to drop? First, enter course number:</p>
+    </div>
+    <p class="wizard">
+      Wait until the user has entered all digits.<br>
+      If the user enters <b>6-2-7</b>, which spells out <b>M-A-S</b> on the keypad, the selected course is <b>MAS</b>.<br>
+      Else if the user enters a 1 or 2 digit number, that is their selected course.
+    </p>
+    <div class="say">
+      <p>You have selected course <b>course</b>. Enter subject number.</p>
+    </div>
+    <p class="wizard">Note their <b>subject</b> selection, usually a 3-digit number.</p>
+    <p class="wizard">If the user is not enrolled in the subject:</p>
+    <p class="say">You are not enrolled in <b>course.subject</b>. Returning to <a href="#top">top.</a></p>
+    <p class="wizard">Otherwise, if they are, drop the class in their enrollment and say:</p>
+    <p class="say">You have dropped <b>course.subject</b>. Returning to <a href="#top">top.</a></p>
+  </div>
+
+  <div id="add-subject" class="menu">
+    <hr>
+    <h2>Add a Subject</h2>
+    <div class="say">
+      <p>What subject would you like to add? First, enter course number:</p>
+      <ul>
+        <li>Press 1 for course <b>2</b></li>
+        <li>Press 2 for course <b>6</b></li>
+        <li>Press 3 for course <b>8</b></li>
+        <li>Press 4 for course <b>4</b></li>
+        <li>Press 5 for course <b>3</b></li>
+        <li><a href="#top">Press 6</a> to return to top</li>
+      </ul>
+    </div>
+    <p class="wizard">Note their <b>course</b> selection.</p>
+    <div class="say">
+      <p>You have selected course <b>course</b>. Enter subject number.</p>
+    </div>
+    <p class="wizard">Note their <b>subject</b> selection, usually a 3-digit number.</p>
+    <p class="wizard">If the user is already enrolled in the subject:</p>
+    <p class="say">You are already enrolled in <b>course.subject</b>. Returning to <a href="#top">top.</a></p>
+    <p class="wizard">Otherwise, if they aren't:</p>
+    <div class="say">
+      <ul>
+        <li>Press 1 for Listener</li>
+        <li>Press 2 for Credit</li>
+      </ul>
+    </div>
+    <p class="wizard">Note their <b>status</b> selection and update their enrollment.</p>
+    <p class="say">You have been enrolled in <b>course.subject</b>, <b>status</b>. Returning to <a href="#top">top.</a></p>
+  </div>
+</div>
+
+</body>
+</html>
