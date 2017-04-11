@@ -1,8 +1,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-  <title>Phone WebSIS: Wizard</title>
-  <link rel="stylesheet" type="text/css" href="/6.831/6831.css">
+  <title>Phone KAIST Acedemic System: Wizard</title>
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+  <link rel="stylesheet" type="text/css" href="../style.css">
   <meta name="read-only" content="true">
   <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
   <meta name="author" content="none">
@@ -26,16 +27,16 @@
 <body>
 
 <div id="body-pane">
-  <h1>WebSIS Over the Phone: Wizard</h1>
+  <h1>KAIST Acedemic System Over the Phone: Wizard</h1>
 
   <p>
-  In this activity, you will be the <b>wizard</b> in a formative evaluation of <b>WebSIS Over the Phone</b>, a touchtone phone UI for enrolling in MIT classes. As the wizard, ask the user to perform each of the three tasks below by <b>speaking number presses to you</b>. You should <b>observe the user</b> and encourage them to <b>think aloud</b> while they are performing the tasks.
+  In this activity, you will be the <b>wizard</b> in a formative evaluation of <b>KAIST Acedemic System Over the Phone</b>, a touchtone phone UI for enrolling in MIT classes. As the wizard, ask the user to perform each of the three tasks below by <b>speaking number presses to you</b>. You should <b>observe the user</b> and encourage them to <b>think aloud</b> while they are performing the tasks.
   </p>
-  <p>The user is enrolled in 6.003, MAS.132, 6.813.</p>
+  <p>The user is enrolled in PH311 (20.311), EE304 (35.304), and CS374 (36.374).</p>
   <ol>
-    <li>Enroll in both <b>8.01 - Physics I</b> and <b>3.091 - Introduction to Solid State Chemistry</b></li>
-    <li>Change status of <b>6.003 - Signals and Systems</b> to Listener</li>
-    <li>Drop <b>MAS.132 - Camera Culture</b></li>
+    <li>Enroll in both <b>CS380 (36.380) - Computer Graphics</b> and <b>HSS159 (10.144) - Introduction to Economics</b></li>
+    <li>Change status of <b>PH311 (Thermal Physics)</b> to Listener</li>
+    <li>Drop <b>EE304 - Electronic Circuits</b></li>
   </ol>
   <h2>Wizard Instructions</h2>
   <ul>
@@ -52,7 +53,7 @@
     <h2>Top</h2>
     <p class="wizard">Read the following to the user:</p>
     <div class="say">
-      <p>Welcome to WebSIS Over the Phone.</p>
+      <p>Welcome to KAIST Acedemic System Over the Phone.</p>
       <ul>
         <li><a href="#list-enrollment">Press 1</a> to list subject enrollment</li>
         <li><a href="#change-status">Press 2</a> to change subject status</li>
@@ -74,11 +75,11 @@
     <div class="say">
       <p>What subject would you like to change? First, enter course number:</p>
       <ul>
-        <li>Press 1 for course <b>2</b></li>
-        <li>Press 2 for course <b>3</b></li>
-        <li>Press 3 for course <b>4</b></li>
-        <li>Press 4 for course <b>6</b></li>
-        <li>Press 5 for course <b>8</b></li>
+        <li>Press 1 for course <b>10</b> (HSS - Humanities & Social Sciences)</li>
+        <li>Press 2 for course <b>20</b> (PH - Physics)</li>
+        <li>Press 3 for course <b>23</b> (CH - Chemistry)</li>
+        <li>Press 4 for course <b>35</b> (EE - Electrical Engineering)</li>
+        <li>Press 5 for course <b>36</b> (CS - Computer Science)</li>
         <li><a href="#top">Press 6</a> to return to top</li>
       </ul>
     </div>
@@ -108,8 +109,8 @@
     </div>
     <p class="wizard">
       Wait until the user has entered all digits.<br>
-      If the user enters <b>6-2-7</b>, which spells out <b>M-A-S</b> on the keypad, the selected course is <b>MAS</b>.<br>
-      Else if the user enters a 1 or 2 digit number, that is their selected course.
+      <!-- If the user enters <b>6-2-7</b>, which spells out <b>M-A-S</b> on the keypad, the selected course is <b>MAS</b>.<br> -->
+      <!-- Else if the user enters a 1 or 2 digit number, that is their selected course. -->
     </p>
     <div class="say">
       <p>You have selected course <b>course</b>. Enter subject number.</p>
@@ -127,11 +128,11 @@
     <div class="say">
       <p>What subject would you like to add? First, enter course number:</p>
       <ul>
-        <li>Press 1 for course <b>2</b></li>
-        <li>Press 2 for course <b>6</b></li>
-        <li>Press 3 for course <b>8</b></li>
-        <li>Press 4 for course <b>4</b></li>
-        <li>Press 5 for course <b>3</b></li>
+        <li>Press 1 for course <b>10</b> (HSS - Humanities & Social Sciences)</li>
+        <li>Press 2 for course <b>20</b> (PH - Physics)</li>
+        <li>Press 3 for course <b>23</b> (CH - Chemistry)</li>
+        <li>Press 4 for course <b>35</b> (EE - Electrical Engineering)</li>
+        <li>Press 5 for course <b>36</b> (CS - Computer Science)</li>
         <li><a href="#top">Press 6</a> to return to top</li>
       </ul>
     </div>

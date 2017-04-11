@@ -56,5 +56,7 @@ Walk around and give suggestions
 
 
 # Post Class Notes
-
+- In-class building + testing worked fine.
+- Good way to give students feedback on their design direction.
+- Some students are done too quickly, have trivial tasks designed, etc. Make sure to guide them.
 
