@@ -108,11 +108,19 @@ Blogosphere
 - https://ello.co/jayrosen/post/Ppg0VSUzxsy3mVNAQ9y5VA
 
 
+
+# IRB Example
+Show an actual exmaple IRB document
+
+# Video Break
+
+# Usability Testing
+
 ## Observing usability test sessions 
-(1:32, 7 mins)
+(7 mins)
 
 ### Paper Prototype Testing 
-(1:32, 3 mins)
+(3 mins)
 
 https://www.youtube.com/watch?v=9wQkLthhHKA
 
@@ -135,7 +143,7 @@ https://www.youtube.com/watch?v=9wQkLthhHKA
 - Paper prototype testing
 
 ### Observing Think Aloud 
-(1:35, 3 mins)
+(3 mins)
 https://www.youtube.com/watch?v=-h8hUtwkMCE
 
 Let’s practice observing a user test, listening to think-aloud, and watching for critical incidents. It's a functional prototype of a controlling interface for cylinder testing.
@@ -158,10 +166,11 @@ Notes
 - It's easy to focus on getting just another data point. Apply the knowledge from the class so far (usability dimensions), etc. to "understand" what users are doing.
 
 
-## User Testing Game (1:40, 7 mins activity, 5 mins discussion)
-- User interface: http://courses.csail.mit.edu/6.831/2013/activities/ac11-user.shtml
-- Wizard interface: http://courses.csail.mit.edu/6.831/2013/activities/ac11-wizard.shtml
+## User Testing Game 
+(7 mins activity, 5 mins discussion)
 
+USER: https://kixlab.org/courses/hci/activities/user-testing/user.html
+WIZARD: https://kixlab.org/courses/hci/activities/user-testing/wizard.html
 
 ### Usability issues of the system discovered during testing
 - Efficiency
@@ -186,10 +195,6 @@ Notes
 - With a real working prototype, what would be different?
 
 
-# Video Break
-
-
-# Part 2
 
 
 # Diff with Reading
