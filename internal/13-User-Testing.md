@@ -1,7 +1,5 @@
 # 13-User Testing
 
-In-class paper prototype testing
-
 # Recap
 
 
@@ -113,11 +111,16 @@ Blogosphere
 Show an actual exmaple IRB document
 
 # Video Break
+OmniTouch 
+
+- https://www.youtube.com/watch?v=Pz17lbjOFn8
+- talk about how user testing new tech / interaction technique might be difficult
 
 # Usability Testing
+1:45 
 
 ## Observing usability test sessions 
-(7 mins)
+(7-10 mins)
 
 ### Paper Prototype Testing 
 (3 mins)
@@ -140,7 +143,7 @@ https://www.youtube.com/watch?v=9wQkLthhHKA
 
 - 2:55 Clicking everywhere: not likely to happen with real interfaces.
 
-- Paper prototype testing
+- Paper prototype + digital printouts
 
 ### Observing Think Aloud 
 (3 mins)
@@ -167,7 +170,7 @@ Notes
 
 
 ## User Testing Game 
-(7 mins activity, 5 mins discussion)
+1:55 (7 mins activity, 5 mins discussion)
 
 USER: https://kixlab.org/courses/hci/activities/user-testing/user.html
 WIZARD: https://kixlab.org/courses/hci/activities/user-testing/wizard.html
@@ -201,6 +204,10 @@ WIZARD: https://kixlab.org/courses/hci/activities/user-testing/wizard.html
 
 
 # Post Class Notes
-
+- Time-wise it took the full 75 mins
+- Mentioning that ethics is perhaps one of the boring, obvious topics but entails many interesting and tricky questions in practice worked quite well.
+- But need to convey the examples more interestingly. Emotion contagion + voting nudge are interesting, but perhaps I need a summarizing slide that brings up high-level insights of how to look at these large-scale experiments.
+- HOFS was fine. (1800 flowers)
+- WOZ activity worked well. Many students were quite engaged.
 
 
