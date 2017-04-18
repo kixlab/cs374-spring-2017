@@ -1,5 +1,25 @@
 # 14-Heuristic-Evaluation
 
+
+
+
+# Recap
+
+# Admin
+- nanoquiz: shoutkey.com/
+- grading / attendance / course evaluation
+- DP4 update
+- Remind MIT/Stanford in class again
+
+
+# UI HOFS
+Canceled, because today's class is all about this.
+This class basically will give you a better way to participate in UI HOFS discussion, by referring to common langauge and guidelines.
+
+# Nanoquiz
+
+
+# Heuristic Evaluation
 multiple ways to evaluate
 - empirical: assess with real users
 - formal: models and formulas to calculate measures
@@ -12,6 +32,8 @@ don't waste users on the small stuff
 indedendent + group later
 
 can be done on various types of prototypes
+
+## Examples
 
 freedom: close dates in flight schedule
 
@@ -38,35 +60,19 @@ provide help
 - creative commons: easy to follow guides and short summaries and human-readable versions
 - fun 404 pages
 
-
-# Recap
-
-# Admin
-- nanoquiz: shoutkey.com/
-- grading / attendance / course evaluation
-- DP4 update
-- Remind MIT/Stanford in class again
-
-
-# UI HOFS
-
-
-# Nanoquiz
-
-
-# Part 1
-
-
 # Video Break
+Zooids
 
+- https://www.youtube.com/watch?v=ZVdAfDMP3m0
+- think how to do heuristic evaluation for technology like this
 
-# Part 2
-
+# Activity
+12 mins is good enough. ~200 from ~70 students.
 
 # Diff with Reading
-Removed cognitive walkthrough
+
 
 # Post Class Notes
-
+First part felt a bit boring, since I kept on saying everythihng. How to make this more interactive and interesting?
 
 
