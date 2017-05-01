@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>AC15: Layout</title>
+<script type="text/javascript">
+
+var editboxHTML = 
+'<html class="expand close">' +
+'<head>' +
+"<link href='http://fonts.googleapis.com/css?family=Muli:300,400,300italic,400italic' rel='stylesheet' type='text/css'>" +
+'<style type="text/css">' +
+'.expand { width: 100%; height: 100%; }' +
+'.close { border: none; margin: 0px; padding: 0px; }' +
+'html,body { overflow: hidden; }' +
+'<\/style>' +
+'<\/head>' +
+'<body class="expand close" onload="document.f.ta.focus(); document.f.ta.select();">' +
+'<form class="expand close" name="f">' +
+'<textarea class="expand close" style="background: #def;" name="ta" wrap="hard" spellcheck="false">' +
+'<\/textarea>' +
+'<\/form>' +
+'<\/body>' +
+'<\/html>';
+
+var defaultStuff =
+'<style type="text/css">'+'\n'+
+'.text {'+'\n'+
+'font-family:"Muli", sans-serif;'+'\n'+
+'line-height: 27px;' +'\n' +
+'width:300px;' +'\n' +
+'font-size:7px;' +'\n' +
+'}'+'\n'+
+'</style>'+'\n'+
+'<p class="text">'+'\n'+
+'Four score and seven years ago our fathers brought forth on this continent, a'+'\n'+
+'new nation, conceived in Liberty, and dedicated to the proposition that all men'+'\n'+
+'are created equal. Now we are engaged in a great civil war, testing whether'+'\n'+
+'that nation, or any nation so conceived and so dedicated, can long endure. We'+'\n'+
+'are met on a great battle-field of that war. We have come to dedicate a portion'+'\n'+
+'of that field, as a final resting place for those who here gave their lives'+'\n'+
+'that that nation might live. It is altogether fitting and proper that we should'+'\n'+
+'do this. But, in a larger sense, we can not dedicate -- we can not consecrate'+'\n'+
+'-- we can not hallow -- this ground. The brave men, living and dead, who'+'\n'+
+'struggled here, have consecrated it, far above our poor power to add or'+'\n'+
+'detract. The world will little note, nor long remember what we say here, but it'+'\n'+
+'can never forget what they did here. It is for us the living, rather, to be'+'\n'+
+'dedicated here to the unfinished work which they who fought here have thus far'+'\n'+
+'so nobly advanced. It is rather for us to be here dedicated to the great task'+'\n'+
+'remaining before us -- that from these honored dead we take increased devotion'+'\n'+
+'to that cause for which they gave the last full measure of devotion -- that we'+'\n'+
+'here highly resolve that these dead shall not have died in vain -- that this'+'\n'+
+'nation, under God, shall have a new birth of freedom -- and that government of'+'\n'+
+'the people, by the people, for the people, shall not perish from the earth. '+'\n'+
+'</p>'+'\n';
+
+// I don't want this stuff to appear in the box at the top because I feel it's likely to be distracting.
+var extraStuff = '<div style="position:absolute; margin:.3em; bottom:0em; right:0em;"><small>\n  Created by <a href="http://www.squarefree.com/" target="_top">Jesse Ruderman<\/a> and hosted by <a href="http://www.dreamhost.com/rewards.cgi?jesseruderman" target="_top">DreamHost<\/a>.\n<\/small><\/div>';
+
+var old = '';
+         
+function init()
+{
+  window.editbox.document.write(editboxHTML);
+  window.editbox.document.close();
+  window.editbox.document.f.ta.value = defaultStuff;
+  update();
+}
+
+function update()
+{
+  var textarea = window.editbox.document.f.ta;
+  var d = dynamicframe.document; 
+
+  if (old != textarea.value) {
+    old = textarea.value;
+    d.open();
+    d.write(old);
+    if (old.replace(/[\r\n]/g,'') == defaultStuff.replace(/[\r\n]/g,''))
+      d.write(extraStuff);
+    d.close();
+  }
+
+  window.setTimeout(update, 150);
+}
+
+</script>
+</head>
+
+<frameset resizable="yes" cols="50%,*" onload="init();">
+  <!-- about:blank confuses opera, so use javascript: URLs instead -->
+  <frame name="editbox" src="javascript:'';">
+  <frame name="dynamicframe" src="javascript:'';">
+</frameset>
+
+</html>

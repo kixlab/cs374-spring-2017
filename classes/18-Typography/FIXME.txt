@@ -1,0 +1,25 @@
+reading
+-----------
+comment from last year's Piazza:
+
+120% leading is too small
+ 
+Use generous leading, but not too generous. 120% of the font size is a good rule of thumb; this would correspond to the 20/24 leading shown on the previous slide.
+This is actually too small for most cases, especially on the Web. Visit any modern big website and inspect the line-height where there is a lot of body text (headings and large text are a different beast) and it will almost always be larger than 120%. I just tried it with a few big websites:
+TechCrunch: 1.625
+CNN.com: 1.4444
+Facebook (posts): 1.38
+Amazon: 1.6
+Twitter: 1.375
+Reddit: 1.43
+Imdb: 1.4
+Wikipedia: 1.6
+ 
+(Note how the ones with the smallest line-height are Twitter and Facebook, since usually their posts are relatively small.)
+ 
+Even in the reading itself, line-height is 180%!!
+ 
+In addition, the W3C accessibility guidelines (WCAG) state:
+Many people with cognitive disabilities have trouble tracking lines of text when a block of text is single spaced. Providing spacing between 1.5 to 2 allows them to start a new line more easily once they have finished the previous one.
+and:
+Line spacing (leading) is at least space-and-a-half within paragraphs, and paragraph spacing is at least 1.5 times larger than the line spacing. [source]

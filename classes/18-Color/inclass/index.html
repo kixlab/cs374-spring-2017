@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--
+  Character encoding note: This file should be saved and opened in UTF-8. If
+  this is done correctly, then the following string should not be garbled in
+  your editor (it should be rendered as shown in chartest.png):
+
+  Character encoding test: «ÆØÅÉÈÑÜæøåéèñü¢~§'»
+-->
+<meta charset="UTF-8">
+
+<title>Staff Notes 16: Color</title>
+
+<link href="../../../web/handout-style-v1.css" rel="stylesheet"></link>
+</head>
+<body>
+<header>6.813/831 User Interface Design & Implementation</header>
+<nav class="navigation"></nav>
+<div class="lecture">
+
+<div class="markdown">
+
+## Postmortem Notes
+- Ended up not doing the Lab in the Wild Blog reading activity
+- Evaluate + Redesign activity worked quite well
+- Juho had everyone send email of before/after screenshots
+
+
+## Announcements to write on board
+
++ Nanoquiz:
+
+
+## HoF (1:05, 5 mins)
+
+Our Hall of Shame candidate for the day is this dialog box from Adaptec Easy CD Creator, which appears at the end of burning a CD.  The top image shows the dialog when the CD was burned successfully; the bottom image shows what it looks like when there was an error.
+
+What does the squint test tell you about these dialogs? How could they use the color visual variable better?
+
+The key problem is the lack of contrast between these two states.  Success or failure of CD burning is important enough to the user that it should be obvious at a glance.  But these two dialogs look identical at a glance.  How can we tell?  Use the squint test, which we talked about in the graphic design lecture.  When you’re squinting, you see some labels, a big filled progress bar, a roundish icon with a blob of red, and three buttons.  All the details, particularly the text of the messages and the exact shapes of the red blob, are fuzzed out. This simulates what a user would see at a quick glance, and it shows that the graphic design doesn’t convey the contrast.
+
+One improvement would change the check mark to another color, say green or black.  Using red for OK seems inconsistent with the real world, anyway.  But designs that differ only in red and green wouldn’t pass the squint test for color-blind users.
+
+Another improvement might remove the completed progress bar from the error dialog, perhaps replacing it with a big white text box containing a more detailed description of the problem.  That would clearly pass the squint test, and make errors much more noticeable.
+
+
+## Nanoquiz (1:10, 3 mins)
+
+
+## Learning objectives (1:13, 2 mins)
+
+Today’s lecture is about choosing colors for a user interface.  We’ll discuss some of the properties of human vision that affect this decision, particularly the limitations of color vision.  We’ll go over some models for representing colors, not just the familiar RGB model.  And we’ll discuss some guidelines for choosing colors.  The most important guidelines will be applications of rules we already discussed in graphic design: simplicity as much as possible, contrast where important.
+
+A good reference about color is Colin Ware, Information Visualization: Perception for Design, Morgan Kaufmann, 2000 (which we also mentioned in the graphic design lecture).
+
+
+
+## Factors that matter (1:15, 10 mins)
+- color blindness
+- emphasis
+- gender
+- culture
+- affect
+- metaphor
+- aesthetics
+
+
+
+Color as identity of a service / brand
+- consistently using the main color in various parts of the interface
+- Facebook: blue
+- Twitter: skyblue
+
+Mac OS's window control
+- traffic light metaphor: but does that match with the actions?
+- double duty: tell you what it does, color associated
+
+
+
+
+## Lab in the Wild Blog (1:25, 5 mins)
+
+What you'll find is that it's often a combination of
+- low-level human perception
+- high-level design issues
+
+
+## Google Material Design (1:30, 7 mins)
+
+
+## Color Scheme Activity: Evaluate (1:37, 8 mins)
+
+
+## Color Scheme Activity: Improve (1:45, 7 mins)
+
+
+## Nanoquiz Answers (1:52, 2 mins)
+
+
+
+
+## Misc refs that may be useful later
+
+Adobe color activity
+- explore different color rules
+    - monochromatic, triad, shades, etc.
+- search using affect, gender, culture, etc.
+
+xkcd color survey
+- http://blog.xkcd.com/2010/05/03/color-survey-results/
+- http://xkcd.com/color/rgb/
+
+color survey
+- http://www1.icsi.berkeley.edu/wcs/
+
+Sharon's color perception paper
+- http://www.sharondlin.com/papers/colorThemes.pdf
+
+David's paper
+
+Katharina's paper:
+- http://reinecke.people.si.umich.edu/Publications_files/Reinecke_CHI2013.pdf
+- http://www.eecs.harvard.edu/~kgajos/papers/2014/reinecke14visual.pdf
+
+
+
+
+</div>
+
+</div>
+<footer id="authors">Copyright course staff. MIT EECS.</footer>
+<script src="../../../web/handout-script-v1.js"></script>
+</body>
+</html>
