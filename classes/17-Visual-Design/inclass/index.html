@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--
+  Character encoding note: This file should be saved and opened in UTF-8. If
+  this is done correctly, then the following string should not be garbled in
+  your editor (it should be rendered as shown in chartest.png):
+
+  Character encoding test: «ÆØÅÉÈÑÜæøåéèñü¢~§'»
+-->
+<meta charset="UTF-8">
+
+<title>Staff Notes 14: Graphic Design</title>
+
+<link href="../../../web/handout-style-v1.css" rel="stylesheet"></link>
+</head>
+<body>
+<header>6.813/831 User Interface Design & Implementation</header>
+<nav class="navigation"></nav>
+<div class="lecture">
+
+<div class="markdown">
+
+
+### Announcements on the board
+
++ nanoquiz shoutkey:
++ PS3 due Wed
++ GR4 underway, due Wed Apr 15
++ (6.831G) RS1 due Fri Apr 10
+
+
+## HoFS
+
+Google is an outstanding example of simplicity.  Its interface is as simple as possible.  Unnecessary features and hyperlinks are omitted, lots of whitespace is used.  Google is fast to load and trivial to use.
+
+But maybe Google goes a little too far!  Let’stTake the perspective of a completely novice user coming to Google for the first time.  What are the learnability obstacles to forming a mental model of what Google actually does and how to use it?
+
++ What does Google actually do?  The front page doesn’t say.  
++ What should be typed into the text box?  It has no caption at all.  
++ The button labels are almost gibberish. “Google Search” isn’t meaningful English (although it’s gradually becoming more meaningful as Google enters the language as a noun, verb, and adjective).  And what does “I’m Feeling Lucky” mean?
++ Where is Help?  Turns out it’s reachable from About Google, but the scent isn’t too strong for that.
+
+Although these problems would be easy for Google to fix, they are actually minor, because Google’s interface is simple enough that it can be learned by only a small amount of exploration.  (Except perhaps for the I’m Feeling Lucky button, which probably remains a mystery until a user is curious enough to hunt for the help.  After all, maybe it does a random choice from the search results!)
+Notice that Google does not ask you to choose your search domain first.  It picks a good default (web pages), includes a mix of results if they seem relevant (e.g. images and videos and maps too, not purely web pages), and makes it easy to change.
+
+
+
+## Nanoquiz
+
+
+## Visual Variables
+
+use the map slide to get the visual vars listed on the board, with their nominal/ordered/quant scales
+
+
+### Array of colored letters
+
+Ask these questions:
+
++ find all the letters on the left edge of the page (position)
++ find all the red letters (hue)
++ find all the K’s (shape)
+
+Which of these questions felt easy to answer, and which felt hard?  The easy ones were selective visual variables.
+
+
+### Visual variables in text
+
+upper left (boldface = value) and lower right (size) pop out.
+upper right (different font face) and lower left (italics) don’t.  They rely too strongly on shape.
+
+
+### My Movies
+
+Gestalt grouping
+reduction technique
+
+
+### Hong Kong Cafe
+
+contrast: does important information pop out?  are hours easy to read?
+
+
+### Search engine results
+
+Here’s another example showing how redundant encoding can make an information display easier to scan and easier to use.  Search engine results are basically just database records, but they aren’t rendered in a simplistic caption/field display like the one shown on top.  Instead, they use rich visual variables – and no field labels! – to enhance the contrast among the items.  Page titles convey the most information, so they use size, hue, and value (brightness), plus a little shape (the underline).  The summary is in black for good readability, and the URL and size are in green to bracket the summary.
+
+Take a lesson from this: your program’s output displays do not have to be arranged like input forms.  When data is self-describing, like names and dates, let it describe itself.  (This is yet another example of the double duty technique for achieving greater simplicity – data is acting as its own label.)  And choose good visual variables to enhance the contrast of information that the user needs to see at a glance.
+
+
+
+
+
+</div>
+
+</div>
+<footer id="authors">Copyright course staff. MIT EECS.</footer>
+<script src="../../../web/handout-script-v1.js"></script>
+</body>
+</html>

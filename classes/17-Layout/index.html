@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<!-- Lecture title entered here: -->
+<title>Reading: Layout</title>
+
+<link href="../../web/handout-style-v1.css" rel="stylesheet"></link>
+</head>
+<body>
+<header>CS374: Intro to HCI</header>
+<nav class="navigation"></nav>
+<div class="lecture">
+
+<div class="markdown">
+
+<!-- Markdown file pasted below. -->
+
+<!-- <div class="slide">
+  <h1>UI Hall of Fame or Shame?</h1>
+  <img src="figures/01.png"/>
+
+</div>
+
+Today's Hall of Fame and Shame is a comparison of two generations of Google Advanced Search.  This is the old interface.
+
+<div class="slide">
+  <h1>UI Hall of Fame or Shame?</h1>
+  <img src="figures/02.png"/>
+</div>
+
+And this is the new interface.  (If you can't read the image, visit the [Google Advanced Search page](http://www.google.com/advanced_search).)
+
+Let's compare and contrast these two interfaces in terms of:
+
+- visibility (specifically self-disclosure)
+- graphic design
+- task analysis
+- efficiency -->
+
+<h2 id="grouping-and-hierarchy">Grouping and Hierarchy</h2>
+
+<div class="slide">
+<h1>The Gestalt Principles of Grouping</h1>
+
+<ul>
+<li>Gestalt principles explain how the eye creates a whole (_gestalt_) from parts</li>
+</ul>
+<img src="figures/03.png"/>
+</div>
+
+The power of white space for grouping derives from the Gestalt principle of proximity.  These principles, discovered in the 1920's by the Gestalt school of psychologists, describe how early visual processing groups elements in the visual field into larger wholes.  Here are the six principles identified by the Gestalt psychologists:
+
+1. **Proximity**.  Elements that are closer to each other are more likely to be grouped together.  You see four vertical columns of circles, because the circles are closer vertically than they are horizontally.
+
+2. **Similarity**.  Elements with similar attributes are more likely to be grouped.  You see four *rows* of circles in the example, because the circles are more alike horizontally than they are vertically.
+
+3. **Continuity**.  The eye expects to see a contour as a continuous object.  You primarily perceive the Continuity example above as two crossing lines, rather than as four lines meeting at a point, or two right angles sharing a vertex.
+
+4. **Closure**.  The eye tends to perceive complete, closed figures, even when lines are missing.  We see a triangle in the center of the example, even though its edges aren't complete.
+
+5. **Area**. When two elements overlap, the smaller one will be interpreted as a figure in front of the larger ground.  So we tend to perceive the example as a small square in front of a large square, rather than a large square with a hole cut in it.
+
+6. **Symmetry**.  The eye prefers explanations with greater symmetry.  So the example is perceived as two overlapping squares, rather than three separate polygons.
+
+A good paper about perceptual grouping in HCI and information visualization is Rosenholtz et al, "[An Intuitive Model of Perceptual Grouping for HCI Design](http://web.mit.edu/rruth/www/Papers/RosenholtzEtAlCHI2009PO.pdf)", CHI 2009.
+
+<div class="slide">
+  <h1>Grouping</h1>
+
+  <ul>
+  <li>Use Gestalt principles to visually group related items</li>
+  </ul>
+
+  <img src="figures/04.png"/>
+</div>
+
+The Gestalt principles - particularly *similarity* and *proximity* - are useful for putting structure on a visual display, helping the viewer chunk it.  The calculator shown here (which we've criticized for other reasons, but we'll praise it now) uses both similarity and proximity to group what might otherwise be a grid of identical-looking buttons into functional units.  The MC/MR/MS/M+ buttons all share the same label color, shape, size, and even the prefix "M" (similarity), and furthermore each button is closer to the other M buttons than it is to the rest of the calculator (proximity).  The effect is to group the M buttons strongly together into a memory function.  Similarity is likewise used to group Backspace/CE/C together, to group the central number pad together, and to group the key operators /, *, -, + together.
+
+<div class="slide">
+  <h1>Hierarchy</h1>
+
+  <ul>
+  <li>Establish a hierarchy of importance among items in the design</li>
+  </ul>
+  <img src="figures/05.png"/>
+  <img src="figures/06.png"/>
+</div>
+
+Establish a hierarchy of importance among the elements of your design.  One kind of hierarchy is visual: use visual variables to make the more important elements pop out.  Hacker News (top) does this effectively and simply.  The highest element in the hierarchy is the header bar, which pops out because of its position, its drastically contrasting hue (the only non grayscale on the page!), and value (the boldfaced title in it).  The next elements in the hierarchy are the items on the list.  Within each item, the most important element is the article title, which pops out.  Other data fields of the article have less importance, so they are given less salience.
+
+Article formats (like the one shown on the bottom) also demonstrate hierarchy.  Here, not only are visual variables used to put some elements (like the title) at a higher level than others (like body text), but the *position* of the elements is also important.  More important elements appear first in the order that the display is likely to be scanned by the reader.  In this case that order is top-to-bottom, left-to-right, but be aware that your design can *change* the scanning order. For a newspaper with a big banner headline or a central "hero" image, the viewer's eyes will start there.
+
+
+
+<!-- <h2 id="whitespace">Whitespace</h2>
+
+<div class="slide">
+  <h1>White Space</h1>
+
+  <ul>
+  <li>Use white space for grouping, instead of lines</li>
+  <li>Use margins to draw eye around design</li>
+  <li>Integrate figure and ground
+  <ul><li>Object should be scaled proportionally to its background</li></ul></li>
+  <li>Don't crowd controls together
+  <ul><li>Crowding creates spatial tension and inhibits scanning</li></ul></li>
+  </ul>
+</div>
+
+White space plays an essential role in composition.  Screen real estate is at a premium in many graphical user interfaces, so it's a constant struggle to balance the need for white space against a desire to pack information and controls into a display.  But insufficient white space can have serious side-effects, making a display more painful to look at and much slower to scan.
+
+Put **margins** around all your content.  Labels and controls that pack tightly against the edge of a window are much slower to scan.  When an object is surrounded by white space, keep a sense of proportion between the object (the **figure**) and its surroundings (**ground**). Don't crowd controls together, even if you're grouping the controls.  Crowding inhibits scanning, and produces distracting effects when two lines (such as the edges of text fields) are too close.  Many UI toolkits unfortunately encourage this crowding by packing controls tightly together by default - that's one problem with the default HTML/CSS, in fact.  Better toolkits like Twitter Bootstrap (mentioned later) automatically add margins to your controls that give them a chance to breathe.
+
+<div class="slide">
+  <h1>Crowded Dialog</h1>
+  <img src="figures/07.jpg"/>
+  <p>Source: Mullet & Sano, p. 110</p>
+</div>
+
+Here's an example of an overcrowded dialog.  The dialog has no **margins** around the edges; the controls are **tightly packed** together; and **lines are used for grouping** where white space would be more appropriate.  Screen real estate isn't terribly precious in a transient dialog box.
+
+The crowding leads to some bad perceptual effects.  Lines appearing too close together - such as the bottom of the Spacing text field and the group line that surround it - blend together into a thicker, darker line, making a wart in the design.  A few pixels of white space between the lines would completely eliminate this problem.
+
+<div class="slide">
+  <h1>Using White Space to Set Off Labels</h1>
+  <img src="figures/08.png"/>
+  <p class="center">(a)</p>
+  <img src="figures/09.png"/>
+  <p class="center">(b)</p>
+  <p>Source: Mullet & Sano, p. 96</p>
+
+</div>
+
+A particularly effective use of white space is to put labels in the left margin, where the white space sets off and highlights them. In dialog box (a), you can't scan the labels and group names separately; they interfere with each other, as do the grouping lines.  In the redesigned dialog (b), the labels are now alone on the left, making them much easier to scan.
+
+For the same reason, when space allows, you should put labels to the left of controls, rather than above.
+
+<div class="slide">
+  <h1>White Space Avoids Visual Noise</h1>
+  <img src="figures/10.png"/>
+  <img src="figures/11.png"/>
+
+</div>
+
+Here's an interesting idea from Tufte: get rid of the grid rules on a standard bar chart, and use whitespace to show where the grid lines would cross the bars.  It's much less noisy.  (But alas, impossible to do automatically in most graphing packages.)
+
+<div class="slide">
+  <h1 id="balance-and-symmetry">Balance & Symmetry</h1>
+
+  <ul>
+  <li>Choose an axis (usually vertical)</li>
+  <li>Distribute elements equally around the axis
+  <ul><li>Equalize both mass and extent</li></ul></li>
+  </ul>
+  <img src="figures/12.png"/>
+
+</div>
+
+Balance and symmetry are valuable tools in a designer's toolkit.  In graphic design, symmetry rarely means exact, mirror-image equivalence. Instead, what we mean by symmetry is more like balance: is there the same amount of stuff on each side of the axis of symmetry.  We measure "stuff" by both mass (quantity of nonwhite pixels) and extent (area covered by those pixels); both mass and extent should be balanced.
+
+An easy way to achieve balance is to simply center the elements of your display.  That automatically achieves balance around a vertical axis.  If you look at Google's home page, you'll see this kind of approach in action.
+
+ -->
+
+<h2 id="alignment-and-grids">Alignment and Grids</h2>
+
+<div class="slide">
+  <h1>Alignment</h1>
+
+  <ul>
+  <li>Align labels on left or right</li>
+  <li>Align controls on left *and* right
+  <ul><li>Expand as needed</li></ul></li>
+  <li>Align text baselines</li>
+  </ul>
+  <img src="figures/13.png"/>
+
+</div>
+
+Finally, simplify your designs by aligning elements horizontally and vertically.  Alignment contributes to the simplicity of a design. Fewer alignment positions means a simpler design.  The dialog box shown has totally haphazard alignment, which makes it seem more complicated than it really is.
+
+**Labels** (e.g., "Wait" and "Retry after"). There are two schools of thought about label alignment: one school says that the left edges of labels should be aligned, and the other school says that their right edges (i.e., the colon following each label) should be aligned.  Both approaches work, and experimental studies haven't found any significant differences between them.  Both approaches also fail when long labels and short labels are used in the same display.  You'll get best results if you can make all your labels about the same size, or else break long labels into multiple lines.
+
+**Controls** (e.g., text fields, combo boxes, checkboxes). A column of controls should be aligned on both the left and the right.  Sometimes this seems unreasonable---should a short date field be expanded to the same length as a filename?  It doesn't hurt the date to be larger than necessary, except perhaps for reducing its perceived affordance for receiving a date.  You can also solve these kinds of problems by rearranging the display, moving the date elsewhere, although be careful of disrupting your design's functional grouping or the expectations of your user.
+
+So far we've only discussed left-to-right alignment.  Vertically, you should ensure that labels and controls on the same row share the same **text baseline**. Java Swing components are designed so that text baselines are aligned if the components are centered vertically with respect to each other, but not if the components' tops or bottoms are aligned.  Java AWT components are virtually impossible to align on their baselines.  The dialog shown here has baseline alignment problems, particularly among the controls in the last row: the checkbox "Use custom editor", the text field, and the Browse button.
+
+<div class="slide">
+  <h1>Grid-Based Design</h1>
+  <img src="figures/14.png"/>
+
+</div>
+
+A **grid** is one effective way to achieve both alignment and balance, nearly automatically. A grid means that you divide the user interface into equal-width columns (separated by gaps, and with margins on both sides of the window), and align content and controls on the column boundaries.  Some elements may span multiple columns, but they align (start or end at) column boundaries.
+
+Newspapers are famous for designing with grids, but if you look carefully at magazines, posters, and many other print designs, you'll often see a grid guiding the design.
+
+
+<div class="slide">
+  <h1>Responsive Design</h1>
+  <img src="figures/16.png"/>
+</div>
+
+A discussion of layout would not be complete without talking a bit about responsive design, which means a layout design that responds appropriately to the size and aspect ratio of the screen.  Responsive designs don't merely rescale when shown on a small phone screen or on a widescreen desktop monitor.  Instead, a responsive design rearranges its layout, possibly changing what was a 12-column grid on a big wide screen into a 3-column grid on a narrow small screen.  Responsive design is implemented with CSS **media queries** that select different CSS rules depending on the kind of device, its screen size and resolution, and its aspect ratio.  Twitter Bootstrap has responsive design features.
+
+
+
+
+<div class="slide">
+  <h1>Bootstrap</h1>
+  <img src="figures/15.png"/>
+
+<!-- TODO: Fix this; avoid the soft hyphen hack (&shy). -->
+<pre><code> 
+&lt;&shy;div class="container"&gt;
+&lt;&shy;div class="row"&gt;
+&lt;&shy;div class="col-md-4"&gt;4 wide&lt;&shy;/div&gt;
+&lt;&shy;div class="col-md-6"&gt;6 wide&lt;&shy;/div&gt;
+&lt;&shy;div class="col-md-2"&gt;2 wide&lt;&shy;/div&gt;
+&lt;&shy;/div&gt;
+&lt;&shy;/div&gt;
+</code></pre>
+
+</div>
+
+
+<!-- Bootstrap is a nice Javascript/CSS toolkit that has a very simple-to-use gridding system (much easier than what's built into HTML/CSS by default).  You structure your views in a tree, and simply put a class name "row" to combine views in a row, and "spanN" to indicate that a view should span N columns of the grid.  By default, Bootstrap's grid has 12 columns, each a fixed width of 60 pixels, but it also has responsive mode (which changes this fixed width for different screen widths) and fluid mode (which makes the column width 1/12 of the window width instead of fixed).
+
+Try out Bootstrap by [installing it](http://getbootstrap.com/getting-started/) and [learning about the gridding system](http://getbootstrap.com/css/#grid). -->
+
+
+Bootstrap is a nice Javascript/CSS toolkit that has a very simple-to-use grid system that also supports responsive layout.
+
+Bootstrap’s grid has 12 columns with identical widths. You structure your views in a tree, and add the CSS class “row” to combine views into a row, and “col-WW-N” to indicate that a view should span N columns of the grid when viewed in a window of width at least WW. The window widths are `xs` (extra small, i.e., phones), `sm` (small, tablets), `md` (medium, laptops), and `lg` (large, big screen). These discrete window widths are how Bootstrap implements responsive design.
+
+Try out Bootstrap by [installing it](http://getbootstrap.com/getting-started/) and [learning about the grid system](http://getbootstrap.com/examples/grid/). 
+
+
+<div class="handout-info alert alert-info">Answer this question: [Layout](https://docs.google.com/forms/d/e/1FAIpQLScQLWoxnHrn9mO74M0ouO3bXzWSdmjLTqXtzY4a2Bw2k4iCqg/viewform?usp=sf_link)</div>
+
+<!-- <div class="slide">
+  <h1>Summary</h1>
+
+  <ul>
+  <li>Establish grouping and hierarchy between items</li>
+  <li>Use whitespace & alignment to preserve simplicity</li>
+  <li>Use grid-based design for simplicity and responsive design</li>
+  </ul>
+</div> -->
+
+<!-- Markdown file pasted above. -->
+
+</div>
+
+</div>
+<footer id="authors">Copyright course staff. MIT EECS.</footer>
+<script src="../../web/handout-script-v1.js"></script>
+</body>
+</html>
