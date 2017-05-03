@@ -140,6 +140,8 @@ Removed some content
 - Issues in Choosing Output Representations
 
 # Post Class Notes
+double-buffering in the reading: need a concise summary
+
 Animation in the reading? The reading gets too long then.
 
 Course recap after the midterm took long time (20 mins or so total)
