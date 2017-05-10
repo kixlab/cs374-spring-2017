@@ -4,7 +4,7 @@
 # Recap
 
 # Admin
-- nanoquiz: shoutkey.com/
+- nanoquiz: shoutkey.com/peak
 
 
 
@@ -53,12 +53,20 @@ Consider the web interface for Google Drive. Analyze its usability with respect 
 # Nanoquiz
 
 
-# Color
+# Meta Point
+pattern in how we approach different design-related topics in this class (layout, color, typography, etc.)
 
-Today’s lecture is about choosing colors for a user interface. We’ll discuss some of the properties of human vision that affect this decision, particularly the limitations of color vision. We’ll go over some models for representing colors, not just the familiar RGB model. And we’ll discuss some guidelines for choosing colors. The most important guidelines will be applications of rules we already discussed in graphic design: simplicity as much as possible, contrast where important.
+- low-level understanding: how the human cognitive process works (perceptual capabilities + machine funcationality)
+- high-level UI design considerations (identity, aesthetics, emotion)
+
+The most important guidelines will be applications of rules we already discussed in graphic design: simplicity as much as possible, contrast where important.
+
+# Color
 
 ## Factors that matter
 10 mins
+
+Do it on the board: "Why does color matter?"
 
 - color blindness
 - emphasis
@@ -68,29 +76,35 @@ Today’s lecture is about choosing colors for a user interface. We’ll discuss
 - metaphor
 - aesthetics
 
-Color as identity of a service / brand - consistently using the main color in various parts of the interface - Facebook: blue - Twitter: skyblue
+Color as identity of a service / brand - consistently using the main color in various parts of the interface 
 
-Mac OS’s window control - traffic light metaphor: but does that match with the actions? - double duty: tell you what it does, color associated
+- Facebook: blue 
+- Twitter: skyblue
+- YouTube: red
+- Naver: green
 
+Mac OS’s window control 
+
+- traffic light metaphor: but does that match with the actions? 
+- double duty: tell you what it does, color associated
+
+## Brand Identitiy: iMac
+
+As part of his comeback strategy for Apple, Jobs unveiled the unique, transparent, curvy and colorful "Bondi Blue" design of the first iMac G3. Advertisements for the all-in-one computer portrayed it as "Chic. Not geek.”"The whole thing is translucent, you can see into it — it's so cool," Jobs said onstage, as all sides of the iMac were being shown to the audience via a wireless camera. "The back of this thing looks better than the front of the other guys'," he went on to say.Apple also pushed the fresh look of the new iMac in a series of commercials featuring the voice of actor Jeff Goldblum. In one television spot, Goldblum noted that the iMac was "more colorful" than the competition currently on the market. Of course, the key to Apple's strategy with the first iMac "G3" was not just its color. The desktop was also somewhat controversial at the time for omitting a 3.5-inch floppy disk drive — a legacy feature that virtually all computers at the time included.But colors became even more important to the G3 iMac in January of 1999, when the "Bondi Blue" shade was replaced with blueberry, strawberry, tangerine, grape and lime. In all, the iMac G3 was eventually released in a total of 13 different "flavors," which also included graphite, ruby, sage, snow, indigo, and the psychadelic "Flower Power" and "Blue Dalmatian" configurations.Apple's iMac G3 was released in a total of 13 different "flavors," making it one of the most colorful products in the company's history.
 ## Lab in the Wild blog
-
-What you’ll find is that it’s often a combination of - low-level human perception - high-level design issues
+skipped
 
 ## Activity: Evaluate
+8 mins
 
 ## Activity: Improve
-
+8-10 mins
 
 
 # Video Break
-
+nothing
 
 # Typography
-
-pattern in how we approach different design-related topics in this class (layout, color, typography, etc.)
-
-- low-level understanding: how the human cognitive process works
-- high-level design considerations (identity, aesthetics, emotion)
 
 ## Factors that matter
 
@@ -133,9 +147,10 @@ http://lifehacker.com/the-truth-about-speed-reading-1542508398
 
 ## Activity: Improve Readability
 
+5-6 mins
+
 - ask for size and weight suggestions first
 - play with width and line-height showing good and bad
-- suggest that the paragraph needs to
 - ask for font faces
 
 ## Font
@@ -168,6 +183,16 @@ road sign fonts - all caps
 
 
 # Post Class Notes
+Activities worked out fairly well.
+
+Some students were not sure how to modify CSS using Inspector. Show some examples.
+
+Skipped Clearview example, as it was controversial.
+
+Ink saving example doesn't seem to provide that insightful information.
+
+Nanoquiz: 3(c): leading changes the value of text -- have we talked about "value" of text in class? The reading says value is brightness of text.
+
 
 # Refs
 
@@ -197,3 +222,7 @@ Franktur vs Antiqua
 Helvetica documentary
 
 - https://www.youtube.com/watch?v=t__AN6d8FWQ
+
+Apple's San Francisco font
+
+- https://medium.com/@mach/the-secret-of-san-francisco-fonts-4b5295d9a745
