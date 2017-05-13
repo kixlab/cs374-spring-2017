@@ -75,4 +75,6 @@ Zooids
 # Post Class Notes
 First part felt a bit boring, since I kept on saying everythihng. How to make this more interactive and interesting?
 
+More video / animation to highlight the heuristic (or violation) in action? 
 
+Activity can be refined?
