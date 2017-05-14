@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--
+  Character encoding note: This file should be saved and opened in UTF-8. If
+  this is done correctly, then the following string should not be garbled in
+  your editor (it should be rendered as shown in chartest.png):
+
+  Character encoding test: «ÆØÅÉÈÑÜæøåéèñü¢~§'»
+-->
+<meta charset="UTF-8">
+
+<!-- Lecture title entered here: -->
+<title>Reading: Internationalization</title>
+
+<link href="../../web/handout-style-v1.css" rel="stylesheet"></link>
+</head>
+<body>
+<header>CS374: Intro to HCI</header>
+<nav class="navigation"></nav>
+<div class="lecture">
+
+<div class="markdown">
+
+
+**Internationalization** concerns supporting users who speak different languages and have different cultural conventions.  We'll talk about some of the reasons why internationalization can be hard, and discuss some of the support that exists in GUI toolkits for making it easier.
+
+A good source of information about this problem is *Java Internationalization*, by Andy Deitsch and David Czarnecki (O'Reilly, 2001).  There's also [a trail in the Java Tutorial](http://java.sun.com/docs/books/tutorial/i18n/index.html) about Java's internationalization features.
+<!-- 
+<h2>UI Hall of Fame or Shame</h2>
+
+<div class="slide">
+  <h1>UI Hall of Fame or Shame?</h1>
+  <img src="figures/00.png"/>
+  <p>Source: <a href="http://www.lamayor.org/mayor_garcetti_unveils_new_easy_to_read_parking_signs?recruiter_id=7">LA Mayors Office</a></p>
+</div>
+
+Our Hall of Fame or Shame candidate for the day is this new parking sign that the Los Angeles Department of Transportation (LADOT) is currently testing. It attempts to explain confusing parking restrictions with simple graphics and colors. Analyze its usability with respect to:
+
+- Graphical layout: the squint test, layout, color, spacing, etc.
+- Simplicity
+- Learnability, efficiency, and safety -->
+
+
+<!-- Our Hall of Fame or Shame candidate for the day is this interface for choosing how a list of database records should be sorted.  Think about its advantages and disadvantages, and contemplate alternative designs. -->
+
+<h2 id="internationalization">Internationalization</h2>
+
+<div class="slide">
+  <h1>Internationalization and Localization</h1>
+  <img src="figures/02.png"/>
+  <img src="figures/03.png"/>
+  <img src="figures/04.png"/>
+
+</div>
+
+Interfaces with international user populations - such as Microsoft Word, shown here - have to be carefully designed to make them easy to adapt to other languages and cultures.  The process of making a user interface *ready* for translation is called **internationalization** (often called **i18n** for short - "18" because it replaces 18 characters in the middle of "internationalization").
+
+Essentially, internationalization separates the language-specific parts of the interface from the rest of the code, so that those parts can be easily replaced.  The translation is usually done by nonprogrammers, so their job is easier if the textual messages are separate from the code.  Actually doing this translation for a particular language and culture is called **localization**.
+
+One way to understand the difference between these two technical terms is by analogy to portability across operating system platforms.  If you write your program carefully so that it doesn't depend on specific features of an operating system or processor, you've made it portable.  Making a program portable is analogous to internationalizing it.  Actually *porting* it to another particular platform, e.g., by recompiling it, is analogous to localizing it.
+
+Unfortunately localization is much harder than merely knowing what words to substitute (and online translators like Babelfish and Google Translate can only barely do that, so don't rely on them!)  You can't necessarily rely on bilingual members of your design team, either.  They may be reasonably fluent in the other language, but not sufficiently immersed in the **culture** or **national standards** to notice all the places where the application needs to change.  The "**you are not the user**" statement is especially true in internationalization.
+
+<h2 id="design-challenges">Design Challenges</h2>
+
+<div class="slide">
+  <h1>Translation</h1>
+
+<ul>
+<li>All user-visible text has to be translated
+<ul><li>Object approach<br />
+`&lt;button&gt; OK &lt;/button&gt;`</li>
+<li>Stroke approach<br />
+`canvas.fillText("Name:",...)`</li>
+<li>Pixel approach
+<img src="figures/kaist.png"/>
+</li></ul></li>
+<li>Error messages too</li>
+</ul>
+</div>
+
+Here are some of the reasons why internationalization is hard.
+
+First, every piece of text that might be shown to the user is a potential candidate for translation.  That means not just properties of components (like menu items and button labels), but also text drawn with stroke drawing calls, and text embedded in pixel images (like this one taken from the KAIST web page). Translation can easily change the size or aspect ratio of the text; German labels tend to be much longer than English ones, for example. It's quite apparent that pixel-based objects will be most difficult to internationalize, with excessive manual effort and per-language image files required.
+
+Error messages also need to be translated, of course - which is another reason not to expose internal system names in error messages.  An English-reading user might be able to figure out what `FileNotFoundException` means, but it won't internationalize well.
+
+<div class="slide">
+  <h1>Risks of Translation</h1>
+    <img src="figures/06.png"/>
+    <p>Source: [BBC](http://news.bbc.co.uk/2/hi/uk_news/wales/7702913.stm)</a></p>
+</div>
+
+Here's a sign from Wales, where official signs are required to be bilingual (English and Welsh).  The English is clear enough to English-speaking lorry drivers - but the Welsh actually reads "I am not in the office at the moment. Send any work to be translated."  The translation was outsourced by email, you see...
+
+There's a larger lesson here that translation without sufficient context can lead to errors.  The BBC article cited just above has some amusing examples of other English/Welsh signs that are mistranslated ("staff" &rarr; "wooden stick") because the translator wasn't fully aware of the context.
+
+<div class="slide">
+  <h1>Different Scripts</h1>
+
+<ul>
+<li>Cyrillic
+<img src="figures/07.png"/>
+</li>
+<li>Hangul (Korean)
+<img src="figures/08.png"/>
+</li>
+<li>Chinese
+<img src="figures/09.png"/>
+</li>
+<li>Greek
+<img src="figures/10.png"/>
+</li>
+<li>Arabic
+<img src="figures/11.png"/>
+</li>
+</ul>
+</div>
+
+Different languages obviously use scripts other than the Latin alphabet.  Here are some of the scripts that Windows, Mac, and web browsers all support.
+
+It's important to distinguish between **script** (or alphabet) and **language**. Western languages like English, French, German, and Italian are different languages that all use the Latin alphabet (basically). Russian, Ukrainian, and Bulgarian (among others) use the Cyrillic alphabet.
+
+<div class="slide">
+  <h1>Text Direction</h1>
+
+<ul>
+<li>Some scripts don't read left-to-right
+<ul><li>Arabic, Hebrew are right-to-left</li>
+<li>Affects drawing, screen layout, even icons</li></ul></li>
+</ul>
+<img src="figures/12.png"/>
+
+</div>
+
+Many scripts are not even written left-to-right; Arabic and Hebrew are the most common languages with scripts written right-to-left.  CJK (Chinese, Japanese, Korean) characters are usually written left-to-right, but can also appear vertically (top-to-bottom) and occasionally even right-to-left.  Reversing the direction of reading requires reversing the entire layout of your screen, since the user is now accustomed to starting from the right edge when they scan.  It might even affect the "natural" direction of arrow icons.  The picture above shows the Hebrew version of Firefox.  Notice that the menu bar is reversed (it starts from the right, and the rightmost menu is the File menu), the toolbar is reversed, and the Back button (which is now the rightmost button) is now pointing to the right!  The URL box isn't reversed, however, because it uses the Latin alphabet, not Hebrew.  This is another common wrinkle in right-to-left languages: when they embed foreign words, or Arabic numbers, the embedded words go in left-to-right order.  So the text might be constantly switching direction.
+
+<!-- <div class="slide">
+  <h1>Sort Order</h1>
+
+<ul>
+<li>Unicode order isn't even right for English</li>
+<li>Uppercase/lowercase, accents affect order</li>
+<li>Norwegian: ... x y z &aelig; &oslash; &aring; </li>
+<li>Traditional Spanish: c, ch, d, ..., l, ll, m, ...</li>
+</ul>
+<img src="figures/13.png"/>
+</div>
+
+Sorting, or collation, is another way that languages differ.  In software, each character is represented by a number.  This mapping is the **character encoding**.  Java, for example, uses Unicode, representing each character by a 16-bit number.  But the ordering of these numbers doesn't necessarily match the conventional ordering of the characters in the language, so sorting text with `<` or `String.compareTo()` is almost certainly wrong.  It's even wrong for English!   Unicode groups the uppercase and lowercase letters separately, so that the sort order by `<` would be ABC...XYZ...abc...xyz...
+
+Similarly, in most European languages, accented characters are sorted with the plain version of the character, even though the Unicode characters may be nowhere near each other in numerical order. And that general rule is not true in Norwegian, where &aring; actually appears at the *end* of the alphabet, after z.
+ -->
+<div class="slide">
+  <h1>Formatting</h1>
+
+<ul>
+<li>Numbers
+<table>
+<tr><th>US/UK</th><td>72,350.55</td></tr>
+<tr><th>France</th><td>72 350.55</td></tr>
+<tr><th>Germany</th><td>72.350,55</td></tr>
+</table>
+</li>
+<li>Date & time formatting
+<table>
+<tr><th>Korea</th><td>2006/10/31</td><td>(Y/M/D)</td></tr>
+<tr><th>US</th><td>10/31/2006</td><td>(M/D/Y)</td></tr>
+<tr><th>Europe</th><td>31/10/2006</td><td>(D/M/Y)</td></tr>
+</table>
+</li>
+</ul>
+</div>
+
+Number formats and date formats also vary - not just by language, but by country.  In the U.S., commas are used for millions and thousands, and a period for the decimal point, as in "72,350.55".  But the convention in Germany is precisely the opposite: "72.350,55".  Even countries that share the same language may differ on conventional formats.  Koreans tend to write dates as YY/MM/DD, Americans write MM/DD/YY, and British write DD/MM/YY.
+
+The target for localization therefore needs to be specified by a language/country pair, also called a **locale**, such as US English, UK English, or Canadian French.
+
+<!-- <div class="slide">
+  <h1>Color Conventions</h1>
+<table>
+<tr>
+<td></td>
+<td>US</td>
+<td>China</td>
+</tr>
+<tr>
+<td>White</td>
+<td>
+<img src="figures/14.jpg"/>
+</td>
+<td>
+<img src="figures/15.png"/>
+</td>
+</tr>
+<tr>
+<td>Red</td>
+<td>
+<img src="figures/16.png"/>
+</td>
+<td>
+<img src="figures/17.png"/>
+</td>
+</tr>
+</table>
+</div>
+
+Localizing a user interface requires knowing about the cultural associations attached to symbols or colors, and making sure you don't send the wrong message.
+
+For example, **colors** have different meanings in different cultures.  In East Asia, particularly China, white is associated with death, and is used as a color theme for funerals.  In the West, on the other hand, white is a symbol of purity, and brides wear white at their weddings. Traditional Chinese weddings involve a lot of red, because it symbolizes luck.  Western cultures don't have the same association for red. -->
+
+<div class="slide">
+  <h1>Icons</h1>
+<ul>
+<li>Familiar icons in one culture aren't in others</li>
+</ul>
+
+<!--- TODO: this renders vertically with a long line of pictures. Fix to look like slide? -->
+<div class="inline-content">
+<img src="figures/18.jpg"/>
+<img src="figures/19.jpg"/>
+<img src="figures/20.jpg"/>
+<img src="figures/21.png"/>
+<img src="figures/22.jpg"/>
+<img src="figures/23.png"/>
+<img src="figures/24.png"/>
+<img src="figures/26.png"/>
+<img src="figures/27.jpg"/>
+</div>
+</div>
+
+Icons must also be carefully chosen, or replaced when the interface is localized.  Metaphorical icons that refer to everyday objects like mailboxes and stop signs aren't necessarily recognizable, because the objects may look different in different countries.  Hand gestures pictured as icons may actually be offensive in some countries.  And visual puns are always a bad idea - an English-speaking designer might think it's cute to use a picture of a table (the furniture) to represent table (the 2D grid), because the words are the same in English.  But the words in German are tisch (furniture) and tabelle (grid), so a German may find the joke incomprehensible.
+
+<!-- (Stop signs are actually pretty universal, however  - I had to look hard to find a stop sign that wasn't a red octagon, like this Japanese inverted triangle.)  -->
+
+<h2 id="implementation-techniques">Implementation Techniques</h2>
+
+<div class="slide">
+  <h1>Implementation Support for I18N</h1>
+
+<ul>
+<li>Message files</li>
+<li>Unicode</li>
+<li>Bidirectionality</li>
+<li>Formatting libraries</li>
+<li>Separating structure from presentation</li>
+</ul>
+</div>
+
+Now that we've surveyed the challenges, let's talk about some solutions. Modern UI toolkits provide support that makes it easier to implement internationalized interfaces.
+
+<div class="slide">
+  <h1>Message Files</h1>
+
+<ul>
+<li>A message file separates localizable messages from source code
+<ul><li>Called resource bundles in Java</li></ul></li>
+<li>Human translators generate a message file for each supported locale
+<ul><li>Doesn't require translators to read source code or recompile</li></ul></li>
+<li>Messages with dynamic parts can be tricky
+<ul><li>`{N}` users have visited since `{date}`</li></ul></li>
+</ul>
+</div>
+
+<!-- Java, for example, has a framework called **resource bundles** that allow textual messages to be stored separately from the code,  but as loadable resources in JAR files, so that an application can be localized simply by replacing those text messages.  The messages are referred to by names, such as `bundle.getString("file-menu-label")`. -->
+
+The most basic feature for internationalization is supporting translation into different languages. UI toolkits that support this allow textual messages to be stored separately from the code, as dynamically loadable, structured text files, so that an application can be localized simply by replacing those text messages. The messages are referred to by names, such as "file-menu-label".
+
+This is an example of the general strategy for internationalization.  First, use abstraction to isolate the parts of your system that need to change from one locale to another, separating it from the rest of your program.  (This is an application of a familiar software engineering rule - if you know something will change, isolate it.)  Second, as much as possible, design these locale-specific parts so that they don't require reading source code or recompiling the program, so that localization can be done by nonprogrammers.
+
+Internationalization gets a little tricky when a message has dynamic parts, like "25 users have visited since January 1".  In an uninternationalized program, you might simply concatenate in your source code: `num + " users have visited since " + date`. For internationalization, you need to give the translator flexibility to put the dynamic parts anywhere, using a format like "%1 users have visited since %2", so that it could be rewritten as "Since %2, %1 users have visited" if the language demands it.  And you also need to think about plurals, usually by having different versions of the entire message that depend on the value of num: 1 **user** vs 2 **users**.
+
+<!-- `num == 0` &rarr; "%1 users have visited since %2"
+
+`num == 1` &rarr; "%1 user has visited since %2"
+
+`num > 1` &rarr; "%1 users have visited since %2"
+ -->
+<!-- Java has a class `ChoiceFormatter` that makes this task somewhat easier.  But be careful - Arabic [has a different plural form](http://en.wikipedia.org/wiki/Grammatical_number) when `num == 2` than when `num > 2`. -->
+
+Format.js supports [pluralization rules](https://formatjs.io/guides/message-syntax/#plural-format) that make this task somewhat easier. But be careful - Arabic [has a different plural form](http://en.wikipedia.org/wiki/Grammatical_number) when `num == 2` than when `num > 2`.
+
+<div class="slide">
+  <h1>Bidirectionality</h1>
+
+<ul>
+<li>Bidirectional text display and editing
+<ul><li>String in memory: This is **arabic text**</li>
+<li>Drawn on screen:
+<table>
+<tr>
+<td>(base direction English)</td>
+<td>This is txet cibara</td> 
+</tr>
+<tr>
+<td>(base direction Arabic)</td>
+<td>txet cibara This is</td>
+</tr>
+</table>
+</li></ul></li>
+<li>Bidirectional layout</li>
+</ul>
+</div>
+
+To handle languages that read right-to-left, UI toolkits like HTML/CSS provide support for bidirectional text (sometimes called “BiDi” or BIDI for short). The trickiest part here is that Unicode strings may (and often do!) mix characters from multiple scripts: Arabic and English, for example. A good UI toolkit will ensure that when you draw such a string to the screen, it draws the appropriate characters in the appropriate order. There must be a base direction that determines whether the whole string starts at the left or the right; if the interface is primarily English, for example, then the base direction should be left to right, but if it’s primarily Arabic, the base direction should be right to left. To avoid messing up bidirectionality, don’t try to draw a sentence in little pieces; instead, put together a string first, and draw it all at once, letting the toolkit figure it out. (If you’re using message files properly, of course, this will happen anyway.)
+
+International toolkits must also support bidirectional text editing, making (for example) arrow keys and selection work in the correct direction for the script.
+
+Automatic layout managers can also support bidirectionality. In CSS, for example, table cells are laid out either left-to-right or right-to-left, depending on the HTML `dir` attribute or CSS `direction` property of the parent.
+
+
+
+<div class="slide">
+  <h1>Separating Structure From Presentation</h1>
+
+<ul>
+<li>Replaceable icons and images</li>
+<li>Fonts</li>
+<li>Colors</li>
+</ul>
+</div>
+
+Finally, to handle other changes that localization might impose, it helps to isolate details of the presentation.  Images and icons might need language translation (if they contain text) or cultural translation (if they use unfamiliar symbols).  Fonts might need to change to handle different scripts, since fonts rarely have glyphs for every script in Unicode.  And colors might need to change if they have cultural problems. For web programming, CSS makes this kind of separation easier.
+
+<div class="handout-info alert alert-info">Answer this question: [Internationalization](https://docs.google.com/forms/d/e/1FAIpQLSdU83us9sZhgEctZEtk3HIGLvAuw53dd_7BOLYwYk43dllHuA/viewform?usp=sf_link)</div>
+
+
+<!-- <div class="slide">
+  <h1>Summary</h1>
+
+<ul>
+<li>Internationalization abstracts a user interface so that it can be localized for different locales
+<ul><li>Languages</li>
+<li>Scripts</li>
+<li>Formatting conventions</li>
+<li>Cultures</li></ul></li>
+</ul>
+</div>
+ -->
+
+</div>
+
+</div>
+<footer id="authors">Copyright course staff. MIT EECS.</footer>
+<script src="../../web/handout-script-v1.js"></script>
+</body>
+</html>

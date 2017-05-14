@@ -1,0 +1,16 @@
+{
+  "title": "Liste d'épicerie",
+  "instructions": "Essayer de faire les courses chez __store__",
+  "items": {
+    "apple" : "__count__ pomme",
+    "apple_plural": "__count__ pommes",
+    "steak" : "__count__ steak",
+    "steak_plural": "__count__ steaks",
+    "milk" : "__count__ carton de lait",
+    "milk_plural": "__count__ cartons de lait",
+    "icecream" : "__count__ pot de crème glacée",
+    "icecream_plural": "__count__ pots de crème glacée"
+  }
+
+}
+

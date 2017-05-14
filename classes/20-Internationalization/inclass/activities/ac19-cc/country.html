@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+
+<style>
+/* iframe zoom styling from http://stackoverflow.com/questions/4660659/javascript-css-set-firefox-zoom-level-of-iframe */
+iframe {
+    -moz-transform: scale(0.4, 0.4);
+    -webkit-transform: scale(0.4, 0.4);
+    -o-transform: scale(0.4, 0.4);
+    -ms-transform: scale(0.4, 0.4);
+    transform: scale(0.4, 0.4);
+    -moz-transform-origin: top left;
+    -webkit-transform-origin: top left;
+    -o-transform-origin: top left;
+    -ms-transform-origin: top left;
+    transform-origin: top left;
+    border: solid #ccc 10px;
+    display: inline;
+}
+.wrapper {
+    width: 400px;
+    height: 400px;
+    display: inline-block;
+    overflow: hidden;
+}
+
+</style>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript">
+function getParameterByName(name){
+    //from http://stackoverflow.com/questions/901115/how-can-i-get-query-string-values
+    name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+    var regexS = "[\\?&]" + name + "=([^&#]*)";
+    var regex = new RegExp(regexS);
+    var results = regex.exec(window.location.search);
+    if(results == null)
+        return "";
+    else
+        return decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
+function createNewIFrame(url){
+    var iframe1 = '<div class="wrapper"><iframe src="';
+    // sandbox comes from http://www.html5rocks.com/en/tutorials/security/sandboxed-iframes/
+    var iframe2 = '" width="1000" height="1000" scrolling="no" sandbox="allow-same-origin allow-scripts allow-popups allow-forms" border="0"></iframe></div>';
+
+    var iframeContents = iframe1+url+iframe2;
+    var $frame = $.parseHTML( iframeContents );
+    var $fun = $("#fun");
+    $fun.append($frame);
+    console.log($frame);
+    return $frame
+
+}
+$(document).ready(function() {
+    var urls = JSON.parse(decodeURIComponent(getParameterByName('urls')));
+    var countryName = getParameterByName('country');
+
+    $("#country").text(countryName);
+
+    for (var i = 0; i < urls.length; ++i){
+        var url = urls[i];
+        if (!url.trim()) continue;  // empty string, don't make an iframe for it
+        if (!url.startsWith("http")) url = "http://" + url;
+        createNewIFrame(url);
+    }
+});
+</script>
+
+</head>
+<body>
+<h1><span id='country'>Your Country</span></h1>
+<div id="fun"></div>
+</body>
+</html>
