@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+    <title>Activity: Internationalize it!</title>
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+    <link rel="stylesheet" type="text/css" href="../../style.css">
+    <meta name="read-only" content="true">
+    <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+    <meta name="author" content="none">
+
+<style>
+  .table {
+  }
+  .cell {
+
+  }
+</style>
+
+<script type="text/javascript">
+
+var editboxHTML =
+'<html class="expand close">' +
+'<head>' +
+'<style type="text/css">' +
+'.expand { width: 100%; height: 100%; }' +
+'.close { border: none; margin: 0px; padding: 0px; }' +
+'html,body { overflow: hidden; }' +
+'<\/style>' +
+'<\/head>' +
+'<body class="expand close" onload="document.f.ta.focus(); document.f.ta.select();">' +
+'<form class="expand close" name="f">' +
+'<textarea class="expand close" style="background: #def;" name="ta" wrap="hard" spellcheck="false">' +
+'<\/textarea>' +
+'<\/form>' +
+'<\/body>' +
+'<\/html>';
+
+var defaultStuff = 'hi';
+
+var old = '';
+
+function init()
+{
+  window.editbox.document.write(editboxHTML);
+  window.editbox.document.close();
+  window.editbox.document.f.ta.value = defaultStuff;
+  update();
+}
+
+function update()
+{
+  var textarea = window.editbox.document.f.ta;
+  var d = dynamicframe.document;
+
+  if (old != textarea.value) {
+    old = textarea.value;
+    d.open();
+    d.write(old);
+    if (old.replace(/[\r\n]/g,'') == defaultStuff.replace(/[\r\n]/g,''))
+      d.write(extraStuff);
+    d.close();
+  }
+
+  window.setTimeout(update, 150);
+}
+
+</script>
+<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+</head>
+<body>
+
+<div id="body-pane">
+
+<div id="content-box">
+
+
+<h1>Activity: Internationalize it!</h1>
+
+<p>
+In this activity, you'll use various JavaScript libraries to localize a grocery list webpage for different cultures.<br>
+In the HTML editor below, there is a JavaScript function that uses <b>static English-language strings</b> to display the following:
+<ul>
+<li>The grocery list <b>title</b>,</li>
+<li><b>instructions</b> for what store to shop at.</li>
+<li>a <b>grocery list</b> including: 5 apples, 1 milk, 2 icecream, and 2 steaks,</li>
+<li>the <b>total price</b>,</li>
+<li>and the <b>current date.</b></li>
+</ul>
+You are responsible for replacing the static strings with <b>function calls</b> that print the localized string depending on the current locale.
+</p>
+
+<h2>Translating strings using the <a href="http://i18next.com/">i18next</a> library</h2>
+<p>
+You have been given the following <b>message files</b> in en-US and fr:
+<table>
+<tr><th>en-US/translation.json</th><th>fr/translation.json</th></tr>
+<tr>
+<td>
+<pre class="prettyprint">
+{
+  "title": "Grocery list",
+  "instructions": "Try to buy groceries at __store__",
+  "items": {
+    "apple" : "__count__ apple",
+    "apple_plural": "__count__ apples",
+    "steak" : "__count__ steak",
+    "steak_plural": "__count__ steaks",
+    "milk" : "__count__ carton of milk",
+    "milk_plural": "__count__ cartons of milk",
+    "icecream" : "__count__ tub of ice cream",
+    "icecream_plural": "__count__ tubs of ice cream"
+  }
+}
+</pre>
+</td><td>
+<pre class="prettyprint">
+{
+  "title": "Liste d'&eacute;picerie",
+  "instructions": "Essayer de faire les courses chez __store__",
+  "items": {
+    "apple" : "__count__ pomme",
+    "apple_plural": "__count__ pommes",
+    "steak" : "__count__ steak",
+    "steak_plural": "__count__ steaks",
+    "milk" : "__count__ carton de lait",
+    "milk_plural": "__count__ cartons de lait",
+    "icecream" : "__count__ pot de cr&egrave;me glac&eacute;e",
+    "icecream_plural": "__count__ pots de cr&egrave;me glac&eacute;e"
+  }
+}
+</pre>
+</td></tr>
+</table>
+Replace the static strings with calls to the <code>t('key')</code> translation function, where <code>key</code> is on the left-side of the message files:
+<ul>
+  <li>For example, <code class="prettyprint">t('title')</code> or <code class="prettyprint">t('items.apple')</code>.</li>
+  <li>For messages that expect variables (e.g. <code class="prettyprint">"This is my dog __DogName__"</code>), you can pass a value into translation:<br/>
+  <code class="prettyprint">
+    t('message', {DogName : "Spot"}) // This is my dog Spot
+  </code>
+  </li>
+  <li>For messages with a plural form, you can pass in a <code>count</code>. For example:<br/>
+    <code class="prettyprint">
+      t('chicken', {count: 20}) // 20 chickens, instead of 1 chicken
+    </code>
+  </li>
+</ul>
+</p>
+
+<h2>Localizing Date and Price</h2>
+<p>
+Use <a href="http://momentjs.com/">Moment.js</a> to display the current localized date:
+<pre class="prettyprint">
+moment().format('L'); // 04/12/2013
+moment().format('LL'); // April 12 2013
+</pre>
+Remarkably, your grocery trip ended up costing 1022.23 of your local currency. Use <a href="http://numeraljs.com/">Numeral.js</a> to display the localized price:
+<pre class="prettyprint">
+numeral(1000).format('0,0'); // '1,000'
+numeral(1000).format('$0,0.00'); // '$1,000.00'
+</pre>
+</p>
+
+<h2>Get coding!</h2>
+<p>Try to update all the lines with <strong>TODO</strong> marks.</p>
+<p>Click on the "en-US" and "fr" buttons on the right panel to switch languages.</p>
+
+<iframe src="editor.html" width=95% height=850em></iframe>
+
+</div>
+</div>
+
+</body>
+</html>
