@@ -63,14 +63,20 @@ Refs
 - Support alternative input (e.g., keyboards)
 - Support alternative output (e.g., screen readers)
 
-Dyslexia
+- Types of assistive technology
+
+- Best practices for web accessibility
+
+## Activity: Explore assistive technology
+5 mins
 
 # Video Break
 Vizwiz / Vislens
 
 # Internationalization
 
-## Internalization factors (1:17, 5 mins)
+## Internalization factors 
+3 mins
 - brainstorm as class, write down on the board
 
 ### Differences among locales
@@ -82,22 +88,27 @@ Vizwiz / Vislens
 - Photos
 
 
-## Activity: Internalization (1:22, 7 mins)
+## Activity: Internalization 
+10 mins
+
 - high quality translation can be tricky
     - requires native speakers in both languages, plus a bilingual who does the translation, if you outsource.
 
 
-## People's system usage can be affected. (1:30, 3 mins)
+## People's system usage can be affected. 
+
 - The way people use Twitter between Korean and English users is quite different.
-- Much more content can be entered in 140 Korean characters. People use Twitter almost as a short blog post sometimes, whereas in English
+- Much more content can be entered in 140 Korean characters. People use Twitter almost as a short blog post sometimes, whereas in English it's mostly links and very brief comments.
 
 
-## Other Factors to Consider (1:33, 2 mins)
+## Other Factors to Consider 
+
 - ActiveX in Korea: IE + Windows
 - Browser usage stats
 
 
-## Activity: Cultural Comparison (1:35, 3 parts, 16 mins)
+## Activity: Cultural Comparison 
+20-25 mins
 
 
 ### Hofstede's cultural dimensions theory
@@ -119,10 +130,10 @@ Vizwiz / Vislens
 - http://en.wikipedia.org/wiki/Hofstede%27s_cultural_dimensions_theory
 
 
-### Part 1. Explore. (5 mins)
+### Part 1. Explore. (8 mins)
 
 
-### Part 2. Synthesize. (3 mins)
+### Part 2. Synthesize. (5 mins)
 
 
 ### Part 3. Compare. (5 mins)
@@ -154,6 +165,7 @@ Internationalization
 
 # Post Class Notes
 
+Dyslexia?
 
 ## Postmortem Notes
 
