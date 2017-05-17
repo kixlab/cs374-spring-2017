@@ -167,6 +167,11 @@ Internationalization
 
 Dyslexia?
 
+Short on time: barely finished part 1 of the exercise
+
+Coding i18n exercise worked quite well
+
+
 ## Postmortem Notes
 
 - Students made good observations about some university websites maintaining multiple layouts for different locales. The Univ. of Tokyo, for instance, has completely different layouts and content organization for their English and Japanese websites.
