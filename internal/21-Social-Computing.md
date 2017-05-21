@@ -4,7 +4,7 @@
 # Recap
 
 # Admin
-- nanoquiz: shoutkey.com/
+- nanoquiz: shoutkey.com/never
 
 
 
@@ -14,12 +14,25 @@
 # Nanoquiz
 
 
-#
+# Social Computing
+
+## Definition
+
+## Example: Amazon product review
+
+## The Matrix + Examples
+
+## Activity: Find Social Cues
+
 
 # Video Break
+none
 
+# Interaction at Scale
+- motivation
+- active
+- passive
 
-#
 
 
 # Diff with Reading
