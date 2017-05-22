@@ -1,4 +1,4 @@
-# 18-Color & Typography
+# 23-Experiment Analysis + IUI
 
 
 # Recap
@@ -23,7 +23,8 @@
 
 
 # Diff with Reading
-
+- removed all R stuff entirely
+- added IUI
 
 # Post Class Notes
 

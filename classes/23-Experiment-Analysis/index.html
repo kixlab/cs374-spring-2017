@@ -38,9 +38,8 @@ pdf: "L13/L13-experiment-analysis.pdf"
 picoquiz: "http://courses.csail.mit.edu/6.831/2014/picoquiz?lectureId=13"
 -->
 
-This reading is designed for the graduate version of the course. As a result, you may find that the reading is longer and more in-depth than previous readings in the course, and demands more study.
 
-<div class="slide">
+<!-- <div class="slide">
 <h1>UI Hall of Fame or Shame?</h1>
 <img src="figures/01.png"/>
 </div>
@@ -48,13 +47,17 @@ This reading is designed for the graduate version of the course. As a result, yo
 Today's Hall of Fame or Shame example is a feature of Microsoft Office 2007 that gives a preview of what a style command will do to the document while you're mousing over it. Here, the mouse is hovering over the 54-point choice on the font-size drop-down, and PowerPoint is showing what the selection would look like with that new style.
 
 Let's discuss the pros and cons of this approach from a usability point of view.
+ -->
 
+<!-- <h2 id="today">Today's Goals</h2> -->
 
-<h2 id="today">Today's Goals</h2>
+This reading deals with how to analyze the data from the experiment to determine the answer to the question you came up with experiment design. 
 
-This reading continues the stream on research methods. Our last reading in the stream concerned experiment design---how to design controlled experiments to answer a research question. Today's reading is about the second part of that process, how to analyze the data from the experiment to determine the answer to the question. We'll discuss the principles of **hypothesis testing**, which is the basis for analysis. We'll talk about a cheap and easy way to get a feel for your data, by graphing it with error bars, which is not hypothesis testing but is always good practice to do anyway. And we'll discuss two statistical tests commonly used in HCI research: the t test and the ANOVA (Analysis of Variance) test. 
+<!-- We'll discuss the principles of hypothesis testing, which is the basis for analysis. We'll talk about a cheap and easy way to get a feel for your data, by graphing it with error bars, which is not hypothesis testing but is always good practice to do anyway. And we'll discuss a statistical test commonly used in HCI research: the t test. -->
 
-This is only a very brief introduction to statistical methods and experiment analysis. There's much more to be said on this topic, which is outside the scope of this class. There are other good MIT classes that cover it in much more depth, particularly 9.07 Statistical Methods in Brain & Cognitive Sciences and 16.470/ESD.756 Statistical Methods in Experimental Design. Also see http://statistics.mit.edu/, a clearinghouse site for classes and research in statistics at MIT.
+ <!-- and the ANOVA (Analysis of Variance) test  -->
+
+<!-- This is only a very brief introduction to statistical methods and experiment analysis. There's much more to be said on this topic, which is outside the scope of this class. There are other good MIT classes that cover it in much more depth, particularly 9.07 Statistical Methods in Brain & Cognitive Sciences and 16.470/ESD.756 Statistical Methods in Experimental Design. Also see http://statistics.mit.edu/, a clearinghouse site for classes and research in statistics at MIT. -->
 
 <h2 id="hypothesis-testing">Hypothesis Testing</h2>
 
@@ -63,7 +66,7 @@ This is only a very brief introduction to statistical methods and experiment ana
 
 <ul>
 <li>Hypothesis: Mac menubar is faster to access than Windows menubar
-<ul><li>Design: between-subjects, randomized assignment of interface to subject</li></ul></li>
+<ul><li>Design: between-subjects, randomized assignment of interface to participant</li></ul></li>
  <table>
  <tr><th>Windows</th><th>Mac</th></tr>
  <tr><td>625</td><td>647</td></tr>
@@ -92,7 +95,7 @@ This is the fundamental question underlying statistical analysis: estimating the
 
 Let's talk about a simple, rough method for judging whether an experiment might support its hypothesis or not, if the statistics you're using are **means**.
 
-The **standard error of the mean** is a statistic that measures how close the mean statistic you computed is likely to be to the true mean. The standard error is computed by taking the standard deviation of the measurements and dividing by the square root of n, the number of measurements. (This is derived from the Central Limit Theorem of probability theory: that the sum of N samples from a distribution with mean *u* and variance *V* has a probability distribution that approaches a *normal* distribution, i.e. a bell curve, whose mean is *Nu* and whose variance is *V*. Thus, the *average* of the N samples would have a normal distribution with mean *u* and variance *V/n*. Its standard deviation would be sqrt(V/N), or equivalently, the standard deviation of the underlying distribution divided by sqrt(n).)
+The **standard error of the mean** is a statistic that measures how close the mean statistic you computed is likely to be to the true mean. The standard error is computed by taking the standard deviation of the measurements and dividing by the square root of n, the number of measurements. (This is derived from the Central Limit Theorem of probability theory: that the sum of N samples from a distribution with mean *u* and variance *V* has a probability distribution that approaches a *normal* distribution, i.e., a bell curve, whose mean is *Nu* and whose variance is *V*. Thus, the *average* of the N samples would have a normal distribution with mean *u* and variance *V/n*. Its standard deviation would be sqrt(V/N), or equivalently, the standard deviation of the underlying distribution divided by sqrt(n).)
 
 The standard error is like a region of likelihood around the computed mean - the region around the computed mean in which the *true* mean of the process probably lies. Think of the computed mean as a random selection from a normal distribution (bell curve) around the true mean; it's randomized because of all the uncontrolled variables and intentional randomization that you did in your experiment. With a normal distribution, 68% of the time your random sample will be within +/-1 standard deviation of the mean; 95% of the time it will be within +/- 2 standard deviations of the mean. The standard error is the standard deviation of the mean's normal distribution, so what this means is that if we draw an **error bar** one standard error above our computed mean, and one standard error below our computed mean, then that interval will have the true mean in it 68% of the time. It is therefore a 68% confidence interval for the mean.
 
@@ -100,7 +103,7 @@ To use the standard error technique, draw a bar chart of the means for each cond
 
 The error bars can also give you a sense of the reliability of your experiment, also called the **statistical power**. If you didn't take enough samples - too few users, or too few trials per user - then your error bars will be large relative to the size of the data. So the error bars may overlap even though there really is a difference between the conditions. The solution is more repetition - more trials and/or more users - in order to increase the reliability of the experiment.
 
-<div class="slide">
+<!-- <div class="slide">
 <h1>Quick Intro to R</h1>
 
 <ul>
@@ -120,9 +123,9 @@ The error bars can also give you a sense of the reliability of your experiment, 
 </div>
 
 R is a good choice for a lot of statistical processing, because it's free and very powerful. A good introduction to R is online at http://cran.r-project.org/doc/manuals/R-intro.html.
-Here's how you can use R to create simple bar charts with error bars.
+Here's how you can use R to create simple bar charts with error bars. -->
 
-<div class="slide">
+<!-- <div class="slide">
 <h1>Graphing Techniques</h1>
 <img src="figures/03.png"/>
 <p>Error bars</p>
@@ -141,7 +144,7 @@ Plotting your data is the first step you should do after every experiment, to ey
 
 If you want to publish the results of your experiment, you'll need to do some statistical tests as well, like the t tests or ANOVAs we'll talk about in the rest of this reading. But your paper should still have plots with error bars in it. Some researchers even argue that the error-bar plots are more valuable and persuasive than the statistical tests (G.R. Loftus, "A picture is worth a thousand p values: On the irrelevance of hypothesis testing in the microcomputer age," *Behavior Research Methods, Instruments & Computers*, 1993, 25(2), 250--256), though this view is far from universally held.
 
-Be warned that nonoverlapping error bars is only a rough indicator; it does not imply a statistically significant difference (i.e., p &lt; 0.05). For that, you have to actually do the t test or ANOVA test, which is what we'll turn to now. For more explanation, see Harvey Motulsky, ["The link between error bars and statistical significance"](http://egret.psychol.cam.ac.uk/statistics/local_copies_of_sources_Cardinal_and_Aitken_ANOVA/errorbars.htm), 2002; and Dave Munger, ["Most researchers don't understand error bars"](http://scienceblogs.com/cognitivedaily/2008/07/most\_researchers\_dont\_understa\_1.php#more), March 2007.
+Be warned that nonoverlapping error bars is only a rough indicator; it does not imply a statistically significant difference (i.e., p &lt; 0.05). For that, you have to actually do the t test or ANOVA test, which is what we'll turn to now. For more explanation, see Harvey Motulsky, ["The link between error bars and statistical significance"](http://egret.psychol.cam.ac.uk/statistics/local_copies_of_sources_Cardinal_and_Aitken_ANOVA/errorbars.htm), 2002; and Dave Munger, ["Most researchers don't understand error bars"](http://scienceblogs.com/cognitivedaily/2008/07/most\_researchers\_dont\_understa\_1.php#more), March 2007. -->
 
 <div class="slide">
 <h1>Hypothesis Testing</h1>
@@ -154,7 +157,7 @@ Be warned that nonoverlapping error bars is only a rough indicator; it does not 
 <ul><li>i.e., mean(Mac) = mean(Win) </li>
 <li>This is called the null hypothesis (H0)</li></ul></li>
 <li>We can't really disprove the null hypothesis
-<ul><li>Instead, we argue that the chance of seeing a difference <strong>at least as extreme</strong> as what we saw is very small if the null hypothesis is true</li></ul></li>
+<ul><li>Instead, we argue that the chance of seeing a difference **at least as extreme** as what we saw is very small if the null hypothesis is true</li></ul></li>
 </ul>
 </div>
 
@@ -174,12 +177,12 @@ Our goal in hypothesis testing will be to accumulate enough evidence - enough of
 <li>mean(Mac)</li></ul></li>
 <li>Apply a statistical test
 
-<ul><li><em>t</em> test: are two means different?</li>
+<ul><li>t-test: are two means different?</li>
 <li>ANOVA (ANalysis Of VAriance): are three or more means different?</li></ul></li>
 <li>Test produces a p value
 
-<ul><li><em>p</em> value = probability that the observed difference happened purely by chance</li>
-<li>If <em>p</em> < 0.05, then we are 95% confident that there is a difference between Windows and Mac</li></ul></li>
+<ul><li>p value = probability that the observed difference happened purely by chance</li>
+<li>If *p* < 0.05, then we are 95% confident that there is a difference between Windows and Mac</li></ul></li>
 </ul>
 
 </div>
@@ -201,8 +204,8 @@ The statistical test produces a **p value**, which is the probability that the d
 <li>Determine the probability distribution of the statistic assuming H0 is true
 <ul><li>Pr( X=x   H0)</li></ul></li>
 <li>Measure the probability of getting the same or greater difference
-<ul><li>Pr ( X > x0   H0 )  <em>one-sided test</em></li>
-<li>2 Pr ( X >  x0    H0) <em>two-sided test</em></li></ul></li>
+<ul><li>Pr ( X > x0   H0 )  *one-sided test*</li>
+<li>2 Pr ( X >  x0    H0) *two-sided test*</li></ul></li>
 <li>If that probability is less than 5%, then we say
 <ul><li>"We reject the null hypothesis at the 5% significance level"</li>
 <li>equivalently: "difference between menubars is statistically significant (p &lt; .05)"</li></ul></li>
@@ -214,18 +217,18 @@ Here's the basic idea behind statistical testing. We boil all our experimental d
 
 So if H0 is really true, we can regard our entire experiment as a single random draw from that distribution. If the statistic we computed turned out to be a typical value for the H0 distribution - really near 0, for example - then we don't have much evidence for arguing that H0 is false. But if the statistic is extreme - far from 0 in this case - then we can **quantify** the likelihood of getting such an extreme result. If only 5% of experiments would produce a result that's at least as extreme, then we say that we reject the null hypothesis - and hence accept the alternative hypothesis H1, which is the one we wanted to prove - at the 5% significance level.
 
-The probability of getting at least as extreme a result given H0 is called the **p value** of the experiment. Small p values are better, because they measure the likelihood of the null hypothesis. Conventionally, the p value must be 5% to be considered **statistically significant**, i.e. enough evidence to reject. But this convention depends on context. An experiment with very few trials (n&lt;10) may be persuasive even if its p value is only 10%. (Note that a paper reviewer would expect you to have a good reason for running so few trials that the standard 5% significance wasn't enough...) Conversely, an experiment with thousands of trials won't be terribly convincing unless its p value is 1% or less.
+The probability of getting at least as extreme a result given H0 is called the **p value** of the experiment. Small p values are better, because they measure the likelihood of the null hypothesis. Conventionally, the p value must be 5% to be considered **statistically significant**, i.e., enough evidence to reject. But this convention depends on context. An experiment with very few trials (n&lt;10) may be persuasive even if its p value is only 10%. (Note that a paper reviewer would expect you to have a good reason for running so few trials that the standard 5% significance wasn't enough...) Conversely, an experiment with thousands of trials won't be terribly convincing unless its p value is 1% or less.
 
 Keep in mind that **statistical significance does not imply importance**. Suppose the difference between the Mac menu bar and Windows menu bar amounted to only 1 millisecond (out of hundreds of milliseconds of total movement time). A sufficiently large experiment, with enough trials, would be able to detect this difference at the 5% significance level, but the difference is so small that it simply wouldn't be relevant to user interface design.
 
-mitx:lecture13picoquiz0 Take Picoquiz
+
 
 <h2 id="statistical-tests">Statistical Tests</h2>
 
 <div class="slide">
-<h1 id="t-test">T test</h1>
+<h1 id="t-test">t test</h1>
 <ul>
-<li>T test compares the means of two samples A and B</li>
+<li>t test compares the means of two samples A and B</li>
 <li>Two-sided:
 <ul><li>H0: mean(A) = mean(B)</li>
 <li>H1: mean(A) <> mean(B)</li></ul></li>
@@ -238,14 +241,15 @@ mitx:lecture13picoquiz0 Take Picoquiz
 <li>equal variance</li></ul></li>
 </ul>
 </div>
-Let's look at some of the more common statistical tests that are used in user interface experiments.
+Let's look at one of the most common statistical tests that are used in user interface experiments.
 
-The T test is what you'd use to compare two means in a between-subjects experiment, like the hypothetical Mac/Windows menubar experiment we've been discussing. The T statistic computes the difference between the Mac average and the Windows average, divided by an estimate of the standard deviation. If the null hypothesis is true, then this statistic follows a T distribution (which looks very similar to a normal distribution, a hump centered at 0). You can look up the value of the T statistic you computed in a table of the T distribution to find out the probability of getting a more extreme value.
+The t test is what you'd use to compare two means in a between-subjects experiment, like the hypothetical Mac/Windows menubar experiment we've been discussing. The T statistic computes the difference between the Mac average and the Windows average, divided by an estimate of the standard deviation. If the null hypothesis is true, then this statistic follows a T distribution (which looks very similar to a normal distribution, a hump centered at 0). You can look up the value of the T statistic you computed in a table of the T distribution to find out the probability of getting a more extreme value.
 
-There are two forms of the T test, with different alternative hypotheses. In the more conservative, **two-sided** T test, your alternative hypothesis is merely that the means are different, so an extreme t value (either positive or negative) counts as evidence against the null hypothesis. The other form is the **one-sided** test, in which your alternative hypothesis expects the difference to go one way or the other - e.g., if there's any difference between Mac and Windows at all, the Mac should be faster. It's conventional to use the two-sided test unless you (and the skeptic you're arguing against) are completely certain which way the difference should go, if the difference exists at all.
+There are two forms of the t test, with different alternative hypotheses. In the more conservative, **two-sided** t test, your alternative hypothesis is merely that the means are different, so an extreme t value (either positive or negative) counts as evidence against the null hypothesis. The other form is the **one-sided** test, in which your alternative hypothesis expects the difference to go one way or the other - e.g., if there's any difference between Mac and Windows at all, the Mac should be faster. It's conventional to use the two-sided test unless you (and the skeptic you're arguing against) are completely certain which way the difference should go, if the difference exists at all.
 
-Using the T test requires a few assumptions. First, your samples should be independent, so you need to use good experiment design with randomization and controls to prevent inadvertent dependence between samples. Second, the T test also assumes that the underlying probability distribution of the samples (e.g., the access times) is a normal distribution, and that even if the alternative hypothesis is true, both samples have equal variance. Fortunately the T test is not too sensitive to the normality and equal-variance assumptions: if your sample is large enough (N > 20), deviations don't affect it much. There's also an "unequal variances" version of the T test, which uses a slightly different statistic, but with weaker assumptions come less power (i.e., it takes a larger N to reach the same level of significance with the unequal variances T test).
+Using the t test requires a few assumptions. First, your samples should be independent, so you need to use good experiment design with randomization and controls to prevent inadvertent dependence between samples. Second, the t test also assumes that the underlying probability distribution of the samples (e.g., the access times) is a normal distribution, and that even if the alternative hypothesis is true, both samples have equal variance. Fortunately the t test is not too sensitive to the normality and equal-variance assumptions: if your sample is large enough (N > 20), deviations don't affect it much. There's also an "unequal variances" version of the t test, which uses a slightly different statistic, but with weaker assumptions come less power (i.e., it takes a larger N to reach the same level of significance with the unequal variances t test).
 
+<!-- 
 <div class="slide">
 <h1>Running a T Test</h1>
 
@@ -294,7 +298,7 @@ In this case, the two-tailed t test had p value 0.75, which means that the diffe
 
 There's another way to run this t test in R, which we'll look at because it introduces an important concept that we'll need for more sophisticated tests in a bit: a **factor**. A factor is a vector of values of a categorical independent variable. In this case, the condition can be either *win* or *mac*, so we first construct a vector of strings (10 "win" and 10 "mac", matching the 20 measurements in the vector *time*), and then convert it from a vector of strings into a factor of enumerated values.
 
-Once we've used a factor to identify the two groups in our t test, we can run the t test against an explicit **model** of the process. That's what *time ~ condition* means: that we believe that the dependent variable time is a function of the (two-valued variable) condition, and we want the t test to test this model against the null hypothesis that time is independent of condition.
+Once we've used a factor to identify the two groups in our t test, we can run the t test against an explicit **model** of the process. That's what *time ~ condition* means: that we believe that the dependent variable time is a function of the (two-valued variable) condition, and we want the t test to test this model against the null hypothesis that time is independent of condition. -->
 
 <div class="slide">
  <h1>Paired T Test</h1>
@@ -308,11 +312,11 @@ Once we've used a factor to identify the two groups in our t test, we can run th
 </ul>
 </div>
 
-What if we had run a within-subjects experiment instead? Then we would need to compare each subject with themselves, by computing the difference between each subject's Macintosh access time and the same subject's Windows access time. We would then use a t test for the hypothesis that the mean of these differences is nonzero, against the null hypothesis that the mean of the differences is zero. This test is called a paired t test.
+What if we had run a within-subjects experiment instead? Then we would need to compare each participant with themselves, by computing the difference between each participant's Macintosh access time and the same participant's Windows access time. We would then use a t test for the hypothesis that the mean of these differences is nonzero, against the null hypothesis that the mean of the differences is zero. This test is called a paired t test.
 
 Why is a paired t test more powerful? Because by computing the difference within each user, we're canceling out the contribution that's unique to the user. That means that individual differences between users are no longer contributing to the noise (variance) of the experiment.
 
-<div class="slide">
+<!-- <div class="slide">
 <h1>Running a Paired T Test (in R)</h1>
 
 <ul>
@@ -322,12 +326,12 @@ Why is a paired t test more powerful? Because by computing the difference within
 
 </div>
 
-Here's an analysis of a within-subjects menubar experiment. Each subject did a trial on each menubars (counterbalanced to control for ordering effects, so half the subjects used the Windows menubar first and half used the Mac menubar first). The data is ordered by subject, so subject #1's times were 625ms for the Windows menubar and 647ms for the Mac menubar. The t test is actually applied to the differences (e.g., 625 - 647 = -22 for subject 1). The p value for the two-tailed t test is now 0.025, which means that the observed difference between the Windows and Mac menubar is only 2.5% likely to happen purely by chance. So we would be justified in concluding that the difference is statistically significant.
+Here's an analysis of a within-subjects menubar experiment. Each participant did a trial on each menubars (counterbalanced to control for ordering effects, so half the participants used the Windows menubar first and half used the Mac menubar first). The data is ordered by participant, so participant #1's times were 625ms for the Windows menubar and 647ms for the Mac menubar. The t test is actually applied to the differences (e.g., 625 - 647 = -22 for participant 1). The p value for the two-tailed t test is now 0.025, which means that the observed difference between the Windows and Mac menubar is only 2.5% likely to happen purely by chance. So we would be justified in concluding that the difference is statistically significant.
 
-Note the paired=TRUE parameter to t.test; that's what makes R pair up the observations. See http://www.statmethods.net/stats/ttest.html
+Note the paired=TRUE parameter to t.test; that's what makes R pair up the observations. See http://www.statmethods.net/stats/ttest.html -->
 
 
-<div class="slide">
+<!-- <div class="slide">
 <h1 id="anova-test">Analysis of Variance (ANOVA)</h1>
 
 <ul>
@@ -345,8 +349,8 @@ One-way ANOVA (also called "single factor ANOVA") addresses the case where you h
 ANOVA works by weighing the variation between the independent variable conditions (Mac vs. Windows vs. bottom) against the variation within the conditions (which is due to other factors like individual differences and random noise). If the null hypothesis is true, then the independent variable doesn't matter, so dividing up the observations according to the independent variable is merely an arbitrary labeling. Thus, assuming we randomized our experiment properly, the variation **between** those arbitrary groups should be due entirely to chance, and identical to the random variation **within** each group. So ANOVA takes the ratio of the between-group variation and the within-group variation, and if this ratio is significantly greater than 1, then that's sufficient evidence to argue that the null hypothesis is false and the independent variable actually **does** matter.
 
 Like the t test, ANOVA also assumes that the samples are independent, normally distributed, and have equal variance.
-
-<div class="slide">
+ -->
+<!-- <div class="slide">
 <h1>Running ANOVA (in R)</h1>
 
 <p><code>data3 = read.csv(file.choose())</code></p>
@@ -373,7 +377,7 @@ It turns out that ANOVA is equivalent to the t test when the number of condition
 
 <ul>
 <li><code>data4 = read.csv(file.choose())</code></li>
-<li><code>fit = aov(data4$time ~ data4$condition + Error(data4$subject/data4$condition))</code></li>
+<li><code>fit = aov(data4$time ~ data4$condition + Error(data4$participant/data4$condition))</code></li>
 <li><code>summary(fit)</code></li>
 </ul>
 
@@ -381,10 +385,10 @@ It turns out that ANOVA is equivalent to the t test when the number of condition
 
 </div>
 
-Within-subjects ANOVAs are possible in R, but require more information. First, we need to create a factor for the subject - which subject provided each measurement? That factor now becomes one of the independent variables of the experiment. But when we write the model, we use this factor not as part of the process, but in a special Error term, as shown.
-http://www.statmethods.net/stats/anova.html
+Within-subjects ANOVAs are possible in R, but require more information. First, we need to create a factor for the participant - which participant provided each measurement? That factor now becomes one of the independent variables of the experiment. But when we write the model, we use this factor not as part of the process, but in a special Error term, as shown.
+http://www.statmethods.net/stats/anova.html -->
 
-<div class="slide">
+<!-- <div class="slide">
 <h1>Tukey HSD Test</h1>
 
 <ul>
@@ -402,8 +406,8 @@ Not every stats package can do this test, but there are web sites that do, and t
 
 Why don't we just apply a t test between each pair of conditions? That's a risky thing to do. Statistical testing is only sound when you apply just one test to any given set of data. Roughly speaking, any given test has a 5% chance of lying to you and indicating a significant difference at the 5% level even when there isn't one. (Statisticians call this a "type I error.") The more tests you do, the more likely you are to fall into this trap. This is why you need to choose your statistical tests *before* you collect your data, rather than just dredge around through the data afterwards to see what tests work. Sometimes experimenters *plan* to run multiple tests on the same data; when they do this, however, they use a stricter level of significance than 5% for each test, so that the overall ("familywise") risk of making the type I error is still bounded by 5%. This stricter significance is called "Bonferroni adjustment"; you'll see it in seriously empirical HCI papers from time to time.
 
-The Tukey HSD test is an example of a **post-hoc test**, one that you didn't originally plan to run (because your decision to run it was triggered by the successful ANOVA), and so you didn't adjust your significance level for it. So the Tukey test is designed to be much more stringent than a t test - you need bigger differences in your data to get 5% significance. You may have noticed that the data in all these fake experiments happens to be identical - but where the t test comparing Win vs. Mac was significant, the Tukey HSD test was not.
-
+The Tukey HSD test is an example of a **post-hoc test**, one that you didn't originally plan to run (because your decision to run it was triggered by the successful ANOVA), and so you didn't adjust your significance level for it. So the Tukey test is designed to be much more stringent than a t test - you need bigger differences in your data to get 5% significance. You may have noticed that the data in all these fake experiments happens to be identical - but where the t test comparing Win vs. Mac was significant, the Tukey HSD test was not. -->
+<!-- 
 <div class="slide">
 <h1>Tukey HSD Test (in R)</h1>
 
@@ -411,9 +415,9 @@ The Tukey HSD test is an example of a **post-hoc test**, one that you didn't ori
 <li><code>TukeyHSD(fit)</code></li>
 </ul>
 <img src="figures/14.png"/>
-</div>
+</div> -->
 
-<div class="slide">
+<!-- <div class="slide">
 <h1>Two-Way ANOVA</h1>
 
 <ul>
@@ -425,20 +429,20 @@ The Tukey HSD test is an example of a **post-hoc test**, one that you didn't ori
 
 ANOVA can be extended to multiple independent variables, by looking at the variation between different levels of one independent variable (while holding the other independent variable constant). This is **two-way** (or two-factor) ANOVA.
 
-Two-way ANOVA can be used to analyze a within-subjects experiment, where one independent variable is the variable we were testing (e.g. menubar position), while the other independent variable is the user's identity.
+Two-way ANOVA can be used to analyze a within-subjects experiment, where one independent variable is the variable we were testing (e.g., menubar position), while the other independent variable is the user's identity.
 
-This can really only be done in a real stats package like R - Excel and online statistical caluclators don't support multiway ANOVAs. See http://www.statmethods.net/stats/anova.html for more about how to do it in R.
+This can really only be done in a real stats package like R - Excel and online statistical caluclators don't support multiway ANOVAs. See http://www.statmethods.net/stats/anova.html for more about how to do it in R. -->
 
-<div class="slide">
+<!-- <div class="slide">
 <h1>Two-way Within-Subjects ANOVA (in R)</h1>
 
 <p><code>time = [625, 480, ..., 647, 503, ..., 485, 436, ...]</code><br />
 <code>menubar = [win, win, ..., mac, mac,..., btm, btm, ...]</code><br />
 <code>device = [mouse, pad, ..., mouse, pad, ..., mouse, pad, ...]</code><br />
-<code>subject = [u1, u1, u2, u2, ..., u1, u1, u2, u2 ..., u1, u1, u2, u2, ...]</code></p>
+<code>participant = [u1, u1, u2, u2, ..., u1, u1, u2, u2 ..., u1, u1, u2, u2, ...]</code></p>
 
 <ul>
-<li><code>fit = aov(time ~ menubar*device + Error(subject/menubar*device))</code></li>
+<li><code>fit = aov(time ~ menubar*device + Error(participant/menubar*device))</code></li>
 <li><code>summary(fit)</code></li>
 </ul>
 
@@ -446,11 +450,11 @@ This can really only be done in a real stats package like R - Excel and online s
 </div>
 
 http://www.statmethods.net/stats/anova.html
-
-<div class="slide">
+ -->
+<!-- <div class="slide">
 <h1>A Word About Data Format</h1>
 <table>
-<tr><th>time</th><th>menubar</th><th>device</th><th>subject</th></tr>
+<tr><th>time</th><th>menubar</th><th>device</th><th>participant</th></tr>
 <tr><td>625</td><td>win</td><td>mouse</td><td>u1</td></tr>
 <tr><td>480</td><td>win</td><td>pad</td><td>u1</td></tr>
 <tr><td>647</td><td>mac</td><td>mouse</td><td>u1</td></tr>
@@ -486,15 +490,15 @@ Whenever you're working with experimental data, it's good to represent it in a s
 
 </div>
 
-The t test and ANOVA are designed for cases where your independent variable is **discrete-valued** (e.g. two or three menubar conditions) and your dependent variable is a **scalar** quantity (in fact, a normally distributed scalar). This is very common, but other kinds of variables sometimes appear in UI experiments.
+The t test and ANOVA are designed for cases where your independent variable is **discrete-valued** (e.g., two or three menubar conditions) and your dependent variable is a **scalar** quantity (in fact, a normally distributed scalar). This is very common, but other kinds of variables sometimes appear in UI experiments.
 
 When both variables are discrete-valued, you end up visualizing your data as a table of occurrence frequencies (called a contingency table) rather than a bar graph. There are two statistical tests for this kind of relationship: the Fisher exact test works best when the numbers are small (some frequencies in the table are less than 10) and the table is 2x2 (i.e., each variable has only two possible values). It can be computed for larger table sizes, but not by hand. The chi-square test is more suitable for large table dimensions, and when the frequencies in each cell are big enough (all greater than 5). Excel doesn't have these tests, but the web does.
 
 When both variables are scalar, the right tool is regression. If our menubar experiment varied the starting distance from the menu, for example, and measured the time to access, then we might use regression to "fit a model" to the data that actually *quantifies* the relationship between these two variables - i.e., that time varies with the log of starting distance. Regression can do this fitting, and tell us how well the model fits the data (the analog of statistical significance for hypothesis testing) as well as the constant factors of the relationship. Regression is beyond the scope of this class (get it in a statistical methods course), but you'll see it from time to time in empirical HCI papers, particularly work on low-level input like Fitts's Law.
 
+ -->
 
-
-<div class="slide">
+<!-- <div class="slide">
 <h1>Summary</h1>
 
 <ul>
@@ -503,7 +507,7 @@ When both variables are scalar, the right tool is regression. If our menubar exp
 <ul><li>Use t test to compare two means</li>
 <li>Use ANOVA to compare 3 or more means</li></ul></li>
 </ul>
-</div>
+</div> -->
 
 <!-- Markdown file pasted above. -->
 
