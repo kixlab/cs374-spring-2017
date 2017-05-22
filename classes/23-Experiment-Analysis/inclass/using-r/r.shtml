@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+    <title>Class 13: Experiment Analysis</title>
+    <link rel="stylesheet" type="text/css" href="../../6831.css">
+    <meta name="read-only" content="true">
+    <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+    <meta name="author" content="none">
+
+<style>
+  .table {
+  }
+  .cell {
+	
+  }
+}
+</style>
+</head>
+<body>
+<!--#include virtual="../../header.html"-->
+
+    <div id="body-pane">
+    <div id="content-box">
+                
+        
+<h1>Class 13: Experiment Analysis - Reference Material about R</h1>
+
+
+<h2>Prep before class</h2>
+<p>Before this class period meets, you should have <a href="http://cran.rstudio.com/">installed R</a>. R is a free software environment for statistical computing and graphics. It compiles and runs on a wide variety of UNIX platforms, Windows and MacOS. Follow the instructions on the <a href="http://www.r-project.org/">website</a> to install R if you do not already have it installed. </p>
+<p>There are other tools that can be used for running statistical tests on your data, but we've chosen R in this class and in our own research. Other tools include SAS, SPSS, and Stata, but these are not free or libre.</p>
+<p>If you decide to use R in the future, you may be interested in some of the packages that can be used with R. One of our favorites is <a href="http://ggplot2.org/">ggplot2</a>, which can be used for rich data visualizations.</p>
+
+<h2>References for using R and picking statistical tests</h2>
+
+<h3>Here are some basic commands for using R:</h3>
+<p><ul>
+	<li>Reading in data from a CSV, opens a file browser:
+		<pre><code>dataset = read.csv(file.choose())</code></pre>
+		Then either attach the data
+		<pre><code>attach(dataset)</code></pre>
+		or call variables by themselves
+		<pre><code>dataset$varname</code></pre>
+	</li>
+	<li>Look at only a specific chunk of data, where the variable is some value:
+		<pre><code>dataset[var == value]</code></pre>
+	</li>
+	<li>Some basic commands:
+		<pre><code>mean(var)</code></pre>
+		<pre><code>median(var)</code></pre>
+		<pre><code>min(var)</code></pre>
+		<pre><code>max(var)</code></pre>
+		<pre><code>sum(var)</code></pre>
+		<pre><code>sd(var)</code></pre>
+	</li>
+	<li>Looking at your raw data graphically(good for seeing the distribution):
+		<ul>
+			<li><a href="http://www.cookbook-r.com/Graphs/Plotting_means_and_error_bars_(ggplot2)/">Means with error bars</a>
+			</li>
+			<li>In a histogram:
+				<pre><code>hist(var)</code></pre>
+			</li>
+		</ul>
+	</li>
+	<li>Getting more information about a command:
+		<pre><code>?hist</code></pre>
+	</li>
+</ul></p>
+     
+<h3>During today's activity, you may want to use some of the following tests:</h3>
+<p><ul>
+	<li>Unpaired t-test
+		<p>T-tests compare the means between two groups. They assume your population is distributed normally. Unpaired tests compare two different groups to each other.
+		</p>
+		<p>To run an unpaired t-test test in R, first divide the data into your two conditions, based here on your condition column (say if you have conditions 'red' and 'blue' in your 'condition' column):
+			<pre><code>condition1 = dataset[dataset$condition == 'red',]</code></pre> 
+			<pre><code>condition2 = dataset[dataset$condition == 'blue',]</code></pre>  
+			Then run a t-test, comparing the same value in each subset:
+			<pre><code>t.test(condition1$time, condition2$time)</code></pre>
+		</p>
+	</li>
+	<li>Paired t-test
+		<p>T-tests compare the means between two groups. They assume your population is distributed normally. Paired t-tests compare two different groups too, but they are for when your data is paired, like in a within-subjects experiment.
+		</p>
+		<p>To run a paired t-test test in R, first divide the data into your two conditions, based here on your condition column (say if you have conditions 'red' and 'blue' in your 'condition' column):
+			<pre><code>condition1 = dataset[dataset$condition == 'red',]</code></pre>
+			<pre><code>condition2 = dataset[dataset$condition == 'blue',]</code></pre>  
+			Then run a paired t-test, comparing the same value in each subset:
+			<pre><code>t.test(condition1$time, condition2$time, paired=TRUE)</code></pre>
+		</p>
+	</li>
+	<li>ANOVA
+		<p>ANOVA also compares the mean between groups, but is best used when you have more than two groups. You could run multiple t-tests comparing each of the groups to the others, and then apply a correction afterward, but ANOVA is a better choice in most cases. You can use ANOVA for a comparison between just two groups, but t-tests are more common and accepted.
+		</p>
+		<p>To get the results of an ANOVA, first run the test:
+			<pre><code>aov = aov(dataset$time ~ dataset$condition, dataset)</code></pre>
+			Then get the summary of the result:
+			<pre><code>summary(aov)</code></pre>
+		</p>
+	</li>
+</ul></p>
+
+</div>
+</div>
+
+<!--#include virtual="../../footer.html"-->
+</body>
+</html>

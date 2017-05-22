@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript" src="./jquery.min.js"></script>
+    <script type="text/javascript" src="./script.js"></script>
+    <title>Experiment Design</title>
+</head>
+<body>
+<div id="menu">
+    You and your partner will both use one computer to complete this activity
+    (so that we know which trials are paired). <br>
+    Decide who is Player 1 and who is Player 2. <br>
+    Choose the experiment below according to where you are seated.<br>
+    <ul>
+        <li><a href="javascript:v_1()">Section A: Between subjects</a></li>
+        <li><a href="javascript:v_2()">Section B: Within subjects not
+            counterbalanced</a></li>
+        <li><a href="javascript:v_3()">Section C: Within subjects, with randomization</a></li>
+    </ul>
+</div>
+
+<div id="ready">
+    <div id="readyplayer">Click 'Ready' when you are ready</div>
+    <button type="button" id="start">Ready</button>
+</div>
+
+<div id="game">
+    <div>
+        Enter the word correctly as fast as you can. Hit enter to continue.<br>
+        You won't be able to submit a word that is typed incorrectly.
+    </div>
+    <br>
+    <div id="progress"></div><br>
+    <div id="label"></div><br>
+    <input type="text" maxlength="20" id="response">
+</div>
+
+<div id="done">Thanks, you're done.</div>
+
+<style type="text/css">
+#label {
+    display: inline;
+    margin-right: 0;
+    width: 15em;
+}
+
+#response {
+    display: inline;
+    width: 20em;
+}
+
+.wrong {
+    outline-color: red;
+    outline-width: 2px;
+    outline-style: solid;
+}
+</style>
+</body>
+</html>

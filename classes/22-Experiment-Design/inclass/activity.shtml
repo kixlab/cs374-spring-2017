@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+    <title>Activity: Experiment Design</title>
+    <link rel="stylesheet" type="text/css" href="../../../6831.css">
+    <meta name="read-only" content="true">
+    <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+    <meta name="author" content="none">
+
+<style>
+  .table {
+  }
+  .cell {
+
+  }
+</style>
+</head>
+<body>
+
+
+<div id="body-pane">
+
+<div id="content-box">
+
+
+<h1>Activity: Ordering Effects</h1>
+
+We wish to conduct an experiment to answer the following question:
+<b>Do people type dictionary words faster than they do gibberish?</b><br>
+
+<h3>1. Find a partner</h3>
+<ul>
+<li>One of you is user 1, the other is user 2. User 1 goes first.</li>
+<li>Depending on your section, run the appropriate experiment with your partner.</li>
+<li>Use one computer to input your data.
+</ul>
+<!-- Your form should pre-populate with your results when you load it.-->
+<!-- When you finish, your results will be uploaded to our server, and we'll aggregate the three experiments across the whole class. -->
+
+<h3>2. Load Your Section's Game</h3>
+<ul>
+<li>Open the <a target="_blank" href="http://courses.csail.mit.edu/6.831/2013/handouts/IC12-experiment-design/game.html">game</a> in a separate tab in your browser.</li>
+
+</ul>
+<!--
+<ul>
+<li><b>Section A: <a href="#sectionA">Between-subjects</a></b></li>
+<li><b>Section B: <a href="#sectionB">Within-subjects, no counterbalancing</a></b></li>
+<li><b>Section C: <a href="#sectionC">Within-subjects, randomized</a></b></li>
+</ul>
+-->
+<h3>3. Answer thought questions about your condition:</h3>
+<ul>
+<li><h4 id="sectionA">Section A: Between Subjects</h4>
+This game is <i>between subjects</i>. One of you was in one condition (typing dictionary words), and the other person was in a different condition (typing gibberish). Think about the advantages and disadvantages of this set up. Is it appropriate for this particular experiment? When might it be important to pick a between subjects experiment?
+<br /></li>
+<li>
+<h4 id="sectionB">Section B: Within Subjects, fixed ordering</h4>
+This game is <i>within subjects</i>. Each of you were in both conditions, and you <i>both</i> did the dictionary condition first, and then the gibberish condition. Since you both did this in the same order, this is <i>not</i> counterbalanced. Think about the advantages and disadvantages of this set up. Is it appropriate for this particular experiment? When might it be important to pick a within subjects experiment? When might you want or not want counterbalancing?
+<br /></li>
+
+<li><h4 id="sectionC">Section C: Within Subjects, randomized ordering</h4>
+This game is <i>within subjects</i>. Each of you were in both conditions, and you were <i>randomly</i> shown words in each condition. Think about the advantages and disadvantages of this set up. Is it appropriate for this particular experiment? When might it be important to pick a within subjects experiment? When might you want or not want randomization of conditions?
+<br /></li>
+</ul>
+<h3 id="moreQs">4. Answer these questions:</h3>
+<ul><li>What were the independent variables and dependent variables in this experiment?</li>
+<li>What about <i>other </i>variables that might affect the experiment -- which were you controlling for, and which were uncontrolled? What differences between each pair of people might threaten internal validity?</li>
+<li>What are the ordering effects that might come into play in this task?<br>
+<li>What biases in this experiment might be caused by your <i>expectations</i> about how it should turn out?
+</li></ul>
+<br>
+
+</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--
+  Character encoding note: This file should be saved and opened in UTF-8. If
+  this is done correctly, then the following string should not be garbled in
+  your editor (it should be rendered as shown in chartest.png):
+
+  Character encoding test: «ÆØÅÉÈÑÜæøåéèñü¢~§'»
+-->
+<meta charset="UTF-8">
+
+<title>Staff Notes 13: Experiment Analysis</title>
+
+<link href="../../../web/handout-style-v1.css" rel="stylesheet"></link>
+</head>
+<body>
+<header>6.813/831 User Interface Design & Implementation</header>
+<nav class="navigation"></nav>
+<div class="lecture">
+
+<div class="markdown">
+
+
+## Announcements on the board
+
++ today's url: tiny.cc/6813
++ GR3 building studio Fri
++ GR3 testing Mon, Wed in class
+
+
+## HoFS
+
+Today’s Hall of Fame or Shame example is a feature of Microsoft Office 2007 that gives a preview of what a style command will do to the document while you’re mousing over it.  Here, the mouse is hovering over the 54-point choice on the font-size drop-down, and PowerPoint is showing what the selection would look like with that new style.
+
+Let’s discuss the pros and cons of this approach from a usability point of view.
+
+
+
+## Nanoquiz
+
+
+## Looking at the data
+
+Walk through the class with their first few R commands:
+
+```
+dataset = read.csv(file.choose())
+
+dataset
+
+summary(dataset)
+
+attach(dataset)
+
+condition
+
+time
+
+dataset[1,1]
+
+dataset[1,]
+
+dataset[condition=="dictionary",]
+
+summary(dataset[condition=="dictionary",])
+
+summary(dataset[condition=="gibberish",])
+```
+
+## Graphing the data
+
+Bar plot of the means
+
+```
+gibberishTimes = dataset[condition=="gibberish",]$time
+dictionaryTimes = dataset[condition=="dictionary",]$time
+
+means = c(mean(gibberishTimes), mean(dictionaryTimes))
+
+mp = barplot(means)
+
+?barplot
+
+mp = barplot(means, xlab="Condition", ylab="Time", names.arg=c("gibberish", "dictionary"), ylim=c(0,8000))
+```
+
+Now add standard error:
+
+```
+se = c(sd(gibberishTimes)/sqrt(length(gibberishTimes)), sd(dictionaryTimes)/sqrt(length(dictionaryTimes)))
+
+segments(mp, means-se, mp, means+se)
+
+segments(mp-0.1, means-se, mp+0.1, means-se)
+segments(mp-0.1, means+se, mp+0.1, means+se)
+```
+
+## T test
+
+What are the possible t tests?
+
++ paired (what experiment design is this appropriate for?)
++ unpaired with equal variance assumption
++ unpaired with unequal variance
+
+Run the unpaired t test
+
+```
+?t.test
+
+t.test(gibberishTimes, dictionaryTimes)
+
+t.test(gibberishTimes, dictionaryTimes, paired=TRUE)
+```
+
+Write on the board how this would be reported in a paper
+
+
+## ANOVA
+
+```
+aov = aov(dataset$time ~ dataset$condition, dataset)
+
+summary(aov)
+```
+
+</div>
+
+</div>
+<footer id="authors">Copyright course staff. MIT EECS.</footer>
+<script src="../../../web/handout-script-v1.js"></script>
+</body>
+</html>

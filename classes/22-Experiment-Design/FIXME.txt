@@ -1,0 +1,2 @@
+The spreadsheet for the classroom area experiment is not reliable.  If you test it, and then delete all your test data responses, it breaks the formulas so that they show #REF (circular dependency) in class.  Find a more reliable way to do the calculations.
+
