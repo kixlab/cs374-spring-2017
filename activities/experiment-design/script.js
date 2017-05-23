@@ -194,7 +194,7 @@ function store_responses() {
     $("#done").show();
     console.log("Sending: "+responses);
     $.ajax(
-        { url:"/var/www/courses/hci/activities/experiment-design/store.py"
+        { url:"/courses/hci/activities/experiment-design/store.py"
         , type:"post"
         , data: {"data":JSON.stringify(responses)}
         , dataType:"json"
