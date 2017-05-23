@@ -52,7 +52,7 @@ var $game;
 
 function run(wordset, i, j) {
     console.log("run:"+i+" "+j+" "+wordset);
-    if (i == 0) {
+    if (i==0){
         store_responses();
         return;
     }
@@ -206,8 +206,8 @@ function store_responses() {
             $("#done").html("Thanks. Your results have been uploaded to our server.");
         }
         , error:function(r) {
-            $("#done").html("Please paste the data block below using\
-                <a target='_blank' href='https://docs.google.com/forms/d/e/1FAIpQLSc20FU1rY_t8nO_e2gMHTWezhwXimfpXW8c8l8s1_T3nOt9LA/viewform?usp=sf_link'>this form</a>\
+            $("#done").html("Please paste the data block using the form below. If the form doesn't display properly, \
+                <a target='_blank' href='https://docs.google.com/forms/d/e/1FAIpQLSc20FU1rY_t8nO_e2gMHTWezhwXimfpXW8c8l8s1_T3nOt9LA/viewform?usp=sf_link'>open the form manually</a>.\
                 <br><br>"+JSON.stringify(responses)+"<br><br>\
                 <hr/><iframe id='form' src='https://docs.google.com/forms/d/e/1FAIpQLSc20FU1rY_t8nO_e2gMHTWezhwXimfpXW8c8l8s1_T3nOt9LA/viewform?usp=sf_link' width=100% height=1025 frameborder=0>\
                 </iframe>");
