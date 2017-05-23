@@ -206,9 +206,14 @@ function store_responses() {
             $("#done").html("Thanks. Your results have been uploaded to our server.");
         }
         , error:function(r) {
-            $("#done").html("We encountered an error uploading your data to the\
-                server. Please email the following data to\
-                juho@juhokim.com<br>"+JSON.stringify(responses));
+            $("#done").html("Please paste the data block below using\
+                <a target='_blank' href='https://docs.google.com/forms/d/e/1FAIpQLSc20FU1rY_t8nO_e2gMHTWezhwXimfpXW8c8l8s1_T3nOt9LA/viewform?usp=sf_link'>this form</a>\
+                <br><br>"+JSON.stringify(responses)+"<br><br>\
+                <hr/><iframe id='form' src='https://docs.google.com/forms/d/e/1FAIpQLSc20FU1rY_t8nO_e2gMHTWezhwXimfpXW8c8l8s1_T3nOt9LA/viewform?usp=sf_link' width=100% height=1025 frameborder=0>\
+                </iframe>");
+            // $("#done").html("We encountered an error uploading your data to the\
+            //     server. Please email the following data to\
+            //     juho@juhokim.com<br>"+JSON.stringify(responses));
         }
         });
 }
