@@ -204,7 +204,7 @@ function store_responses() {
         , error:function(r) {
             $("#done").html("We encountered an error uploading your data to the\
                 server. Please email the following data to\
-                juhokim@mit.edu.<br>"+JSON.stringify(responses));
+                juho@juhokim.com<br>"+JSON.stringify(responses));
         }
         });
 }
