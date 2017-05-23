@@ -52,10 +52,7 @@ var $game;
 
 function run(wordset, i, j) {
     console.log("run:"+i+" "+j+" "+wordset);
-    if (i==0){
-        store_responses();
-        return;
-    }
+
     if (i >= wordset.length) {    
         console.log("final:"+responses);
         store_responses();
