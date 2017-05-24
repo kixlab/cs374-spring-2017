@@ -61,6 +61,8 @@ Findlater & McGrenere: compared split menus that were static (unchanging), adapt
 
 
 # Research Methods in HCI
+5 mins
+
 The picture shows how these methods compare on several interesting dimensions. In the vertical dimension, lab experiments often use highly abstract tasks, which are simplified and highly controlled in order to make strong statistical claims, but also farther removed from the real-world. An example is the classic Fitts’s Law experiment, which measures the time it takes to hit targets on the screen by using plain rectangles rather than realistic pointing targets like buttons, menus, and hyperlinks. Field studies and surveys, by contrast, can use more concrete, real-world examples.
 
 In the horizontal direction, lab experiments and surveys are obtrusive: people need to be interrupted and forced to give their attention to the study. Because they’re aware they’re being studied, their behavior can change; we’ll mention some of the ways that can happen later in this reading. Field studies, on the other hand, can be far less obtrusive, since the subjects are doing their own tasks in their own environment, and so the likelihood of obtaining natural behavior is much higher.
@@ -70,21 +72,24 @@ Finally, the picture also shows how the three methods compare on three criteria 
 (This picture actually omits one important class of methods, which is occasionally but not widely used in HCI research: a theoretical model or computer simulation of human behavior. We talked about some theoretical models for HCI, like KLM and GOMS, in the efficiency reading.)
 
 # Controlled Experiments
-- Look at an actual example from a paper
-- Do it on the board
+5 mins
 
-# Threats to Validity
+- How to convince others? systematic UI evalution
+- Ask questions about the core concepts
+- Look at an actual example from a paper?
+ 
 
 
+# Activity: Sampling
+8 mins
 
-## Sampling (1:21, 8 mins)
-https://courses.csail.mit.edu/6.831/form/form.py?formkey=1n8Huk7RDOey3bUAjuMqgHE41KhQ0VOsJ-nQGUS0kaOM
-
-### Section division / Data Collection (2 mins)
+https://docs.google.com/forms/d/e/1FAIpQLSfi2cLjTO2dAjZ_oaPnQfIQXTjCwjMKNb_3tC1aIKasKOnlNA/viewform?usp=sf_link
+## Section division / Data Collection (2 mins)
 - Divide the room into three quadrants (A, B, C).
 - Students fill out the form.
 
-### Activity (1 min: show results, 2 mins with a partner, 3 mins group discussion)
+## Activity 
+(1 min: show results, 2 mins with a partner, 3 mins group discussion)
 
 - Instructor shows the quadrant distributions to the whole class in the spreadsheet. Make sure "Sheet2" is pre-loaded with all the right formula.
 
@@ -100,27 +105,38 @@ https://courses.csail.mit.edu/6.831/form/form.py?formkey=1n8Huk7RDOey3bUAjuMqgHE
     - Selection bias
 
 - What'd be a better way to divide into sections?
-    - Use MIT ID modulo 3?
+    - Use KAIST ID modulo 3?
     - Random draw?
 
 
-## Typing Experiment (1:30, 23 mins)
+# Video Break
+10 mins
 
-Rather than setting up the whole new infrastructure, reuse 2013's game link.
+Pre-touch sensing for mobile interaction
 
-Activity: http://courses.csail.mit.edu/6.831/2015/handouts/11-experiment-design/inclass/activity.shtml
+https://www.youtube.com/watch?v=fiZkEYLXctE
 
+Discuss evaluating this interaction technique
 
-### Pre-Experiment (1:30, 2 mins)
+# Threats to Validity
+5 mins
+
+# Activity: Typing Game
+20-25 mins
+
+### Pre-Experiment 
+2 mins
+
 - Give a short overview of what to do in the activity, but do not have a meta-discussion about the design to give students an opportunity to think about it.
 
 - Make sure everyone knows which section they are in.
 
 
-### Experiment: data collection (1:32, 5 mins)
+### Experiment: data collection 
+5 mins
 
-
-### Discussion (1:37, 7 mins with partner, 8 mins class discussion)
+### Discussion 
+7 mins with partner + 7 mins class discussion
 
 - What were the independent variables and dependent variables in this experiment?
     - IV: dictionary vs gibberish
@@ -145,7 +161,7 @@ Activity: http://courses.csail.mit.edu/6.831/2015/handouts/11-experiment-design/
 - Critique the current study design
     - Lab study? Field Study? Survey?
         - No precision or control in other options, self-report not good.
-    - Users: MIT students in a CS class, highly skewed. Age?
+    - Users: KAIST students in a CS class, highly skewed. Age?
     - Implementation:
     - Tasks
     - Measurement: when does the time measurement begin and end? Current implementation: begins as soon as a word is displayed, ends upon enter key.
@@ -169,16 +185,15 @@ Activity: http://courses.csail.mit.edu/6.831/2015/handouts/11-experiment-design/
     - Repetition: enough repetitions? but fatigue can be an issue.
 
 
-
-# Video Break
-
-
-#
-
-
 # Diff with Reading
 - techniques part removed (blocking, within/between, counterbalancing)
 
 # Post Class Notes
+
+- the game exercise was quite fun and led to some interesting discussion
+- time-wise things worked quite well, not too packed not too loose.
+- many students were confused about IVs: tasks (words) are not IVs, they are repetitions to get reliable results. the manipulation is related to the hypothesis -- what you want to show the difference "of".
+- question wording was confusing to some students (last question in the game form -- one about the potential bias coming from the initial expectation of how the experiment result would be)
+- section survey: The spreadsheet for the classroom area experiment is not reliable.  If you test it, and then delete all your test data responses, it breaks the formulas so that they show #REF (circular dependency) in class.  Find a more reliable way to do the calculations. When I pressed Enter key, however, the formula worked, and we did get the results successfully.
 
 

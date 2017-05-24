@@ -14,12 +14,20 @@
 # Nanoquiz
 
 
-#
+# Experiment Analaysis
+Introduce the split menu study or similar
+
+- show how results are reported
+
+
+## Online Experimentation
+A/B tests, trends, large-scale experimentation
+
 
 # Video Break
 
 
-#
+# IUI
 
 
 # Diff with Reading
