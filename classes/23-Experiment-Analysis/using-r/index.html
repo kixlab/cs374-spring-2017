@@ -10,42 +10,26 @@
 -->
 <meta charset="UTF-8">
 
-<title>Staff Notes 13: Experiment Analysis</title>
+<title>Experimant Analysis: R Commands</title>
 
 <link href="../../../web/handout-style-v1.css" rel="stylesheet"></link>
 </head>
 <body>
-<header>6.813/831 User Interface Design & Implementation</header>
+<header>CS374: Into to HCI</header>
 <nav class="navigation"></nav>
 <div class="lecture">
 
 <div class="markdown">
 
 
-## Announcements on the board
-
-+ today's url: tiny.cc/6813
-+ GR3 building studio Fri
-+ GR3 testing Mon, Wed in class
-
-
-## HoFS
-
-Today’s Hall of Fame or Shame example is a feature of Microsoft Office 2007 that gives a preview of what a style command will do to the document while you’re mousing over it.  Here, the mouse is hovering over the 54-point choice on the font-size drop-down, and PowerPoint is showing what the selection would look like with that new style.
-
-Let’s discuss the pros and cons of this approach from a usability point of view.
-
-
-
-## Nanoquiz
-
 
 ## Looking at the data
 
-Walk through the class with their first few R commands:
+
 
 ```
-dataset = read.csv(file.choose())
+
+dataset = read.csv(file=file.choose(),head=TRUE,sep=",")
 
 dataset
 
@@ -114,7 +98,7 @@ t.test(gibberishTimes, dictionaryTimes)
 t.test(gibberishTimes, dictionaryTimes, paired=TRUE)
 ```
 
-Write on the board how this would be reported in a paper
+How to report this result?
 
 
 ## ANOVA
@@ -128,7 +112,7 @@ summary(aov)
 </div>
 
 </div>
-<footer id="authors">Copyright course staff. MIT EECS.</footer>
+<footer id="authors"></footer>
 <script src="../../../web/handout-script-v1.js"></script>
 </body>
 </html>
