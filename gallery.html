@@ -63,6 +63,10 @@
       font-style: italic;
     }
 
+    .embed-player {
+      max-width: 560px;
+      width: 100%;
+    }
 
   </style>
   <title>CS374: Intro to HCI | KAIST Spring 2017</title>
@@ -140,7 +144,7 @@
               {{ team.description }}
               <a :href="team.slideURL">Slide</a>
             </p>
-            <iframe width='560' height='315' :src="'https://www.youtube.com/embed/' + videoIds[index]" frameborder='0' allowfullscreen></iframe>
+            <iframe class='embed-player' width='560' height='315' :src="'https://www.youtube.com/embed/' + videoIds[index]" frameborder='0' allowfullscreen></iframe>
           </div>
         </div>
       </div>
