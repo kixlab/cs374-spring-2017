@@ -62,6 +62,8 @@
     #awards-list a {
       font-style: italic;
     }
+
+
   </style>
   <title>CS374: Intro to HCI | KAIST Spring 2017</title>
 </head>
@@ -123,7 +125,13 @@
 
     <!--Template for each team's description-->
     <div id="teams">
-      <div v-for="team in teams" class="row">
+
+    </div>
+  <!--End of container-fluid main-->
+  </div>
+  <script type="x-template" id="template">
+    <div>
+      <div v-for="(team, index) in teams" class="row">
         <div class="col-md-12">
           <div class="well" :id="'more_' + team.name.replace(/\s/g, '').toLowerCase()">
             <h1>{{ team.name }}</h1>
@@ -132,14 +140,12 @@
               {{ team.description }}
               <a :href="team.slideURL">Slide</a>
             </p>
-            <a :href="team.videoURL">Video</a>
+            <iframe width='560' height='315' :src="'https://www.youtube.com/embed/' + videoIds[index]" frameborder='0' allowfullscreen></iframe>
           </div>
         </div>
       </div>
     </div>
-  <!--End of container-fluid main-->
-  </div>
-
+  </script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
     crossorigin="anonymous"></script>
@@ -154,150 +160,158 @@
 
     var app = new Vue({
       el: "#teams",
+      template: "#template",
       data: {
         teams: [
           {
             name: "WhatTheShell",
-            members: ["Suhwan Jee", "Youngkyu Hong", "Jooyoung Lee", "GEONWOO KIM"],
+            members: ["Suhwan Jee", "Youngkyu Hong", "Jooyoung Lee", "Geonwoo Kim"],
             description: "GUI + CLI",
             slideURL: "https://docs.google.com/presentation/d/1pI4uTmMzEwTiUqoJw4hC0f96FVwHlXeFrQ_J1MsE7bs/edit?usp=sharing",
-            videoURL: ""
+            videoURL: "https://youtu.be/e0mY1-zSdG0"
           },
           {
             name: "listen()",
             members: ["Tae Soo Kim", "Silap Aliyev", "Bolat Ashim", "Hyoung Wook Jin"],
             description: "Boosting student participation in class",
             slideURL: "https://docs.google.com/presentation/d/1-jyiZU46voyx19oQqT6KeCvCWNX8X1ftYbkkeUZ5GNU/edit?usp=sharing",
-            videoURL: ""
+            videoURL: "https://youtu.be/R0ZuRtxjXDE"
           },
           {
             name: "Helvetica",
             members: ['Jun Seok Lee', 'Hyunyul Cho', 'Eojin Rho'],
             description: "Interface for oversea buying",
             slideURL: "https://docs.google.com/presentation/d/179DvaUhtxl7FtQA98DK7qPvMitoPCaW83EBRt7M3TSg/edit",
-            videoURL: ""
+            videoURL: "https://youtu.be/T2fLWWaVwlI"
           },
           {
             name: "大丈夫ない",
-            members: ['Sangho Kim', 'Min seon Kim', 'Hyungjun Cho', 'Seonju Lee'],
+            members: ['Sangho Kim', 'Min Seon Kim', 'Hyungjun Cho', 'Seonju Lee'],
             description: "Feedback tool for startup members",
             slideURL: "https://docs.google.com/presentation/d/1MggmcH0kPMKi7Qw12FtOaQ9SeSKFyXg5M95XaaIoLZ8/edit#slide=id.p",
-            videoURL: ""
+            videoURL: "https://youtu.be/i1gSLWDir64"
           },
           {
             name: "YCC",
             members: ['Tae Gyeom Kim', 'JeongHun Moon', 'Saebom Jeong'],
             description: "Interactive KAIST Campus Map",
             slideURL: "https://docs.google.com/presentation/d/1rO1pw7E9V3p7UoZt9bC2a8pJwXcUMd1bE2piKlfLomA/edit?usp=sharing",
-            videoURL: ""
+            videoURL: "https://youtu.be/vRUuu_bDadk"
           },
           {
             name: "Sagam",
             members: ['Yuna Seol', 'Minsu Jang', 'Yujin Kim', 'Tae Gyun Kim'],
             description: "Dormitory request management system",
             slideURL: "https://docs.google.com/presentation/d/1mmNwLqvF_s_jXaqs388mxGkePAFtbgaS3PTgRb2bWt4/edit#slide=id.p",
-            videoURL: ""
+            videoURL: "https://youtu.be/XlOsT1Im81Q"
           },
           {
             name: "Oh-hack-nyun",
-            members: ['Hyeong Chul Moon', 'Taesoo Lim', 'SEUNG HEE YOON', 'Min Yeong Yang'],
+            members: ['Hyeong Chul Moon', 'Taesoo Lim', 'Seung Hee Yoon', 'Min Yeong Yang'],
             description: "Making work-out plan/note",
             slideURL: "https://docs.google.com/presentation/d/1_Ifv7l9MU-jRIlRipINJh7uvZvDSjNKrM550NEiWyMU/edit?usp=sharing",
-            videoURL: ""
+            videoURL: "https://youtu.be/ir_FEGsjtmM"
           },
           {
             name: "K-HCI",
             members: ['Hyunsik Yoon', 'Hyun Seong Kim', 'Jongwan Lee', 'JunHee Lee'],
             description: "Seamless music player",
             slideURL: "https://docs.google.com/presentation/d/19ApSKOy49RRMKtSvwbHkZAHYdtWCSCkTjiGooy2fEfw/edit",
-            videoURL: ""
+            videoURL: "https://youtu.be/ixXyeD7cgQI"
           },
           {
             name: "Fame",
             members: ['Jeong Un Ryoo', 'Hyun Suk Shin'],
             description: "Driver School Search Service",
             slideURL: "https://docs.google.com/presentation/d/1SSRSODQyHKhEtbFdqoa88qfvRwMqFj5daMIukQxYHh8/edit?usp=sharing",
-            videoURL: ""
+            videoURL: "https://youtu.be/UvzA24Znmiw"
           },
           {
             name: "Cookit",
             members: ['Ina Ryu', 'Jae Heon Kim', 'Yong Seok Kwon', 'Jaejin Hwang'],
             description: "Customed recipe for selfboarders",
             slideURL: "https://docs.google.com/presentation/d/1QDfEsK648qJ4RtMXCpRlI8pquVkqwhvp_eVEZILeBz8/edit?usp=sharing",
-            videoURL: ""
+            videoURL: "https://youtu.be/G7JMbS_lQic"
           },
           {
             name: "K2T2",
             members: ['Ching Liu', 'Kamil Veli Torman', 'Nurzhan Badelkhanovich Yergozhin', 'Jongmin Park'],
             description: "Video Q&A Interface",
             slideURL: "https://docs.google.com/presentation/d/1yDbM60OpEg5eWklmUUxO-QVLHHKRjFkPHuoNzmqGO68/edit?usp=sharing",
-            videoURL: ""
+            videoURL: "https://youtu.be/8F9T6Cu7JOU"
           },
           {
             name: "Drunken GUI",
             members: ['Sang Yeob Lee', 'Kyung Yun Lee', 'Sunmin Son', 'Kim Hyung Woo'],
             description: "Tool for drunken people",
             slideURL: "https://docs.google.com/presentation/d/1PbKjiyX7EX4Y7O4VIlMMyC26niyPGYzjHtme0uQoFUo/edit#slide=id.p",
-            videoURL: ""
+            videoURL: "https://youtu.be/HHiuP-tocvk"
           },
           {
             name: "NanoMario",
             members: ['Seung Min Lee', 'Seong Won Lee', 'Rohjoon Myung', 'Changje Jeong'],
             description: "Mail service for managing attached files",
             slideURL: "https://docs.google.com/presentation/d/1x4cTXrh7n6hhpV08l2iwi2x7r2xpgpX40WJUuH3NVYw/edit",
-            videoURL: ""
+            videoURL: "https://youtu.be/27vt8HTa1bU"
           },
           {
             name: "Elders",
             members: ['Jaehak Song', 'Hwisoo kim', 'Seung Hwan Song', 'JinYung Choi'],
             description: "Online shopping interface",
             slideURL: "https://docs.google.com/presentation/d/1KVibUg6_rYD4l5GPuVmWNMfwE1MgcJQIyewHl6dEX1Y/edit#slide=id.g22ea15cb73_1_0",
-            videoURL: ""
+            videoURL: "https://youtu.be/iHHujjEVjeY"
           },
           {
             name: "Brit",
             members: ["Seayeon Lee", "Jaehoon Lee", "Young Eun Kim", "Hyunwoo Kim"],
             description: "Collaborative Cooking",
             slideURL: "https://docs.google.com/presentation/d/1rYYnVX_Aj7gEffQobCy68ZvsZ_Ww0B_Jt_QUVilaRHs/edit?usp=sharing",
-            videoURL: ""
+            videoURL: "https://youtu.be/cMA56X1iGWg"
           },
           {
             name: "Letter Rus",
             members: ['Mingi Jo', 'Minuk Ma', 'Cuong Van Vu Nguyen', 'Viet Do'],
             description: "E-gift card service",
             slideURL: "https://docs.google.com/presentation/d/18y6c96IdCh5U161HSA8tGC_t8w08OsRGNRDCGfh09cg/edit",
-            videoURL: ""
+            videoURL: "https://youtu.be/oVFAhKtKym4"
           },
           {
             name: "KAISTians",
             members: ['Olzhas Kadyrakunov', 'Alisher Tortay', 'Eunji Heo', 'Michael Zipperle'],
             description: "Search engine for kids",
             slideURL: "https://docs.google.com/presentation/d/1yNFHQPmIP0I2p6vrFIBSRLa209QDuhR4bc6opUXumz4/edit#slide=id.p",
-            videoURL: ""
+            videoURL: "https://youtu.be/ixb0hiv87uU"
           },
           {
             name: "Buskee Busker",
             members: ['Jo Kyung Je', 'Hyoung Seok Kim', 'Seok-chan Ahn', 'Eun-Young Ko(Auditing Student)'],
             description: "Interface for buskee",
             slideURL: "https://docs.google.com/presentation/d/1omSD1R9GG3aTsRCAe1bOG-TLVpGyRjR7q5Yv3W5vNvg/edit",
-            videoURL: ""
+            videoURL: "https://youtu.be/lEawUG7guLs"
           },
           {
             name: "OldBoy",
-            members: ['Eunseok Jeong', 'JAE GYUN KIM', 'GIWAN PARK', 'Dohan Kim'],
+            members: ['Eunseok Jeong', 'Jae Gyun Kim', 'Giwan Park', 'Dohan Kim'],
             description: "Finding attractive traveling mate",
             slideURL: "https://docs.google.com/presentation/d/1AEeoDii_zqiQuUUtm1gXm0sZ2yYGDA_zSRElf3pq4FM/edit?usp=sharing",
-            videoURL: ""
+            videoURL: "https://youtu.be/_dVs7VEQN7Q"
           },
           {
             name: "Jeonssa",
             members: ['Joon Young Lee', 'SunJae Lee', 'Min Kang', 'Sewon Hong'],
             description: "Waiting experience in front of/inside restaurant",
             slideURL: "https://docs.google.com/presentation/d/1v-P9en7Sa2zFZfB7Ji57NJF7wFdsSrTunOcVGyxrm5k/edit?usp=sharing",
-            videoURL: ""
+            videoURL: "https://youtu.be/ylGoaqRZWKI"
           }
         ]
-      }
+      },
+      computed: {
+        videoIds: function () {
+          var ids = this.teams.map(function (val) { return val.videoURL.split('/').slice(-1)[0] })
+          console.log(ids)
+          return ids
+        }
+      },
     })
 
   </script>
