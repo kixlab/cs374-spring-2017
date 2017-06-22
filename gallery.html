@@ -312,7 +312,6 @@
       computed: {
         videoIds: function () {
           var ids = this.teams.map(function (val) { return val.videoURL.split('/').slice(-1)[0] })
-          console.log(ids)
           return ids
         }
       },
