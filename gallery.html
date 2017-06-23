@@ -105,6 +105,9 @@
         <div class="well" id="awards-list">
           <h1>Awards</h1>
 
+          <h3>People's Choice Award</h3>
+          <a href="#more_drunkengui">Drunken GUI</a>
+
           <h3>Most Human-Centered Award</h3>
           <a href="#more_sagam">Sagam</a>
 
@@ -140,10 +143,8 @@
           <div class="well" :id="'more_' + team.name.replace(/\s/g, '').toLowerCase()">
             <h1>{{ team.name }}</h1>
             <h4>{{ team.members.join(", ") }}</h4>
-            <p>
-              {{ team.description }}
-              <a :href="team.slideURL">Slide</a>
-            </p>
+            <p>{{ team.description }}</p>
+            <p><a :href="team.slideURL">Slides</a></p>
             <iframe class='embed-player' width='560' height='315' :src="'https://www.youtube.com/embed/' + videoIds[index]" frameborder='0' allowfullscreen></iframe>
           </div>
         </div>
